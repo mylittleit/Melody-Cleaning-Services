@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, ChevronRight, Plus } from "lucide-react"
+import { Menu, X, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -48,7 +48,7 @@ const Navbar = () => {
             <DropdownMenuTrigger asChild>
               <Button variant="link" className="flex items-center text-sm font-medium hover:text-primary">
                 Services
-                <ChevronRight className="ml-1 h-4 w-4" />
+                <Plus className="ml-1 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {
-  Home,
+  FileText,
   MoveRight,
   Brush,
   Sparkles,
@@ -13,6 +13,9 @@ import {
   Store,
   Construction,
   PartyPopper,
+  Bed,
+  Armchair,
+  Home,
 } from "lucide-react"
 
 export default function ServicesPage() {
@@ -47,7 +50,7 @@ export default function ServicesPage() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Home className="h-10 w-10 text-primary" />
+                  <FileText className="h-10 w-10 text-primary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">End of Tenancy</CardTitle>
               </CardHeader>
@@ -173,7 +176,7 @@ export default function ServicesPage() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Home className="h-10 w-10 text-primary" />
+                  <Bed className="h-10 w-10 text-primary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Mattress Cleaning</CardTitle>
               </CardHeader>
@@ -194,7 +197,7 @@ export default function ServicesPage() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Home className="h-10 w-10 text-primary" />
+                  <Armchair className="h-10 w-10 text-primary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Upholstery Cleaning</CardTitle>
               </CardHeader>

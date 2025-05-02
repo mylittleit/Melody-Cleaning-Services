@@ -11,12 +11,14 @@ import {
   Users,
   Shield,
   Coins,
-  Home,
-  MoveRight,
-  Brush,
+  FileText,
+  Bed,
+  Armchair,
   Sparkles,
   UtensilsCrossed,
   Construction,
+  MoveRight,
+  Brush,
 } from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
 
@@ -265,7 +267,7 @@ export default function AboutPage() {
             {/* Service 1 */}
             <div className="flex flex-col items-center text-center">
               <div className="mb-4 rounded-full bg-primary/10 p-3">
-                <Home className="h-10 w-10 text-primary" />
+                <FileText className="h-10 w-10 text-primary" />
               </div>
               <h3 className="mb-2 text-xl font-semibold text-primary">End of Tenancy</h3>
               <p className="mb-4 text-gray-600">
@@ -340,6 +342,34 @@ export default function AboutPage() {
               <h3 className="mb-2 text-xl font-semibold text-primary">End of Construction</h3>
               <p className="mb-4 text-gray-600">
                 Post-construction cleaning to remove dust, debris, and make your new space ready for use.
+              </p>
+              <Button className="bg-primary text-secondary hover:bg-primary/90">
+                <Link href="/book">Book Now</Link>
+              </Button>
+            </div>
+
+            {/* Service 7 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <Bed className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold text-primary">Mattress Cleaning</h3>
+              <p className="mb-4 text-gray-600">
+                Specialized cleaning to remove dust mites, allergens, and stains from mattresses.
+              </p>
+              <Button className="bg-primary text-secondary hover:bg-primary/90">
+                <Link href="/book">Book Now</Link>
+              </Button>
+            </div>
+
+            {/* Service 8 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <Armchair className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold text-primary">Upholstery Cleaning</h3>
+              <p className="mb-4 text-gray-600">
+                Professional cleaning for sofas, chairs, and other upholstered furniture.
               </p>
               <Button className="bg-primary text-secondary hover:bg-primary/90">
                 <Link href="/book">Book Now</Link>
