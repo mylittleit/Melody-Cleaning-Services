@@ -61,6 +61,7 @@ const Navbar = () => {
                 <div className="relative group/domestic">
                   <span className="font-medium text-primary mb-2 block hover:underline flex items-center justify-between cursor-pointer">
                     Domestic Cleaning
+                  <Plus className="inline-block ml-1 h-4 w-4" />
                   </span>
                   <div className="hidden group-hover/domestic:block ml-4 mt-2">
                     <Link href="/services#domestic-end-of-tenancy" className="block py-1 text-sm hover:text-primary">
