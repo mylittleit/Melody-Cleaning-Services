@@ -169,11 +169,11 @@ export default function AboutPage() {
 
             <Card>
               <CardHeader className="text-center">
-                <CardTitle className="text-xl text-primary">Sustainability</CardTitle>
+                <CardTitle className="text-xl text-primary">Customer Focus</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  We are committed to environmentally friendly practices and products in all our operations.
+                  We prioritise our customers' needs and satisfaction above all else.
                 </p>
               </CardContent>
             </Card>
@@ -206,7 +206,7 @@ export default function AboutPage() {
             <Card>
               <CardHeader className="flex flex-col items-center">
                 <Shield className="h-12 w-12 text-primary" />
-                <CardTitle className="mt-4 text-xl text-primary">Customized Solutions</CardTitle>
+                <CardTitle className="mt-4 text-xl text-primary">Customised Solutions</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-center text-gray-600">
@@ -293,20 +293,6 @@ export default function AboutPage() {
             {/* Service 2 */}
             <div className="flex flex-col items-center text-center">
               <div className="mb-4 rounded-full bg-primary/10 p-3">
-                <MoveRight className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-primary">Move-In/Move-Out</h3>
-              <p className="mb-4 text-gray-600">
-                Specialized cleaning to prepare your new home or leave your old one in perfect condition.
-              </p>
-              <Button className="bg-primary text-secondary hover:bg-primary/90">
-                <Link href="/book">Book Now</Link>
-              </Button>
-            </div>
-
-            {/* Service 3 */}
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 rounded-full bg-primary/10 p-3">
                 <Brush className="h-10 w-10 text-primary" />
               </div>
               <h3 className="mb-2 text-xl font-semibold text-primary">Carpet Cleaning</h3>
@@ -318,7 +304,7 @@ export default function AboutPage() {
               </Button>
             </div>
 
-            {/* Service 4 */}
+            {/* Service 3 */}
             <div className="flex flex-col items-center text-center">
               <div className="mb-4 rounded-full bg-primary/10 p-3">
                 <Sparkles className="h-10 w-10 text-primary" />
@@ -332,21 +318,21 @@ export default function AboutPage() {
               </Button>
             </div>
 
-            {/* Service 5 */}
+            {/* Service 4 */}
             <div className="flex flex-col items-center text-center">
               <div className="mb-4 rounded-full bg-primary/10 p-3">
                 <UtensilsCrossed className="h-10 w-10 text-primary" />
               </div>
               <h3 className="mb-2 text-xl font-semibold text-primary">Restaurants and Hotels</h3>
               <p className="mb-4 text-gray-600">
-                Specialized cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
+                Specialised cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
               </p>
               <Button className="bg-primary text-secondary hover:bg-primary/90">
                 <Link href="/book">Book Now</Link>
               </Button>
             </div>
 
-            {/* Service 6 */}
+            {/* Service 5 */}
             <div className="flex flex-col items-center text-center">
               <div className="mb-4 rounded-full bg-primary/10 p-3">
                 <Construction className="h-10 w-10 text-primary" />
@@ -360,28 +346,14 @@ export default function AboutPage() {
               </Button>
             </div>
 
-            {/* Service 7 */}
+            {/* Service 6 */}
             <div className="flex flex-col items-center text-center">
               <div className="mb-4 rounded-full bg-primary/10 p-3">
                 <Bed className="h-10 w-10 text-primary" />
               </div>
               <h3 className="mb-2 text-xl font-semibold text-primary">Mattress Cleaning</h3>
               <p className="mb-4 text-gray-600">
-                Specialized cleaning to remove dust mites, allergens, and stains from mattresses.
-              </p>
-              <Button className="bg-primary text-secondary hover:bg-primary/90">
-                <Link href="/book">Book Now</Link>
-              </Button>
-            </div>
-
-            {/* Service 8 */}
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 rounded-full bg-primary/10 p-3">
-                <Armchair className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-primary">Upholstery Cleaning</h3>
-              <p className="mb-4 text-gray-600">
-                Professional cleaning for sofas, chairs, and other upholstered furniture.
+                Specialised cleaning to remove dust mites, allergens, and stains from mattresses.
               </p>
               <Button className="bg-primary text-secondary hover:bg-primary/90">
                 <Link href="/book">Book Now</Link>
