@@ -37,14 +37,12 @@ export default function AboutPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <p className="mb-8 text-lg text-gray-700">
-              Melody Cleaning Services is a premier cleaning company based in the UK, dedicated to providing exceptional
-              cleaning solutions for both residential and commercial clients. With our team of experienced professionals
-              and commitment to quality, we ensure spotless results every time.
+              Melody Cleaning Services is a professional cleaning company dedicated to providing high-quality cleaning services to homes and businesses across the UK. With our team of experienced and trained professionals, we deliver exceptional results that exceed our clients' expectations. We take pride in our attention to detail and commitment to customer satisfaction.
             </p>
             <p className="mb-8 text-lg text-gray-700">
-              Founded with a passion for cleanliness and customer satisfaction, we have grown to become one of the most
+              Founded with a passion for cleanliness and customer satisfaction, we are focused on becoming one of the most
               trusted cleaning services in the region. Our attention to detail, use of eco-friendly products, and
-              personalized approach set us apart from other cleaning companies.
+              personalised approach set us apart from other cleaning companies.
             </p>
 
             <div className="mb-12 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
@@ -78,9 +76,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-primary">Our Mission</h2>
             </div>
             <p className="text-lg text-gray-700">
-              Our mission is to provide exceptional cleaning services that exceed our clients' expectations. We strive
-              to create healthier, cleaner environments for homes and businesses while delivering outstanding customer
-              service and employing eco-friendly practices.
+              Our mission is to provide exceptional cleaning services that enhance the quality of life for our clients. We aim to create cleaner, healthier, and more comfortable environments through our professional cleaning solutions, while maintaining the highest standards of service and customer care.
             </p>
           </div>
 
@@ -89,9 +85,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-primary">Our Vision</h2>
             </div>
             <p className="text-lg text-gray-700">
-              We aim to be the leading cleaning service provider in the UK, recognized for our quality, reliability, and
-              commitment to sustainability. We envision a future where every home and business can enjoy the benefits of
-              a professionally cleaned space without compromising on environmental values.
+              We envision becoming the leading cleaning service provider in the UK, recognised for our excellence, reliability, and customer-focused approach. We strive to set new standards in the cleaning industry through innovation, sustainability, and continuous improvement.
             </p>
           </div>
 
@@ -106,8 +100,26 @@ export default function AboutPage() {
               <li>Deliver consistent, high-quality cleaning services that meet or exceed industry standards</li>
               <li>Expand our service offerings to meet the evolving needs of our clients</li>
               <li>Maintain a team of well-trained, professional staff who share our values</li>
-              <li>Minimize our environmental footprint through sustainable practices and products</li>
+              <li>Minimise our environmental footprint through sustainable practices and products</li>
               <li>Build long-term relationships with our clients based on trust and satisfaction</li>
+              <li>Continuously improve our processes and services through feedback and innovation</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="mb-6 flex items-center">
+              <h2 className="text-3xl font-bold text-primary">How We Operate</h2>
+            </div>
+            <p className="mb-6 text-lg text-gray-700">
+              At Melody Cleaning Services, we follow a systematic approach to ensure consistent quality and customer satisfaction:
+            </p>
+            <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
+              <li>Initial Consultation: We begin with a thorough assessment of your cleaning needs and requirements.</li>
+              <li>Customised Plan: We develop a tailored cleaning plan specific to your property and preferences.</li>
+              <li>Team Assignment: We assign experienced and trained cleaning professionals who specialise in your required services.</li>
+              <li>Quality Execution: Our team executes the cleaning plan with attention to detail and using appropriate techniques.</li>
+              <li>Quality Check: We conduct a thorough inspection to ensure all areas meet our high standards.</li>
+              <li>Feedback Collection: We actively seek your feedback to continuously improve our services.</li>
             </ul>
           </div>
         </div>
