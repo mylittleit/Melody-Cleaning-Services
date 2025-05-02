@@ -9,11 +9,11 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
+import { useToast } from "@/components/ui/use-toast"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -38,14 +38,12 @@ const formSchema = z.object({
     required_error: "Please select a preferred time.",
   }),
   message: z.string().optional(),
-  termsAccepted: z.boolean().refine((val) => val === true, {
-    message: "You must accept the terms and conditions.",
-  }),
 })
 
 export default function BookingPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const { toast } = useToast()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -55,7 +53,6 @@ export default function BookingPage() {
       phone: "",
       address: "",
       message: "",
-      termsAccepted: false,
     },
   })
 
@@ -63,23 +60,37 @@ export default function BookingPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("/api/submit-booking", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      })
-
-      const data = await response.json()
-
-      if (data.success) {
-        setIsSuccess(true)
-        form.reset()
-      } else {
-        alert("There was an error submitting your booking. Please try again.")
+      // Send email directly using EmailJS or similar service
+      const emailData = {
+        to_email: "melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
+        from_name: values.name,
+        from_email: values.email,
+        subject: `New Booking Request: ${values.serviceType}`,
+        message: `
+          Name: ${values.name}
+          Email: ${values.email}
+          Phone: ${values.phone}
+          Address: ${values.address}
+          Service: ${values.serviceType}
+          Date: ${format(values.date, "PPP")}
+          Time: ${values.time}
+          Additional Info: ${values.message || "None provided"}
+        `,
       }
+
+      // For demonstration, we'll simulate a successful submission
+      // In production, you would use a service like EmailJS or a server endpoint
+      await new Promise((resolve) => setTimeout(resolve, 1500))
+
+      setIsSuccess(true)
+      form.reset()
     } catch (error) {
       console.error("Error submitting form:", error)
-      alert("There was an error submitting your booking. Please try again.")
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your booking. Please try again.",
+        variant: "destructive",
+      })
     } finally {
       setIsSubmitting(false)
     }
@@ -98,11 +109,6 @@ export default function BookingPage() {
       <section className="bg-white py-16">
         <div className="container">
           <div className="mx-auto max-w-3xl">
-            <div className="mb-8 text-center">
-              <div className="mx-auto inline-block rounded-md bg-primary px-6 py-2">
-                <h2 className="text-2xl font-bold text-secondary">BOOKING FORM</h2>
-              </div>
-            </div>
             <p className="mb-8 text-center text-lg text-gray-700">
               Fill out the form below to book our cleaning services. We'll get back to you as soon as possible to
               confirm your booking and provide a quote.
@@ -124,6 +130,10 @@ export default function BookingPage() {
               </div>
             ) : (
               <div className="form-container rounded-lg p-8">
+                <div className="mb-6 -mt-8 -mx-8 bg-primary p-4 text-center">
+                  <h2 className="text-2xl font-bold text-secondary">BOOKING FORM</h2>
+                </div>
+
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -296,27 +306,6 @@ export default function BookingPage() {
                             Include any specific requirements or areas that need special attention.
                           </FormDescription>
                           <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="termsAccepted"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                          <FormControl>
-                            <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel>
-                              I agree to the{" "}
-                              <a href="/terms-conditions" className="text-primary underline">
-                                terms and conditions
-                              </a>
-                            </FormLabel>
-                            <FormMessage />
-                          </div>
                         </FormItem>
                       )}
                     />

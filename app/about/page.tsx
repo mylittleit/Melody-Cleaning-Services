@@ -1,8 +1,23 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Facebook, Instagram, Linkedin } from "lucide-react"
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  CheckCircle,
+  Clock,
+  Leaf,
+  Users,
+  Shield,
+  Coins,
+  Home,
+  MoveRight,
+  Brush,
+  Sparkles,
+  UtensilsCrossed,
+  Construction,
+} from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
 
 export default function AboutPage() {
@@ -49,7 +64,12 @@ export default function AboutPage() {
       {/* Mission, Vision, Goals */}
       <section className="bg-gray-50 py-16">
         <div className="container">
-          <h2 className="mb-8 text-center text-3xl font-bold text-primary">OUR PURPOSE</h2>
+          <div className="relative mb-12 h-[200px] w-full overflow-hidden">
+            <div className="absolute inset-0 bg-primary/80"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h2 className="text-4xl font-bold text-secondary">OUR PURPOSE</h2>
+            </div>
+          </div>
 
           <div className="mb-16">
             <div className="mb-6 flex items-center">
@@ -157,11 +177,12 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Experienced Team</CardTitle>
+              <CardHeader className="flex flex-col items-center">
+                <Users className="h-12 w-12 text-primary" />
+                <CardTitle className="mt-4 text-xl text-primary">Experienced Team</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
+                <p className="text-center text-gray-600">
                   Our cleaning professionals are fully trained, insured, and background-checked, with years of
                   experience in the industry.
                 </p>
@@ -169,11 +190,12 @@ export default function AboutPage() {
             </Card>
 
             <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Customized Solutions</CardTitle>
+              <CardHeader className="flex flex-col items-center">
+                <Shield className="h-12 w-12 text-primary" />
+                <CardTitle className="mt-4 text-xl text-primary">Customized Solutions</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
+                <p className="text-center text-gray-600">
                   We tailor our cleaning services to meet your specific needs, whether it's a one-time deep clean or
                   regular maintenance.
                 </p>
@@ -181,42 +203,48 @@ export default function AboutPage() {
             </Card>
 
             <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Quality Guarantee</CardTitle>
+              <CardHeader className="flex flex-col items-center">
+                <CheckCircle className="h-12 w-12 text-primary" />
+                <CardTitle className="mt-4 text-xl text-primary">Quality Guarantee</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
+                <p className="text-center text-gray-600">
                   We stand behind our work with a 100% satisfaction guarantee on all our services.
                 </p>
               </CardContent>
             </Card>
 
             <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Eco-Friendly Approach</CardTitle>
+              <CardHeader className="flex flex-col items-center">
+                <Leaf className="h-12 w-12 text-primary" />
+                <CardTitle className="mt-4 text-xl text-primary">Eco-Friendly Approach</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
+                <p className="text-center text-gray-600">
                   We use environmentally friendly cleaning products that are safe for your family, pets, and the planet.
                 </p>
               </CardContent>
             </Card>
 
             <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Competitive Pricing</CardTitle>
+              <CardHeader className="flex flex-col items-center">
+                <Coins className="h-12 w-12 text-primary" />
+                <CardTitle className="mt-4 text-xl text-primary">Competitive Pricing</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">We offer fair and transparent pricing with no hidden fees or surprises.</p>
+                <p className="text-center text-gray-600">
+                  We offer fair and transparent pricing with no hidden fees or surprises.
+                </p>
               </CardContent>
             </Card>
 
             <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Reliable Service</CardTitle>
+              <CardHeader className="flex flex-col items-center">
+                <Clock className="h-12 w-12 text-primary" />
+                <CardTitle className="mt-4 text-xl text-primary">Reliable Service</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
+                <p className="text-center text-gray-600">
                   We arrive on time, every time, and complete our work efficiently without compromising on quality.
                 </p>
               </CardContent>
@@ -233,113 +261,89 @@ export default function AboutPage() {
             <p className="mt-4 text-lg text-gray-700">Our comprehensive range of cleaning services</p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {/* Service 1 */}
-            <div className="flex">
-              <div className="mr-4 flex-shrink-0">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Image src="/images/service-end-of-tenancy.png" alt="End of Tenancy" width={40} height={40} />
-                </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <Home className="h-10 w-10 text-primary" />
               </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-primary">End of Tenancy</h3>
-                <p className="mb-4 text-gray-600">
-                  Comprehensive cleaning services for property transitions, ensuring your deposit is returned in full.
-                </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Book Now</Link>
-                </Button>
-              </div>
+              <h3 className="mb-2 text-xl font-semibold text-primary">End of Tenancy</h3>
+              <p className="mb-4 text-gray-600">
+                Comprehensive cleaning services for property transitions, ensuring your deposit is returned in full.
+              </p>
+              <Button className="bg-primary text-secondary hover:bg-primary/90">
+                <Link href="/book">Book Now</Link>
+              </Button>
             </div>
 
             {/* Service 2 */}
-            <div className="flex">
-              <div className="mr-4 flex-shrink-0">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Image src="/images/service-move-in.png" alt="Move-In/Move-Out" width={40} height={40} />
-                </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <MoveRight className="h-10 w-10 text-primary" />
               </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-primary">Move-In/Move-Out</h3>
-                <p className="mb-4 text-gray-600">
-                  Specialized cleaning to prepare your new home or leave your old one in perfect condition.
-                </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Book Now</Link>
-                </Button>
-              </div>
+              <h3 className="mb-2 text-xl font-semibold text-primary">Move-In/Move-Out</h3>
+              <p className="mb-4 text-gray-600">
+                Specialized cleaning to prepare your new home or leave your old one in perfect condition.
+              </p>
+              <Button className="bg-primary text-secondary hover:bg-primary/90">
+                <Link href="/book">Book Now</Link>
+              </Button>
             </div>
 
             {/* Service 3 */}
-            <div className="flex">
-              <div className="mr-4 flex-shrink-0">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Image src="/images/service-carpet.png" alt="Carpet Cleaning" width={40} height={40} />
-                </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <Brush className="h-10 w-10 text-primary" />
               </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-primary">Carpet Cleaning</h3>
-                <p className="mb-4 text-gray-600">
-                  Professional carpet cleaning to remove stains, odors, and allergens for a fresher home.
-                </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Book Now</Link>
-                </Button>
-              </div>
+              <h3 className="mb-2 text-xl font-semibold text-primary">Carpet Cleaning</h3>
+              <p className="mb-4 text-gray-600">
+                Professional carpet cleaning to remove stains, odors, and allergens for a fresher home.
+              </p>
+              <Button className="bg-primary text-secondary hover:bg-primary/90">
+                <Link href="/book">Book Now</Link>
+              </Button>
             </div>
 
             {/* Service 4 */}
-            <div className="flex">
-              <div className="mr-4 flex-shrink-0">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Image src="/images/service-deep-clean.png" alt="Deep Clean" width={40} height={40} />
-                </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <Sparkles className="h-10 w-10 text-primary" />
               </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-primary">Deep Clean</h3>
-                <p className="mb-4 text-gray-600">
-                  Thorough cleaning of all areas, including hard-to-reach spots, for a completely refreshed space.
-                </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Book Now</Link>
-                </Button>
-              </div>
+              <h3 className="mb-2 text-xl font-semibold text-primary">Deep Clean</h3>
+              <p className="mb-4 text-gray-600">
+                Thorough cleaning of all areas, including hard-to-reach spots, for a completely refreshed space.
+              </p>
+              <Button className="bg-primary text-secondary hover:bg-primary/90">
+                <Link href="/book">Book Now</Link>
+              </Button>
             </div>
 
             {/* Service 5 */}
-            <div className="flex">
-              <div className="mr-4 flex-shrink-0">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Image src="/images/service-restaurants.png" alt="Restaurants and Hotels" width={40} height={40} />
-                </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <UtensilsCrossed className="h-10 w-10 text-primary" />
               </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-primary">Restaurants and Hotels</h3>
-                <p className="mb-4 text-gray-600">
-                  Specialized cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
-                </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Book Now</Link>
-                </Button>
-              </div>
+              <h3 className="mb-2 text-xl font-semibold text-primary">Restaurants and Hotels</h3>
+              <p className="mb-4 text-gray-600">
+                Specialized cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
+              </p>
+              <Button className="bg-primary text-secondary hover:bg-primary/90">
+                <Link href="/book">Book Now</Link>
+              </Button>
             </div>
 
             {/* Service 6 */}
-            <div className="flex">
-              <div className="mr-4 flex-shrink-0">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Image src="/images/service-construction.png" alt="End of Construction" width={40} height={40} />
-                </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <Construction className="h-10 w-10 text-primary" />
               </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-primary">End of Construction</h3>
-                <p className="mb-4 text-gray-600">
-                  Post-construction cleaning to remove dust, debris, and make your new space ready for use.
-                </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Book Now</Link>
-                </Button>
-              </div>
+              <h3 className="mb-2 text-xl font-semibold text-primary">End of Construction</h3>
+              <p className="mb-4 text-gray-600">
+                Post-construction cleaning to remove dust, debris, and make your new space ready for use.
+              </p>
+              <Button className="bg-primary text-secondary hover:bg-primary/90">
+                <Link href="/book">Book Now</Link>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,7 +1,17 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Home,
+  Building,
+  UtensilsCrossed,
+  Heart,
+  Store,
+  GraduationCap,
+  Construction,
+  PartyPopper,
+  Factory,
+} from "lucide-react"
 
 export default function SectorsPage() {
   return (
@@ -33,8 +43,8 @@ export default function SectorsPage() {
             {/* Sector 1 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-residential.png" alt="Residential" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <Home className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Residential</CardTitle>
               </CardHeader>
@@ -54,8 +64,8 @@ export default function SectorsPage() {
             {/* Sector 2 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-commercial.png" alt="Commercial Offices" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <Building className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Commercial Offices</CardTitle>
               </CardHeader>
@@ -66,7 +76,7 @@ export default function SectorsPage() {
                 </p>
                 <div className="mt-6 flex justify-center">
                   <Button className="bg-primary text-secondary hover:bg-primary/90">
-                    <Link href="/services/commercial/office-workshop">Learn More</Link>
+                    <Link href="/services#commercial-office-workshop">Learn More</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -75,8 +85,8 @@ export default function SectorsPage() {
             {/* Sector 3 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-hospitality.png" alt="Hospitality" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <UtensilsCrossed className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Hospitality</CardTitle>
               </CardHeader>
@@ -87,7 +97,7 @@ export default function SectorsPage() {
                 </p>
                 <div className="mt-6 flex justify-center">
                   <Button className="bg-primary text-secondary hover:bg-primary/90">
-                    <Link href="/services/commercial/restaurants-hotels">Learn More</Link>
+                    <Link href="/services#commercial-restaurants-hotels">Learn More</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -96,8 +106,8 @@ export default function SectorsPage() {
             {/* Sector 4 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-healthcare.png" alt="Healthcare" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <Heart className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Healthcare</CardTitle>
               </CardHeader>
@@ -108,7 +118,7 @@ export default function SectorsPage() {
                 </p>
                 <div className="mt-6 flex justify-center">
                   <Button className="bg-primary text-secondary hover:bg-primary/90">
-                    <Link href="/services/commercial/care-homes">Learn More</Link>
+                    <Link href="/services#commercial-care-homes">Learn More</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -117,8 +127,8 @@ export default function SectorsPage() {
             {/* Sector 5 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-retail.png" alt="Retail" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <Store className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Retail</CardTitle>
               </CardHeader>
@@ -129,7 +139,7 @@ export default function SectorsPage() {
                 </p>
                 <div className="mt-6 flex justify-center">
                   <Button className="bg-primary text-secondary hover:bg-primary/90">
-                    <Link href="/services/commercial/shop-cleaning">Learn More</Link>
+                    <Link href="/services#commercial-shop-cleaning">Learn More</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -138,8 +148,8 @@ export default function SectorsPage() {
             {/* Sector 6 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-education.png" alt="Education" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <GraduationCap className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Education</CardTitle>
               </CardHeader>
@@ -159,8 +169,8 @@ export default function SectorsPage() {
             {/* Sector 7 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-construction.png" alt="Construction" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <Construction className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Construction</CardTitle>
               </CardHeader>
@@ -171,7 +181,7 @@ export default function SectorsPage() {
                 </p>
                 <div className="mt-6 flex justify-center">
                   <Button className="bg-primary text-secondary hover:bg-primary/90">
-                    <Link href="/services/specialised/end-of-construction">Learn More</Link>
+                    <Link href="/services#specialised-end-of-construction">Learn More</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -180,8 +190,8 @@ export default function SectorsPage() {
             {/* Sector 8 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-events.png" alt="Events" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <PartyPopper className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Events</CardTitle>
               </CardHeader>
@@ -192,7 +202,7 @@ export default function SectorsPage() {
                 </p>
                 <div className="mt-6 flex justify-center">
                   <Button className="bg-primary text-secondary hover:bg-primary/90">
-                    <Link href="/services/specialised/pre-post-event">Learn More</Link>
+                    <Link href="/services#specialised-pre-post-event">Learn More</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -201,8 +211,8 @@ export default function SectorsPage() {
             {/* Sector 9 */}
             <Card>
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/sector-industrial.png" alt="Industrial" width={60} height={60} />
+                <div className="mb-4 rounded-full bg-primary p-4">
+                  <Factory className="h-10 w-10 text-secondary" />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Industrial</CardTitle>
               </CardHeader>

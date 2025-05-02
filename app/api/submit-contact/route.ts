@@ -13,14 +13,17 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       service: "yahoo",
       auth: {
-        user: process.env.EMAIL_USER || "melodycleaningservices@yahoo.com",
-        pass: process.env.EMAIL_PASSWORD, // This should be set in your environment variables
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
+      },
+      tls: {
+        rejectUnauthorized: false,
       },
     })
 
     // Email content
     const mailOptions = {
-      from: "melodycleaningservices@yahoo.com",
+      from: process.env.EMAIL_USER,
       to: ["melodycleaningservices@yahoo.com", "contactmelodycleaning@gmail.com"],
       subject: `New Contact Message: ${subject}`,
       html: `

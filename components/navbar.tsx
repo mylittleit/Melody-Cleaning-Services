@@ -5,7 +5,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, ChevronRight, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuGroup,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+} from "@/components/ui/dropdown-menu"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -43,74 +52,82 @@ const Navbar = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-              <div className="grid grid-cols-1 gap-3 p-2">
-                <div>
-                  <h4 className="mb-2 flex items-center font-medium text-primary">
+              <DropdownMenuGroup>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
                     <span className="flex items-center">
                       Domestic Cleaning
                       <Plus className="ml-1 h-4 w-4" />
                     </span>
-                  </h4>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#domestic-end-of-tenancy">End of Tenancy</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#domestic-move-in-out">Move-In/Move-Out</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#domestic-carpet-cleaning">Carpet Cleaning</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#domestic-deep-clean">Deep Clean</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#domestic-standard-cleaning">Standard Cleaning</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#domestic-housekeeping">General Housekeeping</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#domestic-mattress-cleaning">Mattress Cleaning</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#domestic-upholstery-cleaning">Upholstery Cleaning</Link>
-                  </DropdownMenuItem>
-                </div>
-                <div>
-                  <h4 className="mb-2 flex items-center font-medium text-primary">
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="w-48">
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#domestic-end-of-tenancy">End of Tenancy</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#domestic-move-in-out">Move-In/Move-Out</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#domestic-carpet-cleaning">Carpet Cleaning</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#domestic-deep-clean">Deep Clean</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#domestic-standard-cleaning">Standard Cleaning</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#domestic-housekeeping">General Housekeeping</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#domestic-mattress-cleaning">Mattress Cleaning</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#domestic-upholstery-cleaning">Upholstery Cleaning</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
                     <span className="flex items-center">
                       Commercial Cleaning
                       <Plus className="ml-1 h-4 w-4" />
                     </span>
-                  </h4>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#commercial-office-workshop">Office and Workshop</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#commercial-restaurants-hotels">Restaurants and Hotels</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#commercial-care-homes">Care Homes</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#commercial-shop-cleaning">Shop Cleaning</Link>
-                  </DropdownMenuItem>
-                </div>
-                <div>
-                  <h4 className="mb-2 flex items-center font-medium text-primary">
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="w-48">
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#commercial-office-workshop">Office and Workshop</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#commercial-restaurants-hotels">Restaurants and Hotels</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#commercial-care-homes">Care Homes</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#commercial-shop-cleaning">Shop Cleaning</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger>
                     <span className="flex items-center">
                       Specialised Cleaning
                       <Plus className="ml-1 h-4 w-4" />
                     </span>
-                  </h4>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#specialised-end-of-construction">End of Construction</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#specialised-pre-post-event">Pre/Post Event</Link>
-                  </DropdownMenuItem>
-                </div>
-              </div>
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="w-48">
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#specialised-end-of-construction">End of Construction</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/services#specialised-pre-post-event">Pre/Post Event</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+              </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link href="/sectors" className="text-sm font-medium hover:text-primary">

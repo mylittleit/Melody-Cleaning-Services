@@ -1,18 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Phone,
-  Mail,
-  Clock,
-  Facebook,
-  Instagram,
-  Linkedin,
-  CalendarRange,
-  FileText,
-  MapPin,
-  Share2,
-} from "lucide-react"
+import { Phone, Mail, Clock, Facebook, Instagram, Linkedin, CalendarRange, FileText, MapPin } from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
 
 export default function ContactPage() {
@@ -66,7 +55,11 @@ export default function ContactPage() {
                 <CardTitle className="text-xl text-primary">Hours of Operation</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="mb-6 text-gray-600">Monday - Sunday: 8:00am - 10:00pm</p>
+                <p className="mb-6 text-gray-600">
+                  Monday - Sunday
+                  <br />
+                  8:00am - 10:00pm
+                </p>
                 <Button className="bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Schedule</Link>
                 </Button>
@@ -154,19 +147,20 @@ export default function ContactPage() {
                 <Clock className="mr-2 h-6 w-6 text-primary" />
                 <h3 className="mb-4 text-2xl font-bold text-primary">Opening Hours</h3>
               </div>
-              <p className="text-gray-600">Monday - Sunday: 8:00am - 10:00pm</p>
+              <p className="text-gray-600">
+                Monday - Sunday
+                <br />
+                8:00am - 10:00pm
+              </p>
 
               <div className="mt-8">
-                <div className="flex items-center">
-                  <Share2 className="mr-2 h-6 w-6 text-primary" />
-                  <h3 className="mb-4 text-2xl font-bold text-primary">Connect With Us</h3>
-                </div>
+                <h3 className="mb-4 flex items-center text-2xl font-bold text-primary">Connect With Us</h3>
                 <div className="flex space-x-4">
                   <Link
                     href="https://www.facebook.com/profile.php?id=61575544748505"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
+                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
                   >
                     <Facebook className="h-6 w-6" />
                     <span className="sr-only">Facebook</span>
@@ -175,7 +169,7 @@ export default function ContactPage() {
                     href="https://www.instagram.com/melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
+                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
                   >
                     <Instagram className="h-6 w-6" />
                     <span className="sr-only">Instagram</span>
@@ -184,7 +178,7 @@ export default function ContactPage() {
                     href="https://www.linkedin.com/in/melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
+                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
                   >
                     <Linkedin className="h-6 w-6" />
                     <span className="sr-only">LinkedIn</span>
@@ -193,7 +187,7 @@ export default function ContactPage() {
                     href="https://www.tiktok.com/@melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
+                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
                   >
                     <FaTiktok className="h-6 w-6" />
                     <span className="sr-only">TikTok</span>
@@ -271,7 +265,7 @@ export default function ContactPage() {
                     type="submit"
                     className="rounded-full bg-primary px-8 py-2 text-secondary hover:bg-primary/90"
                   >
-                    Send Message
+                    SUBMIT
                   </Button>
                 </div>
               </form>

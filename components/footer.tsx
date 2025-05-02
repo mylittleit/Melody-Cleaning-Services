@@ -57,32 +57,32 @@ const Footer = () => {
             <h3 className="mb-4 text-lg font-bold text-primary">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/services/domestic/end-of-tenancy" className="text-gray-600 hover:text-primary">
+                <Link href="/services#domestic-end-of-tenancy" className="text-gray-600 hover:text-primary">
                   End of Tenancy
                 </Link>
               </li>
               <li>
-                <Link href="/services/domestic/deep-clean" className="text-gray-600 hover:text-primary">
+                <Link href="/services#domestic-deep-clean" className="text-gray-600 hover:text-primary">
                   Deep Clean
                 </Link>
               </li>
               <li>
-                <Link href="/services/commercial/restaurants-hotels" className="text-gray-600 hover:text-primary">
+                <Link href="/services#commercial-restaurants-hotels" className="text-gray-600 hover:text-primary">
                   Restaurants and Hotels
                 </Link>
               </li>
               <li>
-                <Link href="/services/domestic/carpet-cleaning" className="text-gray-600 hover:text-primary">
+                <Link href="/services#domestic-carpet-cleaning" className="text-gray-600 hover:text-primary">
                   Carpet Cleaning
                 </Link>
               </li>
               <li>
-                <Link href="/services/specialised/end-of-construction" className="text-gray-600 hover:text-primary">
+                <Link href="/services#specialised-end-of-construction" className="text-gray-600 hover:text-primary">
                   End of Construction
                 </Link>
               </li>
               <li>
-                <Link href="/services/specialised/pre-post-event" className="text-gray-600 hover:text-primary">
+                <Link href="/services#specialised-pre-post-event" className="text-gray-600 hover:text-primary">
                   Pre/Post Event
                 </Link>
               </li>
@@ -136,7 +136,11 @@ const Footer = () => {
                 <strong>Phone:</strong> <a href="tel:07453581984">07453581984</a>
               </li>
               <li className="text-gray-600">
-                <strong>Hours:</strong> Mon-Sun: 8am-10pm
+                <strong>Hours:</strong>
+                <br />
+                Monday - Sunday
+                <br />
+                8:00am - 10:00pm
               </li>
             </ul>
           </div>
