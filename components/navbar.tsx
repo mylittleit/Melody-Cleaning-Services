@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Plus } from "lucide-react"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -61,7 +61,7 @@ const Navbar = () => {
                 <div className="relative group/domestic">
                   <span className="font-medium text-primary mb-2 block hover:underline flex items-center justify-between cursor-pointer">
                     Domestic Cleaning
-                  <Plus className="inline-block ml-1 h-4 w-4" />
+                    <Plus className="inline-block ml-1 h-4 w-4" />
                   </span>
                   <div className="hidden group-hover/domestic:block ml-4 mt-2">
                     <Link href="/services#domestic-end-of-tenancy" className="block py-1 text-sm hover:text-primary">
@@ -100,6 +100,7 @@ const Navbar = () => {
                 <div className="relative group/commercial">
                   <span className="font-medium text-primary mb-2 block hover:underline flex items-center justify-between cursor-pointer">
                     Commercial Cleaning
+                    <Plus className="inline-block ml-1 h-4 w-4" />
                   </span>
                   <div className="hidden group-hover/commercial:block ml-4 mt-2">
                     <Link href="/services#commercial-office-workshop" className="block py-1 text-sm hover:text-primary">
@@ -126,6 +127,7 @@ const Navbar = () => {
                 <div className="relative group/specialised">
                   <span className="font-medium text-primary mb-2 block hover:underline flex items-center justify-between cursor-pointer">
                     Specialised Cleaning
+                    <Plus className="inline-block ml-1 h-4 w-4" />
                   </span>
                   <div className="hidden group-hover/specialised:block ml-4 mt-2">
                     <Link
