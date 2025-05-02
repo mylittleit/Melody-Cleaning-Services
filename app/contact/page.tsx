@@ -1,8 +1,18 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin } from "lucide-react"
+import {
+  Phone,
+  Mail,
+  Clock,
+  Facebook,
+  Instagram,
+  Linkedin,
+  CalendarRange,
+  FileText,
+  MapPin,
+  Share2,
+} from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
 
 export default function ContactPage() {
@@ -22,9 +32,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <Card className="text-center">
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/book-online.png" alt="Book Online" width={60} height={60} />
-                </div>
+                <CalendarRange className="h-12 w-12 text-primary" />
                 <CardTitle className="text-xl text-primary">Book Online</CardTitle>
               </CardHeader>
               <CardContent>
@@ -39,9 +47,7 @@ export default function ContactPage() {
 
             <Card className="text-center">
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Image src="/images/request-quote.png" alt="Request A Quote" width={60} height={60} />
-                </div>
+                <FileText className="h-12 w-12 text-primary" />
                 <CardTitle className="text-xl text-primary">Request A Quote</CardTitle>
               </CardHeader>
               <CardContent>
@@ -56,15 +62,11 @@ export default function ContactPage() {
 
             <Card className="text-center">
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4">
-                  <Clock className="h-12 w-12 text-primary" />
-                </div>
+                <Clock className="h-12 w-12 text-primary" />
                 <CardTitle className="text-xl text-primary">Hours of Operation</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="mb-6 text-gray-600">
-                  View our working hours and schedule your cleaning service at a time that suits you.
-                </p>
+                <p className="mb-6 text-gray-600">Monday - Sunday: 8:00am - 10:00pm</p>
                 <Button className="bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Schedule</Link>
                 </Button>
@@ -77,16 +79,21 @@ export default function ContactPage() {
       {/* Contact Details */}
       <section className="bg-gray-50 py-16">
         <div className="container">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <Card>
-              <CardHeader className="flex flex-col items-center">
-                <Mail className="h-10 w-10 text-primary" />
-                <CardTitle className="mt-4 text-xl text-primary">Email Us</CardTitle>
+              <CardHeader className="flex items-center">
+                <Mail className="mr-2 h-6 w-6 text-primary" />
+                <CardTitle className="text-xl text-primary">Email Us</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-gray-600">
-                  <a href="mailto:info@melodycleaningservices.co.uk" className="hover:text-primary">
-                    info@melodycleaningservices.co.uk
+                  <a href="mailto:melodycleaningservices@gmail.com" className="hover:text-primary">
+                    melodycleaningservices@gmail.com
+                  </a>
+                </p>
+                <p className="text-gray-600">
+                  <a href="mailto:info@melodycleaningservices.com" className="hover:text-primary">
+                    info@melodycleaningservices.com
                   </a>
                 </p>
                 <p className="mt-2 text-sm text-gray-500">We aim to respond to all emails within 24 hours.</p>
@@ -94,34 +101,17 @@ export default function ContactPage() {
             </Card>
 
             <Card>
-              <CardHeader className="flex flex-col items-center">
-                <Phone className="h-10 w-10 text-primary" />
-                <CardTitle className="mt-4 text-xl text-primary">Call Us</CardTitle>
+              <CardHeader className="flex items-center">
+                <Phone className="mr-2 h-6 w-6 text-primary" />
+                <CardTitle className="text-xl text-primary">Call Us</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-gray-600">
-                  <a href="tel:+441234567890" className="hover:text-primary">
-                    +44 123 456 7890
+                  <a href="tel:07453581984" className="hover:text-primary">
+                    07453581984
                   </a>
                 </p>
                 <p className="mt-2 text-sm text-gray-500">Available during our business hours.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="flex flex-col items-center">
-                <MapPin className="h-10 w-10 text-primary" />
-                <CardTitle className="mt-4 text-xl text-primary">Visit Us</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-gray-600">
-                  123 Cleaning Street
-                  <br />
-                  London, UK
-                  <br />
-                  SW1A 1AA
-                </p>
-                <p className="mt-2 text-sm text-gray-500">By appointment only.</p>
               </CardContent>
             </Card>
           </div>
@@ -133,80 +123,82 @@ export default function ContactPage() {
         <div className="container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-md">
-              <Image src="/images/uk-map.png" alt="Map" fill className="object-cover" />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4865204.804292891!2d-7.7218376684090815!3d54.12416090494634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited%20Kingdom!5e0!3m2!1sen!2sus!4v1714665600000!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
 
             <div>
-              <h3 className="mb-6 text-2xl font-bold text-primary">Opening Hours</h3>
-              <div className="mb-8 space-y-2">
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="font-medium">Monday</span>
-                  <span>8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="font-medium">Tuesday</span>
-                  <span>8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="font-medium">Wednesday</span>
-                  <span>8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="font-medium">Thursday</span>
-                  <span>8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="font-medium">Friday</span>
-                  <span>8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="font-medium">Saturday</span>
-                  <span>9:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between pb-2">
-                  <span className="font-medium">Sunday</span>
-                  <span>Closed</span>
-                </div>
+              <div className="flex items-center">
+                <MapPin className="mr-2 h-6 w-6 text-primary" />
+                <h3 className="mb-6 text-2xl font-bold text-primary">Our Service Area</h3>
               </div>
+              <p className="mb-4 text-gray-600">We provide our cleaning services in:</p>
+              <ul className="mb-8 space-y-2 text-gray-600">
+                <li>• London</li>
+                <li>• Kent</li>
+                <li>• M25</li>
+              </ul>
+              <p className="mb-8 text-gray-600">
+                We also cater to clients further afield, ensuring flexibility and availability wherever our expertise is
+                needed.
+              </p>
 
-              <h3 className="mb-4 text-2xl font-bold text-primary">Connect With Us</h3>
-              <div className="flex space-x-4">
-                <Link
-                  href="https://www.facebook.com/profile.php?id=61575544748505"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
-                >
-                  <Facebook className="h-6 w-6" />
-                  <span className="sr-only">Facebook</span>
-                </Link>
-                <Link
-                  href="https://www.instagram.com/melodycleaningservices"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
-                >
-                  <Instagram className="h-6 w-6" />
-                  <span className="sr-only">Instagram</span>
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/in/melodycleaningservices"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
-                >
-                  <Linkedin className="h-6 w-6" />
-                  <span className="sr-only">LinkedIn</span>
-                </Link>
-                <Link
-                  href="https://www.tiktok.com/@melodycleaningservices"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
-                >
-                  <FaTiktok className="h-6 w-6" />
-                  <span className="sr-only">TikTok</span>
-                </Link>
+              <div className="flex items-center">
+                <Clock className="mr-2 h-6 w-6 text-primary" />
+                <h3 className="mb-4 text-2xl font-bold text-primary">Opening Hours</h3>
+              </div>
+              <p className="text-gray-600">Monday - Sunday: 8:00am - 10:00pm</p>
+
+              <div className="mt-8">
+                <div className="flex items-center">
+                  <Share2 className="mr-2 h-6 w-6 text-primary" />
+                  <h3 className="mb-4 text-2xl font-bold text-primary">Connect With Us</h3>
+                </div>
+                <div className="flex space-x-4">
+                  <Link
+                    href="https://www.facebook.com/profile.php?id=61575544748505"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
+                  >
+                    <Facebook className="h-6 w-6" />
+                    <span className="sr-only">Facebook</span>
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/melodycleaningservices"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
+                  >
+                    <Instagram className="h-6 w-6" />
+                    <span className="sr-only">Instagram</span>
+                  </Link>
+                  <Link
+                    href="https://www.linkedin.com/in/melodycleaningservices"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
+                  >
+                    <Linkedin className="h-6 w-6" />
+                    <span className="sr-only">LinkedIn</span>
+                  </Link>
+                  <Link
+                    href="https://www.tiktok.com/@melodycleaningservices"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-primary/10 p-3 text-primary hover:bg-primary hover:text-white"
+                  >
+                    <FaTiktok className="h-6 w-6" />
+                    <span className="sr-only">TikTok</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -219,7 +211,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-center text-3xl font-bold text-primary">Send Us a Message</h2>
             <div className="form-container rounded-lg bg-white p-8 shadow-md">
-              <form className="space-y-6">
+              <form className="space-y-6" action="/api/submit-contact" method="POST">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="mb-2 block text-sm font-medium">
@@ -228,8 +220,10 @@ export default function ContactPage() {
                     <input
                       type="text"
                       id="name"
+                      name="name"
                       className="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       placeholder="John Doe"
+                      required
                     />
                   </div>
                   <div>
@@ -239,8 +233,10 @@ export default function ContactPage() {
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       className="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       placeholder="john.doe@example.com"
+                      required
                     />
                   </div>
                 </div>
@@ -251,8 +247,10 @@ export default function ContactPage() {
                   <input
                     type="text"
                     id="subject"
+                    name="subject"
                     className="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     placeholder="How can we help you?"
+                    required
                   />
                 </div>
                 <div>
@@ -261,14 +259,21 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={6}
                     className="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     placeholder="Your message here..."
+                    required
                   ></textarea>
                 </div>
-                <Button type="submit" className="w-full bg-primary text-secondary hover:bg-primary/90">
-                  Send Message
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    type="submit"
+                    className="rounded-full bg-primary px-8 py-2 text-secondary hover:bg-primary/90"
+                  >
+                    Send Message
+                  </Button>
+                </div>
               </form>
             </div>
           </div>

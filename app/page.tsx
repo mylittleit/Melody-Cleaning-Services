@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Clock, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react"
+import { CheckCircle, Clock, Phone, Mail, Facebook, Instagram, Linkedin, Leaf, Users } from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section relative h-[600px] w-full">
         <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
-          <div className="max-w-2xl rounded-lg bg-white/90 p-8 shadow-lg">
+          <div className="max-w-2xl rounded-lg bg-white/70 p-8 shadow-lg backdrop-blur-sm">
             <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">Professional Cleaning Services</h1>
             <p className="mb-6 text-lg text-gray-700">
               Providing exceptional cleaning solutions for homes and businesses across the UK
@@ -31,7 +31,7 @@ export default function Home() {
             variant="outline"
             className="w-full border-primary text-primary hover:bg-primary hover:text-secondary sm:w-auto"
           >
-            <Link href="/careers">We Are Hiring</Link>
+            <Link href="/contact">We Are Hiring</Link>
           </Button>
           <Button size="lg" className="w-full bg-primary text-secondary hover:bg-primary/90 sm:w-auto">
             <Link href="/services">Our Services</Link>
@@ -226,9 +226,7 @@ export default function Home() {
 
             <Card className="text-center">
               <CardHeader className="flex flex-col items-center">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Image src="/images/eco-friendly.png" alt="Eco-Friendly Products" width={48} height={48} />
-                </div>
+                <Leaf className="h-12 w-12 text-primary" />
                 <CardTitle className="mt-4 text-xl">Eco-Friendly Products</CardTitle>
               </CardHeader>
               <CardContent>
@@ -240,9 +238,7 @@ export default function Home() {
 
             <Card className="text-center">
               <CardHeader className="flex flex-col items-center">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Image src="/images/experienced-staff.png" alt="Experienced Staff" width={48} height={48} />
-                </div>
+                <Users className="h-12 w-12 text-primary" />
                 <CardTitle className="mt-4 text-xl">Experienced Staff</CardTitle>
               </CardHeader>
               <CardContent>
@@ -266,7 +262,7 @@ export default function Home() {
                 <CardTitle className="mt-4">Phone</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">+44 123 456 7890</p>
+                <p className="text-gray-600">07453581984</p>
               </CardContent>
             </Card>
 
@@ -276,7 +272,12 @@ export default function Home() {
                 <CardTitle className="mt-4">Email</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">info@melodycleaningservices.co.uk</p>
+                <p className="text-gray-600">
+                  <a href="mailto:melodycleaningservices@gmail.com">melodycleaningservices@gmail.com</a>
+                </p>
+                <p className="text-gray-600">
+                  <a href="mailto:info@melodycleaningservices.com">info@melodycleaningservices.com</a>
+                </p>
               </CardContent>
             </Card>
 
@@ -286,9 +287,7 @@ export default function Home() {
                 <CardTitle className="mt-4">Opening Hours</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Monday - Friday: 8am - 6pm</p>
-                <p className="text-gray-600">Saturday: 9am - 4pm</p>
-                <p className="text-gray-600">Sunday: Closed</p>
+                <p className="text-gray-600">Monday - Sunday: 8:00am - 10:00pm</p>
               </CardContent>
             </Card>
           </div>

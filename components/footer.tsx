@@ -129,13 +129,14 @@ const Footer = () => {
             <h3 className="mb-4 text-lg font-bold text-primary">Contact Us</h3>
             <ul className="space-y-2 text-sm">
               <li className="text-gray-600">
-                <strong>Email:</strong> info@melodycleaningservices.co.uk
+                <strong>Email:</strong>{" "}
+                <a href="mailto:melodycleaningservices@gmail.com">melodycleaningservices@gmail.com</a>
               </li>
               <li className="text-gray-600">
-                <strong>Phone:</strong> +44 123 456 7890
+                <strong>Phone:</strong> <a href="tel:07453581984">07453581984</a>
               </li>
               <li className="text-gray-600">
-                <strong>Hours:</strong> Mon-Fri: 8am-6pm, Sat: 9am-4pm
+                <strong>Hours:</strong> Mon-Sun: 8am-10pm
               </li>
             </ul>
           </div>

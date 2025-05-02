@@ -62,21 +62,27 @@ export default function BookingPage() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
 
-    // Simulate form submission
-    console.log(values)
+    try {
+      const response = await fetch("/api/submit-booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      })
 
-    // In a real application, you would send this data to your server
-    // await fetch('/api/booking', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(values),
-    // })
+      const data = await response.json()
 
-    setTimeout(() => {
+      if (data.success) {
+        setIsSuccess(true)
+        form.reset()
+      } else {
+        alert("There was an error submitting your booking. Please try again.")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert("There was an error submitting your booking. Please try again.")
+    } finally {
       setIsSubmitting(false)
-      setIsSuccess(true)
-      form.reset()
-    }, 1500)
+    }
   }
 
   return (
@@ -92,6 +98,11 @@ export default function BookingPage() {
       <section className="bg-white py-16">
         <div className="container">
           <div className="mx-auto max-w-3xl">
+            <div className="mb-8 text-center">
+              <div className="mx-auto inline-block rounded-md bg-primary px-6 py-2">
+                <h2 className="text-2xl font-bold text-secondary">BOOKING FORM</h2>
+              </div>
+            </div>
             <p className="mb-8 text-center text-lg text-gray-700">
               Fill out the form below to book our cleaning services. We'll get back to you as soon as possible to
               confirm your booking and provide a quote.
@@ -174,12 +185,19 @@ export default function BookingPage() {
                               </FormControl>
                               <SelectContent>
                                 <SelectItem value="end-of-tenancy">End of Tenancy</SelectItem>
-                                <SelectItem value="deep-clean">Deep Clean</SelectItem>
+                                <SelectItem value="move-in-out">Move-In/Move-Out</SelectItem>
                                 <SelectItem value="carpet-cleaning">Carpet Cleaning</SelectItem>
-                                <SelectItem value="regular-cleaning">Regular Cleaning</SelectItem>
-                                <SelectItem value="office-cleaning">Office Cleaning</SelectItem>
-                                <SelectItem value="post-construction">Post Construction</SelectItem>
-                                <SelectItem value="event-cleaning">Event Cleaning</SelectItem>
+                                <SelectItem value="deep-clean">Deep Clean</SelectItem>
+                                <SelectItem value="standard-cleaning">Standard Cleaning</SelectItem>
+                                <SelectItem value="housekeeping">General Housekeeping</SelectItem>
+                                <SelectItem value="mattress-cleaning">Mattress Cleaning</SelectItem>
+                                <SelectItem value="upholstery-cleaning">Upholstery Cleaning</SelectItem>
+                                <SelectItem value="office-workshop">Office and Workshop</SelectItem>
+                                <SelectItem value="restaurants-hotels">Restaurants and Hotels</SelectItem>
+                                <SelectItem value="care-homes">Care Homes</SelectItem>
+                                <SelectItem value="shop-cleaning">Shop Cleaning</SelectItem>
+                                <SelectItem value="end-of-construction">End of Construction</SelectItem>
+                                <SelectItem value="pre-post-event">Pre/Post Event</SelectItem>
                                 <SelectItem value="other">Other</SelectItem>
                               </SelectContent>
                             </Select>
@@ -303,13 +321,15 @@ export default function BookingPage() {
                       )}
                     />
 
-                    <Button
-                      type="submit"
-                      className="w-full bg-primary text-secondary hover:bg-primary/90"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Submitting..." : "Submit Booking Request"}
-                    </Button>
+                    <div className="flex justify-center">
+                      <Button
+                        type="submit"
+                        className="rounded-full bg-primary px-8 py-2 text-secondary hover:bg-primary/90"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Processing..." : "PROCEED"}
+                      </Button>
+                    </div>
                   </form>
                 </Form>
               </div>

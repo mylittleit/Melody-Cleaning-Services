@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Facebook, Instagram, Linkedin } from "lucide-react"
+import { FaTiktok } from "react-icons/fa"
 
 export default function AboutPage() {
   return (
@@ -47,9 +49,10 @@ export default function AboutPage() {
       {/* Mission, Vision, Goals */}
       <section className="bg-gray-50 py-16">
         <div className="container">
+          <h2 className="mb-8 text-center text-3xl font-bold text-primary">OUR PURPOSE</h2>
+
           <div className="mb-16">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 h-[2px] w-12 bg-primary"></div>
               <h2 className="text-3xl font-bold text-primary">Our Mission</h2>
             </div>
             <p className="text-lg text-gray-700">
@@ -61,7 +64,6 @@ export default function AboutPage() {
 
           <div className="mb-16">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 h-[2px] w-12 bg-primary"></div>
               <h2 className="text-3xl font-bold text-primary">Our Vision</h2>
             </div>
             <p className="text-lg text-gray-700">
@@ -73,7 +75,6 @@ export default function AboutPage() {
 
           <div>
             <div className="mb-6 flex items-center">
-              <div className="mr-4 h-[2px] w-12 bg-primary"></div>
               <h2 className="text-3xl font-bold text-primary">Our Goals & Objectives</h2>
             </div>
             <p className="mb-6 text-lg text-gray-700">
@@ -354,17 +355,22 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg">
-              <Image src="/images/uk-map.png" alt="UK Map" fill className="object-contain" />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4865204.804292891!2d-7.7218376684090815!3d54.12416090494634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited%20Kingdom!5e0!3m2!1sen!2sus!4v1714665600000!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
 
             <div className="flex flex-col justify-center">
               <div className="mb-8">
                 <h3 className="mb-4 text-xl font-semibold text-primary">Opening Hours</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>Monday - Friday: 8am - 6pm</li>
-                  <li>Saturday: 9am - 4pm</li>
-                  <li>Sunday: Closed</li>
-                </ul>
+                <p className="text-gray-600">Monday – Sunday</p>
+                <p className="text-gray-600">8:00AM – 10:00PM</p>
               </div>
 
               <div>
@@ -377,7 +383,7 @@ export default function AboutPage() {
                     className="text-primary hover:text-primary/80"
                   >
                     <div className="rounded-full bg-primary/10 p-3">
-                      <Image src="/images/facebook-icon.png" alt="Facebook" width={24} height={24} />
+                      <Facebook className="h-6 w-6" />
                     </div>
                   </Link>
                   <Link
@@ -387,7 +393,7 @@ export default function AboutPage() {
                     className="text-primary hover:text-primary/80"
                   >
                     <div className="rounded-full bg-primary/10 p-3">
-                      <Image src="/images/instagram-icon.png" alt="Instagram" width={24} height={24} />
+                      <Instagram className="h-6 w-6" />
                     </div>
                   </Link>
                   <Link
@@ -397,7 +403,7 @@ export default function AboutPage() {
                     className="text-primary hover:text-primary/80"
                   >
                     <div className="rounded-full bg-primary/10 p-3">
-                      <Image src="/images/linkedin-icon.png" alt="LinkedIn" width={24} height={24} />
+                      <Linkedin className="h-6 w-6" />
                     </div>
                   </Link>
                   <Link
@@ -407,7 +413,7 @@ export default function AboutPage() {
                     className="text-primary hover:text-primary/80"
                   >
                     <div className="rounded-full bg-primary/10 p-3">
-                      <Image src="/images/tiktok-icon.png" alt="TikTok" width={24} height={24} />
+                      <FaTiktok className="h-6 w-6" />
                     </div>
                   </Link>
                 </div>
