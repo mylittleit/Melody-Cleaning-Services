@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       service: "yahoo",
       auth: {
         user: "max_frances@yahoo.com", // Email used to generate the app password
-        pass: process.env.EMAIL_PASSWORD,
+        pass: process.env.pasd vqku yapn xbff,
       },
       tls: {
         rejectUnauthorized: false,
