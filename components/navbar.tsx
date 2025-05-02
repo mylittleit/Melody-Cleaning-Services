@@ -4,17 +4,6 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuGroup,
-  DropdownMenuSub,
-  DropdownMenuSubTrigger,
-  DropdownMenuSubContent,
-} from "@/components/ui/dropdown-menu"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -28,7 +17,7 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="https://drive.google.com/file/d/15WP0DyEjgOBKa1g3OWnqm9Da047vLP6n/view?usp=drive_link"
+            src="/images/logo.png"
             alt="Melody Cleaning Services Logo"
             width={150}
             height={50}
@@ -44,82 +33,115 @@ const Navbar = () => {
           <Link href="/about" className="text-sm font-medium hover:text-primary">
             About Us
           </Link>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="link" className="flex items-center text-sm font-medium hover:text-primary">
-                Services
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuGroup>
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger>
-                    <span>Domestic Cleaning</span>
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="w-48">
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#domestic-end-of-tenancy">End of Tenancy</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#domestic-move-in-out">Move-In/Move-Out</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#domestic-carpet-cleaning">Carpet Cleaning</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#domestic-deep-clean">Deep Clean</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#domestic-standard-cleaning">Standard Cleaning</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#domestic-housekeeping">General Housekeeping</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#domestic-mattress-cleaning">Mattress Cleaning</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#domestic-upholstery-cleaning">Upholstery Cleaning</Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
 
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger>
-                    <span>Commercial Cleaning</span>
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="w-48">
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#commercial-office-workshop">Office and Workshop</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#commercial-restaurants-hotels">Restaurants and Hotels</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#commercial-care-homes">Care Homes</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#commercial-shop-cleaning">Shop Cleaning</Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
+          {/* Services Dropdown */}
+          <div className="relative group">
+            <Link href="/services" className="text-sm font-medium hover:text-primary flex items-center">
+              Services
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="ml-1"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </Link>
 
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger>
-                    <span>Specialised Cleaning</span>
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="w-48">
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#specialised-end-of-construction">End of Construction</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/services#specialised-pre-post-event">Pre/Post Event</Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
-              </DropdownMenuGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+            {/* Dropdown Content */}
+            <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-lg rounded-md overflow-hidden invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
+              {/* Domestic Cleaning */}
+              <div className="p-4 border-b">
+                <div className="relative group/domestic">
+                  <span className="font-medium text-primary mb-2 block hover:underline flex items-center justify-between cursor-pointer">
+                    Domestic Cleaning
+                  </span>
+                  <div className="hidden group-hover/domestic:block ml-4 mt-2">
+                    <Link href="/services#domestic-end-of-tenancy" className="block py-1 text-sm hover:text-primary">
+                      End of Tenancy
+                    </Link>
+                    <Link href="/services#domestic-move-in-out" className="block py-1 text-sm hover:text-primary">
+                      Move-In/Move-Out
+                    </Link>
+                    <Link href="/services#domestic-carpet-cleaning" className="block py-1 text-sm hover:text-primary">
+                      Carpet Cleaning
+                    </Link>
+                    <Link href="/services#domestic-deep-clean" className="block py-1 text-sm hover:text-primary">
+                      Deep Clean
+                    </Link>
+                    <Link href="/services#domestic-standard-cleaning" className="block py-1 text-sm hover:text-primary">
+                      Standard Cleaning
+                    </Link>
+                    <Link href="/services#domestic-housekeeping" className="block py-1 text-sm hover:text-primary">
+                      General Housekeeping
+                    </Link>
+                    <Link href="/services#domestic-mattress-cleaning" className="block py-1 text-sm hover:text-primary">
+                      Mattress Cleaning
+                    </Link>
+                    <Link
+                      href="/services#domestic-upholstery-cleaning"
+                      className="block py-1 text-sm hover:text-primary"
+                    >
+                      Upholstery Cleaning
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Commercial Cleaning */}
+              <div className="p-4 border-b">
+                <div className="relative group/commercial">
+                  <span className="font-medium text-primary mb-2 block hover:underline flex items-center justify-between cursor-pointer">
+                    Commercial Cleaning
+                  </span>
+                  <div className="hidden group-hover/commercial:block ml-4 mt-2">
+                    <Link href="/services#commercial-office-workshop" className="block py-1 text-sm hover:text-primary">
+                      Office and Workshop
+                    </Link>
+                    <Link
+                      href="/services#commercial-restaurants-hotels"
+                      className="block py-1 text-sm hover:text-primary"
+                    >
+                      Restaurants and Hotels
+                    </Link>
+                    <Link href="/services#commercial-care-homes" className="block py-1 text-sm hover:text-primary">
+                      Care Homes
+                    </Link>
+                    <Link href="/services#commercial-shop-cleaning" className="block py-1 text-sm hover:text-primary">
+                      Shop Cleaning
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Specialised Cleaning */}
+              <div className="p-4">
+                <div className="relative group/specialised">
+                  <span className="font-medium text-primary mb-2 block hover:underline flex items-center justify-between cursor-pointer">
+                    Specialised Cleaning
+                  </span>
+                  <div className="hidden group-hover/specialised:block ml-4 mt-2">
+                    <Link
+                      href="/services#specialised-end-of-construction"
+                      className="block py-1 text-sm hover:text-primary"
+                    >
+                      End of Construction
+                    </Link>
+                    <Link href="/services#specialised-pre-post-event" className="block py-1 text-sm hover:text-primary">
+                      Pre/Post Event
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <Link href="/sectors" className="text-sm font-medium hover:text-primary">
             Sectors
           </Link>
