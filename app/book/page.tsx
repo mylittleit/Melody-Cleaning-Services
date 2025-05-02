@@ -60,30 +60,29 @@ export default function BookingPage() {
     setIsSubmitting(true)
 
     try {
-      // Send email directly using EmailJS or similar service
-      const emailData = {
-        to_email: "melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
-        from_name: values.name,
-        from_email: values.email,
-        subject: `New Booking Request: ${values.serviceType}`,
-        message: `
-          Name: ${values.name}
-          Email: ${values.email}
-          Phone: ${values.phone}
-          Address: ${values.address}
-          Service: ${values.serviceType}
-          Date: ${format(values.date, "PPP")}
-          Time: ${values.time}
-          Additional Info: ${values.message || "None provided"}
-        `,
+      // Convert the date to a string for JSON serialization
+      const formData = {
+        ...values,
+        date: format(values.date, "yyyy-MM-dd"),
       }
 
-      // For demonstration, we'll simulate a successful submission
-      // In production, you would use a service like EmailJS or a server endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      // Send the data to our API endpoint
+      const response = await fetch("/api/submit-booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-      setIsSuccess(true)
-      form.reset()
+      const data = await response.json()
+
+      if (data.success) {
+        setIsSuccess(true)
+        form.reset()
+      } else {
+        throw new Error(data.message || "Failed to submit booking")
+      }
     } catch (error) {
       console.error("Error submitting form:", error)
       toast({

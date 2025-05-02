@@ -7,24 +7,23 @@ export async function POST(request: Request) {
 
     // Create a transporter
     const transporter = nodemailer.createTransport({
-      service: "yahoo",
+      service: "Yahoo",
       auth: {
-        user: "max_frances@yahoo.com", // Email used to generate the app password
+        user: "max_frances@yahoo.com",
         pass: process.env.EMAIL_PASSWORD,
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
+      debug: true, // Enable debug output
+      logger: true, // Log information to the console
     })
 
-    // Format the date
-    const formattedDate = formData.date ? new Date(formData.date).toLocaleDateString() : "Not specified"
+    // Format the date if it's a string
+    const formattedDate = formData.date || "Not specified"
 
     // Email content
     const mailOptions = {
-      from: "max_frances@yahoo.com", // Email used to generate the app password
-      to: ["melodycleaningservices@yahoo.com", "contactmelodycleaning@gmail.com"],
-      subject: "New Booking Request from Website",
+      from: "max_frances@yahoo.com",
+      to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
+      subject: `New Booking Request: ${formData.serviceType}`,
       html: `
         <h1>New Booking Request</h1>
         <p><strong>Name:</strong> ${formData.name}</p>
@@ -39,7 +38,8 @@ export async function POST(request: Request) {
     }
 
     // Send email
-    await transporter.sendMail(mailOptions)
+    const info = await transporter.sendMail(mailOptions)
+    console.log("Email sent:", info.response)
 
     return NextResponse.json({ success: true, message: "Booking request submitted successfully" })
   } catch (error) {

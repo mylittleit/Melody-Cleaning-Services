@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, Plus } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -48,17 +48,13 @@ const Navbar = () => {
             <DropdownMenuTrigger asChild>
               <Button variant="link" className="flex items-center text-sm font-medium hover:text-primary">
                 Services
-                <Plus className="ml-1 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
               <DropdownMenuGroup>
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger>
-                    <span className="flex items-center">
-                      Domestic Cleaning
-                      <Plus className="ml-1 h-4 w-4" />
-                    </span>
+                    <span>Domestic Cleaning</span>
                   </DropdownMenuSubTrigger>
                   <DropdownMenuSubContent className="w-48">
                     <DropdownMenuItem asChild>
@@ -90,10 +86,7 @@ const Navbar = () => {
 
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger>
-                    <span className="flex items-center">
-                      Commercial Cleaning
-                      <Plus className="ml-1 h-4 w-4" />
-                    </span>
+                    <span>Commercial Cleaning</span>
                   </DropdownMenuSubTrigger>
                   <DropdownMenuSubContent className="w-48">
                     <DropdownMenuItem asChild>
@@ -113,10 +106,7 @@ const Navbar = () => {
 
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger>
-                    <span className="flex items-center">
-                      Specialised Cleaning
-                      <Plus className="ml-1 h-4 w-4" />
-                    </span>
+                    <span>Specialised Cleaning</span>
                   </DropdownMenuSubTrigger>
                   <DropdownMenuSubContent className="w-48">
                     <DropdownMenuItem asChild>

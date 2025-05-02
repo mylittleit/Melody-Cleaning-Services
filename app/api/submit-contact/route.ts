@@ -11,20 +11,19 @@ export async function POST(request: Request) {
 
     // Create a transporter
     const transporter = nodemailer.createTransport({
-      service: "yahoo",
+      service: "Yahoo",
       auth: {
-        user: "max_frances@yahoo.com", // Email used to generate the app password
-        pass: process.env.pasd vqku yapn xbff,
+        user: "max_frances@yahoo.com",
+        pass: process.env.EMAIL_PASSWORD,
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
+      debug: true, // Enable debug output
+      logger: true, // Log information to the console
     })
 
     // Email content
     const mailOptions = {
-      from: "max_frances@yahoo.com", // Email used to generate the app password
-      to: ["melodycleaningservices@yahoo.com", "contactmelodycleaning@gmail.com"],
+      from: "max_frances@yahoo.com",
+      to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
       subject: `New Contact Message: ${subject}`,
       html: `
         <h1>New Contact Message</h1>
@@ -36,7 +35,8 @@ export async function POST(request: Request) {
     }
 
     // Send email
-    await transporter.sendMail(mailOptions)
+    const info = await transporter.sendMail(mailOptions)
+    console.log("Email sent:", info.response)
 
     return NextResponse.redirect(new URL("/contact?success=true", request.url))
   } catch (error) {
