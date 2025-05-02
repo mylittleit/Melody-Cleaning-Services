@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo.png"
+            src="https://drive.google.com/file/d/15WP0DyEjgOBKa1g3OWnqm9Da047vLP6n/view?usp=drive_link"
             alt="Melody Cleaning Services Logo"
             width={150}
             height={50}
