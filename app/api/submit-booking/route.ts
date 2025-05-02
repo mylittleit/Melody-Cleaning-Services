@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 
     // Email content
     const mailOptions = {
-      from: "EMAIL_User",
+      from: "max_frances@yahoo.com",
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
       subject: `New Booking Request: ${formData.serviceType}`,
       html: `
