@@ -77,7 +77,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Specialized cleaning to prepare your new home or leave your old one in perfect condition. We ensure a
+                  Specialised cleaning to prepare your new home or leave your old one in perfect condition. We ensure a
                   fresh start in your new space or help you leave on good terms.
                 </CardDescription>
               </CardContent>
@@ -161,7 +161,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Ongoing cleaning services to maintain a tidy and organized home. Perfect for busy professionals who
+                  Ongoing cleaning services to maintain a tidy and organised home. Perfect for busy professionals who
                   want to come home to a clean space.
                 </CardDescription>
               </CardContent>
@@ -182,7 +182,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Specialized cleaning to remove dust mites, allergens, and stains from mattresses. Improve your sleep
+                  Expert cleaning to remove dust mites, allergens, and stains from mattresses. Improve your sleep
                   quality with a clean, fresh mattress.
                 </CardDescription>
               </CardContent>
@@ -232,7 +232,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Professional cleaning services for offices and workshops, creating a clean and productive environment
+                  Bespoke cleaning services for offices and workshops, creating a clean and productive environment
                   for your team.
                 </CardDescription>
               </CardContent>
@@ -253,7 +253,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Specialized cleaning for hospitality venues, maintaining hygiene standards and ensuring guest
+                  Elite cleaning for hospitality venues, maintaining hygiene standards and ensuring guest
                   satisfaction.
                 </CardDescription>
               </CardContent>
@@ -309,10 +309,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Specialized Cleaning */}
+      {/* Specialised Cleaning */}
       <section className="bg-gray-50 py-16">
         <div className="container">
-          <h2 className="mb-12 text-center text-3xl font-bold text-primary">Specialized Cleaning</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold text-primary">Specialised Cleaning</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {/* Service 1 */}
             <Card className="service-card">
@@ -345,7 +345,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Cleaning services before and after events to ensure your venue looks perfect for guests and is quickly
+                  Bespoke cleaning services before and after events to ensure your venue looks perfect for guests and is quickly
                   restored afterward. Perfect for parties, corporate events, and celebrations.
                 </CardDescription>
               </CardContent>

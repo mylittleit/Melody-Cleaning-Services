@@ -28,7 +28,7 @@ export default function SectorsPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-lg text-gray-700">
-              At Melody Cleaning Services, we provide specialized cleaning solutions across a wide range of sectors. Our
+              At Melody Cleaning Services, we provide diversed cleaning solutions across a wide range of sectors. Our
               experienced team understands the unique requirements of each industry and delivers tailored services to
               meet those specific needs.
             </p>
@@ -50,7 +50,7 @@ export default function SectorsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-center text-gray-600">
-                  We provide comprehensive cleaning services for homes, apartments, and rental properties, ensuring a
+                  We provide comprehensive cleaning services for homes, apartments, estates, and rental properties, ensuring a
                   clean and healthy living environment for families and individuals.
                 </p>
                 <div className="mt-6 flex justify-center">
@@ -92,7 +92,7 @@ export default function SectorsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-center text-gray-600">
-                  Our specialized cleaning services for hotels, restaurants, and cafes help maintain the highest
+                  Our specialised cleaning services for hotels, restaurants, cafes, and other hospitality spaces help maintain the highest
                   standards of cleanliness and hygiene for guest satisfaction.
                 </p>
                 <div className="mt-6 flex justify-center">
@@ -113,7 +113,7 @@ export default function SectorsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-center text-gray-600">
-                  We provide thorough cleaning and sanitization for medical facilities, clinics, and care homes,
+                  We provide thorough cleaning and sanitisation for medical facilities, clinics, and care homes,
                   adhering to strict health and safety protocols.
                 </p>
                 <div className="mt-6 flex justify-center">
@@ -218,7 +218,7 @@ export default function SectorsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-center text-gray-600">
-                  Our specialized cleaning services for factories, warehouses, and industrial facilities help maintain
+                  Our exceptional cleaning services for factories, warehouses, and industrial facilities help maintain
                   safety standards and operational efficiency.
                 </p>
                 <div className="mt-6 flex justify-center">
@@ -236,7 +236,7 @@ export default function SectorsPage() {
       <section className="bg-white py-16">
         <div className="container">
           <div className="rounded-lg bg-primary p-8 text-center shadow-lg">
-            <h2 className="mb-4 text-3xl font-bold text-secondary">Need a Customized Cleaning Solution?</h2>
+            <h2 className="mb-4 text-3xl font-bold text-secondary">Need a Customised Cleaning Solution?</h2>
             <p className="mb-8 text-lg text-white">
               Contact us today to discuss your specific requirements. Our team will create a tailored cleaning plan for
               your sector.
