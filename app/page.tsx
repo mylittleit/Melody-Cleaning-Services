@@ -20,6 +20,7 @@ export default function Home() {
     muted
     playsInline
   />
+  <Link href="/book">Book Now</Link>
 </section>
 
       {/* Dual Button Section */}
@@ -69,7 +70,7 @@ export default function Home() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/images/service-end-of-tenancy.png" alt="End of Tenancy" width={50} height={50} />
+                  <Image src="/images/Tenancy.png" alt="End of Tenancy" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">End of Tenancy</CardTitle>
               </CardHeader>
