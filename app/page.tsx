@@ -89,8 +89,9 @@ export default function Home() {
             {/* Service 2 */}
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="End.png" alt="End of Construction" width={50} height={50} />
+                <div className="mb-4 h-24 w-24 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center">
+                  <Image src="End.png" alt="End of Construction" width={96} height={96}
+                    className="object-cover w-full h-full"/>
                 </div>
                 <CardTitle className="text-center text-xl text-primary">End of Construction</CardTitle>
               </CardHeader>
@@ -109,14 +110,15 @@ export default function Home() {
             {/* Service 3 */}
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/images/service-restaurants.png" alt="Restaurants and Hotels" width={50} height={50} />
+                <div className="mb-4 h-24 w-24 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center">
+                  <Image src="Restaurant.png" alt="Restaurants and Hotels" width={96} height={96}
+                    className="object-cover w-full h-full"/>
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Restaurants and Hotels</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Specialized cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
+                  Specialised cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
