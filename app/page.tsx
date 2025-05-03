@@ -20,7 +20,6 @@ export default function Home() {
     muted
     playsInline
   />
-  <Link href="/book">Book Now</Link>
 </section>
 
       {/* Dual Button Section */}
