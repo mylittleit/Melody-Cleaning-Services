@@ -9,17 +9,13 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section relative h-[600px] w-full overflow-hidden">
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="absolute inset-0 h-full w-full object-cover"
-  >
-    <source src="/Hero.mp4" type="video/mp4" />
-  </video>
-</section>
+      <section className="hero-section relative h-[600px] w-full">
+        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
+          <div className="max-w-2xl rounded-lg bg-white/70 p-8 shadow-lg backdrop-blur-sm">
+            <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">Professional Cleaning Services</h1>
+            <p className="mb-6 text-lg text-gray-700">
+              Providing exceptional cleaning solutions for homes and businesses across the UK
+            </p>
             <Button size="lg" className="bg-primary text-secondary hover:bg-primary/90">
               <Link href="/book">Book Now</Link>
             </Button>
@@ -74,7 +70,7 @@ export default function Home() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/images/End.png" alt="End of Tenancy" width={50} height={50} />
+                  <Image src="/images/service-end-of-tenancy.png" alt="End of Tenancy" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">End of Tenancy</CardTitle>
               </CardHeader>
@@ -94,7 +90,7 @@ export default function Home() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/images/General.png" alt="End of Construction" width={50} height={50} />
+                  <Image src="/images/service-construction.png" alt="End of Construction" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">End of Construction</CardTitle>
               </CardHeader>
@@ -114,13 +110,13 @@ export default function Home() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/images/Restaurant.png" alt="Restaurants and Hotels" width={50} height={50} />
+                  <Image src="/images/service-restaurants.png" alt="Restaurants and Hotels" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Restaurants and Hotels</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center">
-                  Specialised cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
+                  Specialized cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
@@ -134,7 +130,7 @@ export default function Home() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/images/Deep.png" alt="Deep Clean" width={50} height={50} />
+                  <Image src="/images/service-deep-clean.png" alt="Deep Clean" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Deep Clean</CardTitle>
               </CardHeader>
@@ -154,7 +150,7 @@ export default function Home() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/images/Carpet.png" alt="Carpet Cleaning" width={50} height={50} />
+                  <Image src="/images/service-carpet.png" alt="Carpet Cleaning" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Carpet Cleaning</CardTitle>
               </CardHeader>
@@ -174,7 +170,7 @@ export default function Home() {
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/images/Event.png" alt="Pre/Post Event" width={50} height={50} />
+                  <Image src="/images/service-event.png" alt="Pre/Post Event" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-primary">Pre/Post Event</CardTitle>
               </CardHeader>
@@ -341,4 +337,4 @@ export default function Home() {
       </section>
     </>
   )
-}
+                }
