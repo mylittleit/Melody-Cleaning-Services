@@ -1,3 +1,4 @@
+import Video from "next/video"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -8,20 +9,33 @@ import { FaTiktok } from "react-icons/fa"
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="hero-section relative h-[600px] w-full">
-        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
-          <div className="max-w-2xl rounded-lg bg-white/70 p-8 shadow-lg backdrop-blur-sm">
-            <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">Professional Cleaning Services</h1>
-            <p className="mb-6 text-lg text-gray-700">
-              Providing exceptional cleaning solutions for homes and businesses across the UK
-            </p>
-            <Button size="lg" className="bg-primary text-secondary hover:bg-primary/90">
-              <Link href="/book">Book Now</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Video Background */}
+<section className="hero-section relative h-[600px] w-full overflow-hidden">
+  {/* Background Video */}
+  <video 
+    className="absolute top-0 left-0 h-full w-full object-cover"
+    src="/Hero.mp4" 
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+
+  {/* Overlay for better readability */}
+  <div className="absolute top-0 left-0 h-full w-full bg-black/40"></div>
+
+  {/* Content */}
+  <div className="hero-content container relative z-10 flex h-full flex-col items-center justify-center text-center">
+    <div className="max-w-2xl rounded-lg bg-white/70 p-8 shadow-lg backdrop-blur-sm">
+      <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">
+        Professional Cleaning Services
+      </h1>
+      <p className="mb-6 text-lg text-gray-700">
+        Providing exceptional cleaning solutions for homes and businesses across the UK
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Dual Button Section */}
       <section className="bg-white py-8">
