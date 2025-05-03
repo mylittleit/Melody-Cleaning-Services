@@ -68,8 +68,9 @@ export default function Home() {
             {/* Service 1 */}
             <Card className="service-card">
               <CardHeader className="flex flex-col items-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="Tenancy.png" alt="End of Tenancy" width={50} height={50} />
+                <div className="mb-4 h-24 w-24 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center">
+                  <Image src="Tenancy.png" alt="End of Tenancy" width={96} height={96}
+                    className="object-cover w-full h-full"/>
                 </div>
                 <CardTitle className="text-center text-xl text-primary">End of Tenancy</CardTitle>
               </CardHeader>
