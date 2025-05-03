@@ -20,21 +20,6 @@ export default function Home() {
     muted
     playsInline
   />
-
-  {/* Overlay for better readability */}
-  <div className="absolute top-0 left-0 h-full w-full bg-black/40"></div>
-
-  {/* Content */}
-  <div className="hero-content container relative z-10 flex h-full flex-col items-center justify-center text-center">
-    <div className="max-w-2xl rounded-lg bg-white/70 p-8 shadow-lg backdrop-blur-sm">
-      <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">
-        Professional Cleaning Services
-      </h1>
-      <p className="mb-6 text-lg text-gray-700">
-        Providing exceptional cleaning solutions for homes and businesses across the UK
-      </p>
-    </div>
-  </div>
 </section>
 
       {/* Dual Button Section */}
