@@ -22,11 +22,16 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-section relative h-[300px] w-full">
-        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
-          <h1 className="text-4xl font-bold text-white md:text-5xl">OUR SERVICES</h1>
-        </div>
-      </section>
+<section className="hero-section relative h-[300px] w-full">
+  <img
+    src="/Services.png"
+    alt="Header background"
+    className="absolute w-full h-full object-cover"
+  />
+  <div className="hero-content container flex h-full flex-col items-center justify-center text-center relative z-10 bg-black/50">
+    <h1 className="text-4xl font-bold text-white md:text-5xl">OUR SERVICES</h1>
+  </div>
+</section>
 
       {/* Intro Section */}
       <section className="bg-white py-12">
