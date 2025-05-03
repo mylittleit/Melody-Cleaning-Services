@@ -50,6 +50,11 @@ export default function ServicesPage() {
       <section className="bg-gray-50 py-16">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold text-primary">Domestic Cleaning</h2>
+           <img 
+      src="/Domestic.png" 
+      alt="Domestic Cleaning" 
+      className="mx-auto mb-12 w-full max-w-3xl rounded-lg object-cover"
+    />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {/* Service 1 */}
             <Card className="service-card">
