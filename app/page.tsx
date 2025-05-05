@@ -4,20 +4,17 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, Clock, Phone, Mail, Facebook, Instagram, Linkedin, Leaf, Users } from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
+import ServiceSlideshow from "@/components/service-slideshow"
 
 export default function Home() {
   return (
     <>
       {/* Hero Section with Video Background */}
       <section className="hero-section relative h-[600px] w-full">
-        <video 
-          className="absolute top-0 left-0 h-full w-full object-cover"
-          src="/Hero.mp4" 
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        <video className="hero-video" src="/Hero.mp4" autoPlay loop muted playsInline preload="auto" />
+        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
+          {/* You can add hero text here if needed */}
+        </div>
       </section>
 
       {/* Dual Button Section */}
@@ -63,7 +60,6 @@ export default function Home() {
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold text-primary">Our Services</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
             {/* Service 1 */}
             <Card
               className="service-card relative overflow-hidden"
@@ -222,7 +218,8 @@ export default function Home() {
               </CardHeader>
               <CardContent className="relative z-10">
                 <CardDescription className="text-center text-white">
-                  Cleaning services before and after events to ensure your venue looks perfect for guests and is quickly restored afterward.
+                  Cleaning services before and after events to ensure your venue looks perfect for guests and is quickly
+                  restored afterward.
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
@@ -236,6 +233,11 @@ export default function Home() {
             <Button size="lg" className="bg-primary text-secondary hover:bg-primary/90">
               <Link href="/services">Find Out More</Link>
             </Button>
+          </div>
+
+          {/* Service Slideshow Gallery */}
+          <div className="mt-16">
+            <ServiceSlideshow />
           </div>
         </div>
       </section>
