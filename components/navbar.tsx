@@ -174,19 +174,19 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-primary pt-16">
+        <div className="fixed inset-0 z-50 flex flex-col bg-[#4B0082] pt-16">
           <div className="container flex flex-col space-y-4 p-4">
-            <Link href="/" className="py-2 text-lg font-medium text-secondary" onClick={toggleMenu}>
+            <Link href="/" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
               Home
             </Link>
-            <Link href="/about" className="py-2 text-lg font-medium text-secondary" onClick={toggleMenu}>
+            <Link href="/about" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
               About Us
             </Link>
 
             {/* Services with submenu */}
             <div className="py-2">
               <button
-                className="flex items-center justify-between w-full text-lg font-medium text-secondary"
+                className="flex items-center justify-between w-full text-lg font-medium text-white"
                 onClick={() => toggleMobileSubmenu("services")}
               >
                 <span>Services</span>
@@ -198,7 +198,7 @@ const Navbar = () => {
                   {/* Domestic Cleaning */}
                   <div>
                     <button
-                      className="flex items-center justify-between w-full text-base font-medium text-secondary"
+                      className="flex items-center justify-between w-full text-base font-medium text-white"
                       onClick={() => toggleMobileSubmenu("domestic")}
                     >
                       <span>Domestic Cleaning</span>
@@ -209,56 +209,56 @@ const Navbar = () => {
                       <div className="mt-2 ml-4 space-y-2">
                         <Link
                           href="/services#domestic-end-of-tenancy"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           End of Tenancy
                         </Link>
                         <Link
                           href="/services#domestic-move-in-out"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Move-In/Move-Out
                         </Link>
                         <Link
                           href="/services#domestic-carpet-cleaning"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Carpet Cleaning
                         </Link>
                         <Link
                           href="/services#domestic-deep-clean"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Deep Clean
                         </Link>
                         <Link
                           href="/services#domestic-standard-cleaning"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Standard Cleaning
                         </Link>
                         <Link
                           href="/services#domestic-housekeeping"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           General Housekeeping
                         </Link>
                         <Link
                           href="/services#domestic-mattress-cleaning"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Mattress Cleaning
                         </Link>
                         <Link
                           href="/services#domestic-upholstery-cleaning"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Upholstery Cleaning
@@ -270,7 +270,7 @@ const Navbar = () => {
                   {/* Commercial Cleaning */}
                   <div>
                     <button
-                      className="flex items-center justify-between w-full text-base font-medium text-secondary"
+                      className="flex items-center justify-between w-full text-base font-medium text-white"
                       onClick={() => toggleMobileSubmenu("commercial")}
                     >
                       <span>Commercial Cleaning</span>
@@ -281,28 +281,28 @@ const Navbar = () => {
                       <div className="mt-2 ml-4 space-y-2">
                         <Link
                           href="/services#commercial-office-workshop"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Office and Workshop
                         </Link>
                         <Link
                           href="/services#commercial-restaurants-hotels"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Restaurants and Hotels
                         </Link>
                         <Link
                           href="/services#commercial-care-homes"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Care Homes
                         </Link>
                         <Link
                           href="/services#commercial-shop-cleaning"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Shop Cleaning
@@ -314,7 +314,7 @@ const Navbar = () => {
                   {/* Specialised Cleaning */}
                   <div>
                     <button
-                      className="flex items-center justify-between w-full text-base font-medium text-secondary"
+                      className="flex items-center justify-between w-full text-base font-medium text-white"
                       onClick={() => toggleMobileSubmenu("specialised")}
                     >
                       <span>Specialised Cleaning</span>
@@ -325,14 +325,14 @@ const Navbar = () => {
                       <div className="mt-2 ml-4 space-y-2">
                         <Link
                           href="/services#specialised-end-of-construction"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           End of Construction
                         </Link>
                         <Link
                           href="/services#specialised-pre-post-event"
-                          className="block text-sm text-secondary"
+                          className="block text-sm text-white"
                           onClick={toggleMenu}
                         >
                           Pre/Post Event
@@ -344,13 +344,13 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link href="/sectors" className="py-2 text-lg font-medium text-secondary" onClick={toggleMenu}>
+            <Link href="/sectors" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
               Sectors
             </Link>
-            <Link href="/book" className="py-2 text-lg font-medium text-secondary" onClick={toggleMenu}>
+            <Link href="/book" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
               Book Online
             </Link>
-            <Link href="/contact" className="py-2 text-lg font-medium text-secondary" onClick={toggleMenu}>
+            <Link href="/contact" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
               Contact Us
             </Link>
           </div>
