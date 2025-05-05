@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
@@ -13,11 +14,9 @@ import {
   Coins,
   FileText,
   Bed,
-  Armchair,
   Sparkles,
   UtensilsCrossed,
   Construction,
-  MoveRight,
   Brush,
 } from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
@@ -26,8 +25,9 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-section relative h-[300px] w-full">
-        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
+      <section className="page-header">
+        <Image src="/images/about-header.png" alt="About Us" fill className="object-cover" />
+        <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">ABOUT US</h1>
         </div>
       </section>
@@ -37,11 +37,14 @@ export default function AboutPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <p className="mb-8 text-lg text-gray-700">
-              Melody Cleaning Services is a professional cleaning company dedicated to providing high-quality cleaning services to homes and businesses across the UK. With our team of experienced and trained professionals, we deliver exceptional results that exceed our clients' expectations. We take pride in our attention to detail and commitment to customer satisfaction.
+              Melody Cleaning Services is a professional cleaning company dedicated to providing high-quality cleaning
+              services to homes and businesses across the UK. With our team of experienced and trained professionals, we
+              deliver exceptional results that exceed our clients' expectations. We take pride in our attention to
+              detail and commitment to customer satisfaction.
             </p>
             <p className="mb-8 text-lg text-gray-700">
-              Founded with a passion for cleanliness and customer satisfaction, we are focused on becoming one of the most
-              trusted cleaning services in the region. Our attention to detail, use of eco-friendly products, and
+              Founded with a passion for cleanliness and customer satisfaction, we are focused on becoming one of the
+              most trusted cleaning services in the region. Our attention to detail, use of eco-friendly products, and
               personalised approach set us apart from other cleaning companies.
             </p>
 
@@ -64,7 +67,7 @@ export default function AboutPage() {
       {/* Mission, Vision, Goals */}
       <section className="bg-gray-50 py-16">
         <div className="container">
-          <div className="relative mb-12 h-[200px] w-full overflow-hidden">
+          <div className="relative mb-12 h-[200px] w-full overflow-hidden purpose-bg">
             <div className="absolute inset-0 bg-primary/80"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <h2 className="text-4xl font-bold text-secondary">OUR PURPOSE</h2>
@@ -76,7 +79,9 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-primary">Our Mission</h2>
             </div>
             <p className="text-lg text-gray-700">
-              Our mission is to provide exceptional cleaning services that enhance the quality of life for our clients. We aim to create cleaner, healthier, and more comfortable environments through our professional cleaning solutions, while maintaining the highest standards of service and customer care.
+              Our mission is to provide exceptional cleaning services that enhance the quality of life for our clients.
+              We aim to create cleaner, healthier, and more comfortable environments through our professional cleaning
+              solutions, while maintaining the highest standards of service and customer care.
             </p>
           </div>
 
@@ -85,11 +90,13 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-primary">Our Vision</h2>
             </div>
             <p className="text-lg text-gray-700">
-              We envision becoming the leading cleaning service provider in the UK, recognised for our excellence, reliability, and customer-focused approach. We strive to set new standards in the cleaning industry through innovation, sustainability, and continuous improvement.
+              We envision becoming the leading cleaning service provider in the UK, recognised for our excellence,
+              reliability, and customer-focused approach. We strive to set new standards in the cleaning industry
+              through innovation, sustainability, and continuous improvement.
             </p>
           </div>
 
-          <div>
+          <div className="mb-16">
             <div className="mb-6 flex items-center">
               <h2 className="text-3xl font-bold text-primary">Our Goals & Objectives</h2>
             </div>
@@ -111,13 +118,22 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-primary">How We Operate</h2>
             </div>
             <p className="mb-6 text-lg text-gray-700">
-              At Melody Cleaning Services, we follow a systematic approach to ensure consistent quality and customer satisfaction:
+              At Melody Cleaning Services, we follow a systematic approach to ensure consistent quality and customer
+              satisfaction:
             </p>
             <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
-              <li>Initial Consultation: We begin with a thorough assessment of your cleaning needs and requirements.</li>
+              <li>
+                Initial Consultation: We begin with a thorough assessment of your cleaning needs and requirements.
+              </li>
               <li>Customised Plan: We develop a tailored cleaning plan specific to your property and preferences.</li>
-              <li>Team Assignment: We assign experienced and trained cleaning professionals who specialise in your required services.</li>
-              <li>Quality Execution: Our team executes the cleaning plan with attention to detail and using appropriate techniques.</li>
+              <li>
+                Team Assignment: We assign experienced and trained cleaning professionals who specialise in your
+                required services.
+              </li>
+              <li>
+                Quality Execution: Our team executes the cleaning plan with attention to detail and using appropriate
+                techniques.
+              </li>
               <li>Quality Check: We conduct a thorough inspection to ensure all areas meet our high standards.</li>
               <li>Feedback Collection: We actively seek your feedback to continuously improve our services.</li>
             </ul>
@@ -172,9 +188,7 @@ export default function AboutPage() {
                 <CardTitle className="text-xl text-primary">Customer Focus</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  We prioritise our customers' needs and satisfaction above all else.
-                </p>
+                <p className="text-gray-600">We prioritise our customers' needs and satisfaction above all else.</p>
               </CardContent>
             </Card>
           </div>

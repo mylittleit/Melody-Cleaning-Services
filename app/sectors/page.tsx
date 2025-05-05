@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
@@ -17,8 +18,9 @@ export default function SectorsPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-section relative h-[300px] w-full">
-        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
+      <section className="page-header">
+        <Image src="/images/sectors-header.png" alt="Sectors We Serve" fill className="object-cover" />
+        <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">SECTORS WE SERVE</h1>
         </div>
       </section>
@@ -50,8 +52,8 @@ export default function SectorsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-center text-gray-600">
-                  We provide comprehensive cleaning services for homes, apartments, estates, and rental properties, ensuring a
-                  clean and healthy living environment for families and individuals.
+                  We provide comprehensive cleaning services for homes, apartments, estates, and rental properties,
+                  ensuring a clean and healthy living environment for families and individuals.
                 </p>
                 <div className="mt-6 flex justify-center">
                   <Button className="bg-primary text-secondary hover:bg-primary/90">
@@ -92,8 +94,8 @@ export default function SectorsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-center text-gray-600">
-                  Our specialised cleaning services for hotels, restaurants, cafes, and other hospitality spaces help maintain the highest
-                  standards of cleanliness and hygiene for guest satisfaction.
+                  Our specialised cleaning services for hotels, restaurants, cafes, and other hospitality spaces help
+                  maintain the highest standards of cleanliness and hygiene for guest satisfaction.
                 </p>
                 <div className="mt-6 flex justify-center">
                   <Button className="bg-primary text-secondary hover:bg-primary/90">

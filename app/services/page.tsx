@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {
@@ -6,7 +7,7 @@ import {
   MoveRight,
   Brush,
   Sparkles,
-  Broom,
+  BrushIcon as Broom,
   Building,
   UtensilsCrossed,
   Heart,
@@ -22,13 +23,9 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-section relative h-[300px] w-full">
-        <img
-          src="/Services.png"
-          alt="Header background"
-          className="absolute w-full h-full object-cover"
-        />
-        <div className="hero-content container flex h-full flex-col items-center justify-center text-center relative z-10 bg-black/50">
+      <section className="page-header">
+        <Image src="/images/services-header.png" alt="Our Services" fill className="object-cover" />
+        <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">OUR SERVICES</h1>
         </div>
       </section>
@@ -46,156 +43,336 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Domestic Cleaning Banner */}
-      <section
-        className="relative h-[250px] w-full bg-cover bg-center flex items-center justify-center mb-16"
-        style={{ backgroundImage: "url('/Domestic.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
-        <h2 className="relative z-10 text-4xl font-bold text-purple-600 md:text-5xl text-center">
-          Domestic Cleaning
-        </h2>
-      </section>
-
-      {/* Services Grid - Domestic */}
+      {/* Services Grid */}
       <section className="bg-gray-50 py-16">
         <div className="container">
+          <div className="service-title-bg domestic-bg mb-12">
+            <div className="service-title-overlay"></div>
+            <div className="service-title-content">
+              <h2 className="text-center text-3xl font-bold text-white">Domestic Cleaning</h2>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <Home className="h-10 w-10 text-purple-600" />
-                <CardTitle>End of Tenancy</CardTitle>
-                <CardDescription>Move out hassle-free with our thorough end-of-tenancy cleaning services.</CardDescription>
+            {/* Service 1 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <FileText className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">End of Tenancy</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Comprehensive cleaning services for property transitions, ensuring your deposit is returned in full.
+                  We clean every corner of your property to meet landlord and agency standards.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <MoveRight className="h-10 w-10 text-purple-600" />
-                <CardTitle>Move-In and Move-Out</CardTitle>
-                <CardDescription>Ensure a fresh start or smooth transition with our move-in/move-out cleaning expertise.</CardDescription>
+
+            {/* Service 2 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <MoveRight className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Move-In/Move-Out</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Specialised cleaning to prepare your new home or leave your old one in perfect condition. We ensure a
+                  fresh start in your new space or help you leave on good terms.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <Brush className="h-10 w-10 text-purple-600" />
-                <CardTitle>Deep Clean</CardTitle>
-                <CardDescription>Experience a top-to-bottom deep clean for a healthier and fresher home environment.</CardDescription>
+
+            {/* Service 3 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Brush className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Carpet Cleaning</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Professional carpet cleaning to remove stains, odors, and allergens for a fresher home. Our deep
+                  cleaning methods reach deep into carpet fibers to extract dirt and bacteria.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <Sparkles className="h-10 w-10 text-purple-600" />
-                <CardTitle>Standard Cleaning</CardTitle>
-                <CardDescription>Keep your home sparkling clean with our regular standard cleaning services.</CardDescription>
+
+            {/* Service 4 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Sparkles className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Deep Clean</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Thorough cleaning of all areas, including hard-to-reach spots, for a completely refreshed space.
+                  Perfect for seasonal cleaning or before special occasions.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <Heart className="h-10 w-10 text-purple-600" />
-                <CardTitle>General Housekeeping</CardTitle>
-                <CardDescription>Reliable and attentive housekeeping support for your everyday home maintenance needs.</CardDescription>
+
+            {/* Service 5 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Broom className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Standard Cleaning</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Regular maintenance cleaning to keep your home looking its best. We focus on high-traffic areas and
+                  common surfaces to maintain cleanliness.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <Bed className="h-10 w-10 text-purple-600" />
-                <CardTitle>Mattresses Cleaning</CardTitle>
-                <CardDescription>Promote a healthier sleep environment with our professional mattress cleaning services.</CardDescription>
+
+            {/* Service 6 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Home className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">General Housekeeping</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Ongoing cleaning services to maintain a tidy and organised home. Perfect for busy professionals who
+                  want to come home to a clean space.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <Armchair className="h-10 w-10 text-purple-600" />
-                <CardTitle>Upholstery Cleaning</CardTitle>
-                <CardDescription>Revive and refresh your furniture with our specialized upholstery cleaning solutions.</CardDescription>
+
+            {/* Service 7 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Bed className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Mattress Cleaning</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Expert cleaning to remove dust mites, allergens, and stains from mattresses. Improve your sleep
+                  quality with a clean, fresh mattress.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <Sparkles className="h-10 w-10 text-purple-600" />
-                <CardTitle>Carpet Cleaning</CardTitle>
-                <CardDescription>Restore the beauty and hygiene of your carpets with our expert carpet cleaning service.</CardDescription>
+
+            {/* Service 8 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Armchair className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Upholstery Cleaning</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Professional cleaning for sofas, chairs, and other upholstered furniture to remove dirt, stains, and
+                  odors, extending the life of your furniture.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Commercial Cleaning Banner */}
-      <section
-        className="relative h-[250px] w-full bg-cover bg-center flex items-center justify-center mb-16"
-        style={{ backgroundImage: "url('/Commercial.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
-        <h2 className="relative z-10 text-4xl font-bold text-purple-600 md:text-5xl text-center">
-          Commercial Cleaning
-        </h2>
-      </section>
-
-      {/* Services Grid - Commercial */}
+      {/* Commercial Cleaning */}
       <section className="bg-white py-16">
         <div className="container">
+          <div className="service-title-bg commercial-bg mb-12">
+            <div className="service-title-overlay"></div>
+            <div className="service-title-content">
+              <h2 className="text-center text-3xl font-bold text-white">Commercial Cleaning</h2>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <Card>
-              <CardHeader>
-                <Building className="h-10 w-10 text-purple-600" />
-                <CardTitle>Office and Workplace Cleaning</CardTitle>
-                <CardDescription>Create a healthier and more productive environment with our office cleaning services.</CardDescription>
+            {/* Service 1 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Building className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Office and Workshop</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Bespoke cleaning services for offices and workshops, creating a clean and productive environment for
+                  your team.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <UtensilsCrossed className="h-10 w-10 text-purple-600" />
-                <CardTitle>Restaurants and Hotels</CardTitle>
-                <CardDescription>Deliver exceptional first impressions with our hospitality sector cleaning expertise.</CardDescription>
+
+            {/* Service 2 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <UtensilsCrossed className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Restaurants and Hotels</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Elite cleaning for hospitality venues, maintaining hygiene standards and ensuring guest satisfaction.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <Heart className="h-10 w-10 text-purple-600" />
-                <CardTitle>Care Home</CardTitle>
-                <CardDescription>Ensure a safe and sanitary environment for residents with specialized cleaning for care homes.</CardDescription>
+
+            {/* Service 3 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Heart className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Care Homes</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Thorough and sensitive cleaning services for care homes, focusing on hygiene and safety for residents
+                  and staff.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <Store className="h-10 w-10 text-purple-600" />
-                <CardTitle>Shop Cleaning</CardTitle>
-                <CardDescription>Keep your store immaculate and welcoming with our professional retail cleaning services.</CardDescription>
+
+            {/* Service 4 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Store className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Shop Cleaning</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Retail space cleaning services to create an inviting environment for customers and maintain a
+                  professional appearance.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Specialised Cleaning Banner */}
-      <section
-        className="relative h-[250px] w-full bg-cover bg-center flex items-center justify-center mb-16"
-        style={{ backgroundImage: "url('/Specialised.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
-        <h2 className="relative z-10 text-4xl font-bold text-purple-600 md:text-5xl text-center">
-          Specialised Cleaning
-        </h2>
-      </section>
-
-      {/* Services Grid - Specialised */}
+      {/* Specialised Cleaning */}
       <section className="bg-gray-50 py-16">
         <div className="container">
+          <div className="service-title-bg specialised-bg mb-12">
+            <div className="service-title-overlay"></div>
+            <div className="service-title-content">
+              <h2 className="text-center text-3xl font-bold text-white">Specialised Cleaning</h2>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <Construction className="h-10 w-10 text-purple-600" />
-                <CardTitle>End of Construction</CardTitle>
-                <CardDescription>Post-construction cleaning for a polished and ready-to-use space.</CardDescription>
+            {/* Service 1 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Construction className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">End of Construction</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Post-construction cleaning to remove dust, debris, and make your new space ready for use. We handle
+                  the tough cleanup so you can enjoy your newly built or renovated space.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <PartyPopper className="h-10 w-10 text-purple-600" />
-                <CardTitle>Pre/Post Event Cleanup</CardTitle>
-                <CardDescription>Make events stress-free with our efficient pre-event setup and post-event cleanup services.</CardDescription>
+
+            {/* Service 2 */}
+            <Card className="service-card">
+              <CardHeader className="flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <PartyPopper className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="text-center text-xl text-primary">Pre/Post Event</CardTitle>
               </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Bespoke cleaning services before and after events to ensure your venue looks perfect for guests and is
+                  quickly restored afterward. Perfect for parties, corporate events, and celebrations.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex flex-col items-center">
+                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
             </Card>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Phone, Mail, Clock, Facebook, Instagram, Linkedin, CalendarRange, FileText, MapPin } from "lucide-react"
@@ -8,8 +9,9 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-section relative h-[300px] w-full">
-        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
+      <section className="page-header">
+        <Image src="/images/contact-header.png" alt="Contact Us" fill className="object-cover" />
+        <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">CONTACT US</h1>
         </div>
       </section>
@@ -41,7 +43,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <p className="mb-6 text-gray-600">
-                  Get a personalized quote for your specific cleaning needs without any obligation.
+                  Get a personalised quote for your specific cleaning needs without any obligation.
                 </p>
                 <Button className="bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Quote</Link>

@@ -14,6 +14,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
 import { useToast } from "@/components/ui/use-toast"
+import Image from "next/image"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -98,8 +99,9 @@ export default function BookingPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="hero-section relative h-[300px] w-full">
-        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
+      <section className="page-header">
+        <Image src="/images/book-header.png" alt="Book Online" fill className="object-cover" />
+        <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">BOOK ONLINE</h1>
         </div>
       </section>

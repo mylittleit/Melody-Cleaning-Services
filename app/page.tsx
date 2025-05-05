@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, Clock, Phone, Mail, Facebook, Instagram, Linkedin, Leaf, Users } from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
-import ServiceSlideshow from "@/components/service-slideshow"
+import ServiceSlider from "@/components/service-slider"
 
 export default function Home() {
   return (
@@ -12,9 +12,6 @@ export default function Home() {
       {/* Hero Section with Video Background */}
       <section className="hero-section relative h-[600px] w-full">
         <video className="hero-video" src="/Hero.mp4" autoPlay loop muted playsInline preload="auto" />
-        <div className="hero-content container flex h-full flex-col items-center justify-center text-center">
-          {/* You can add hero text here if needed */}
-        </div>
       </section>
 
       {/* Dual Button Section */}
@@ -38,7 +35,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-              <Image src="/About.png" alt="About Melody Cleaning Services" fill className="object-cover" />
+              <Image src="/images/about-us.jpg" alt="About Melody Cleaning Services" fill className="object-cover" />
             </div>
             <div className="flex flex-col justify-center">
               <h2 className="mb-4 text-3xl font-bold text-primary">About Us</h2>
@@ -64,7 +61,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/end-of-tenancy.jpg')",
+                backgroundImage: "url('/images/service-end-of-tenancy.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -92,7 +89,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/end-of-construction.jpg')",
+                backgroundImage: "url('/images/service-construction.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -120,7 +117,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/restaurants-hotels.jpg')",
+                backgroundImage: "url('/images/service-restaurants.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -134,7 +131,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="relative z-10">
                 <CardDescription className="text-center text-white">
-                  Specialized cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
+                  Specialised cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
@@ -148,7 +145,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/deep-clean.jpg')",
+                backgroundImage: "url('/images/service-deep-clean.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -176,7 +173,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/carpet-cleaning.jpg')",
+                backgroundImage: "url('/images/service-carpet.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -204,7 +201,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/event-cleaning.jpg')",
+                backgroundImage: "url('/images/service-event.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -229,15 +226,14 @@ export default function Home() {
               </CardFooter>
             </Card>
           </div>
+
+          {/* Auto-sliding Gallery */}
+          <ServiceSlider />
+
           <div className="mt-10 flex justify-center">
             <Button size="lg" className="bg-primary text-secondary hover:bg-primary/90">
               <Link href="/services">Find Out More</Link>
             </Button>
-          </div>
-
-          {/* Service Slideshow Gallery */}
-          <div className="mt-16">
-            <ServiceSlideshow />
           </div>
         </div>
       </section>
@@ -334,7 +330,8 @@ export default function Home() {
                 <CardTitle className="mt-4">Opening Hours</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Monday - Sunday: 8:00am - 10:00pm</p>
+                <p className="text-gray-600">Monday - Sunday</p>
+                <p className="text-gray-600">8:00am - 10:00pm</p>
               </CardContent>
             </Card>
           </div>
