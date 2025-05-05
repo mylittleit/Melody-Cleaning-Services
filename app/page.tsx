@@ -22,7 +22,7 @@ export default function Home() {
   />
   
   {/* Content over the video */}
-  <div className="relative z-10 flex items-center justify-center h-full">
+  <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
     <Button className="px-8 py-4 bg-primary text-secondary text-lg hover:bg-primary/90 transition-all duration-500">
       <Link href="/book">Book Now</Link>
     </Button>
