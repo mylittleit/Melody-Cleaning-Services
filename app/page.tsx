@@ -10,9 +10,24 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Video Background */}
-      <section className="hero-section relative h-[600px] w-full">
-        <video className="hero-video" src="/Hero.mp4" autoPlay loop muted playsInline preload="auto" />
-      </section>
+<section className="hero-section relative h-[600px] w-full overflow-hidden">
+  <video
+    className="hero-video"
+    src="/Hero.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+  />
+  
+  {/* Content over the video */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <Button className="px-8 py-4 bg-primary text-secondary text-lg hover:bg-primary/90 transition-all duration-500">
+      <Link href="/book">Book Now</Link>
+    </Button>
+  </div>
+</section>
 
       {/* Dual Button Section */}
       <section className="bg-white py-8">
