@@ -35,7 +35,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-              <Image src="/images/about-us.jpg" alt="About Melody Cleaning Services" fill className="object-cover" />
+              <Image src="/Abouthome.png" alt="About Melody Cleaning Services" fill className="object-cover" />
             </div>
             <div className="flex flex-col justify-center">
               <h2 className="mb-4 text-3xl font-bold text-primary">About Us</h2>
@@ -61,7 +61,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/images/service-end-of-tenancy.png')",
+                backgroundImage: "Image src="/Carpet2.png",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
