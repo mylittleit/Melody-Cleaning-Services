@@ -18,6 +18,7 @@ export default function Home() {
     loop
     muted
     playsInline
+    style={{ width: "100%", maxWidth: "100%", height: "auto" }}
   />
 </section>
 
