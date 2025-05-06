@@ -26,12 +26,12 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#8A2BE2", // Purple
-          foreground: "#98FB98", // Mint
+          DEFAULT: "#3A0162", // Deep Purple
+          foreground: "#9AEDB6", // Mint
         },
         secondary: {
-          DEFAULT: "#98FB98", // Mint
-          foreground: "#8A2BE2", // Purple
+          DEFAULT: "#9AEDB6", // Mint
+          foreground: "#3A0162", // Deep Purple
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
