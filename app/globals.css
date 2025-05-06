@@ -70,6 +70,25 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.hero-section {
+  background-image: url("/images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .hero-content {
@@ -127,6 +146,66 @@
 .group\/commercial:hover .group-hover\/commercial\:block,
 .group\/specialised:hover .group-hover\/specialised\:block {
   display: block;
+}
+
+/* Mobile menu animations */
+.mobile-menu-container {
+  animation: slideIn 0.3s ease-out forwards;
+  transform-origin: right center;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%) scaleX(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(-5%) scaleX(1.02);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+.mobile-menu-item {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeInRight 0.5s ease forwards;
+}
+
+.mobile-menu-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-menu-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.mobile-menu-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.mobile-menu-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.mobile-menu-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.mobile-menu-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-submenu-item {
+  transition: all 0.3s ease;
 }
 
 /* Page headers with images */

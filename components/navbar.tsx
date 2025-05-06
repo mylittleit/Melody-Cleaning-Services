@@ -1,37 +1,54 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, Plus } from "lucide-react"
+import { Menu, X, Plus, Minus } from "lucide-react"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [mobileActiveSubmenu, setMobileActiveSubmenu] = useState<string | null>(null)
+  const [expandedMenus, setExpandedMenus] = useState<{ [key: string]: boolean }>({})
+  const menuRef = useRef<HTMLDivElement>(null)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
-    setMobileActiveSubmenu(null)
-  }
-
-  const toggleMobileSubmenu = (submenu: string) => {
-    if (mobileActiveSubmenu === submenu) {
-      setMobileActiveSubmenu(null)
-    } else {
-      setMobileActiveSubmenu(submenu)
+    // Reset expanded menus when closing the main menu
+    if (isOpen) {
+      setExpandedMenus({})
     }
   }
+
+  const toggleSubmenu = (menu: string) => {
+    setExpandedMenus((prev) => ({
+      ...prev,
+      [menu]: !prev[menu],
+    }))
+  }
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node) && isOpen) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isOpen])
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/Melody.png"
+            src="/images/logo.png"
             alt="Melody Cleaning Services Logo"
-            width={120}
-            height={30}
-            className="h-30 w-120"
+            width={150}
+            height={50}
+            className="h-auto w-auto"
           />
         </Link>
 
@@ -182,178 +199,208 @@ const Navbar = () => {
             <Link
               href="/about"
               className="py-2 text-lg font-medium text-[#9AEDB6] mobile-menu-item"
-              onClick={toggleMenu}>
+              onClick={toggleMenu}
+            >
               About Us
             </Link>
 
             {/* Services with submenu */}
-            <div className="py-2">
-              <button
-                className="flex items-center justify-between w-full text-lg font-medium text-white"
-                onClick={() => toggleMobileSubmenu("services")}
+            <div className="py-2 mobile-menu-item">
+              <div
+                className="flex items-center justify-between w-full text-lg font-medium text-[#9AEDB6] cursor-pointer"
+                onClick={() => toggleSubmenu("services")}
               >
                 <span>Services</span>
-                {mobileActiveSubmenu === "services" ? <span>-</span> : <span>+</span>}
-              </button>
+                {expandedMenus["services"] ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+              </div>
 
-              {mobileActiveSubmenu === "services" && (
-                <div className="mt-2 ml-4 space-y-3">
-                  {/* Domestic Cleaning */}
-                  <div>
-                    <button
-                      className="flex items-center justify-between w-full text-base font-medium text-white"
-                      onClick={() => toggleMobileSubmenu("domestic")}
-                    >
-                      <span>Domestic Cleaning</span>
-                      {mobileActiveSubmenu === "domestic" ? <span>-</span> : <span>+</span>}
-                    </button>
-
-                    {mobileActiveSubmenu === "domestic" && (
-                      <div className="mt-2 ml-4 space-y-2">
-                        <Link
-                          href="/services#domestic-end-of-tenancy"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          End of Tenancy
-                        </Link>
-                        <Link
-                          href="/services#domestic-move-in-out"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Move-In/Move-Out
-                        </Link>
-                        <Link
-                          href="/services#domestic-carpet-cleaning"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Carpet Cleaning
-                        </Link>
-                        <Link
-                          href="/services#domestic-deep-clean"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Deep Clean
-                        </Link>
-                        <Link
-                          href="/services#domestic-standard-cleaning"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Standard Cleaning
-                        </Link>
-                        <Link
-                          href="/services#domestic-housekeeping"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          General Housekeeping
-                        </Link>
-                        <Link
-                          href="/services#domestic-mattress-cleaning"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Mattress Cleaning
-                        </Link>
-                        <Link
-                          href="/services#domestic-upholstery-cleaning"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Upholstery Cleaning
-                        </Link>
-                      </div>
-                    )}
+              <div
+                className={`mt-2 ml-4 space-y-3 overflow-hidden transition-all duration-300 ${
+                  expandedMenus["services"] ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                {/* Domestic Cleaning */}
+                <div className="mobile-submenu-item">
+                  <div
+                    className="flex items-center justify-between w-full text-base font-medium text-[#9AEDB6] cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      toggleSubmenu("domestic")
+                    }}
+                  >
+                    <span>Domestic Cleaning</span>
+                    {expandedMenus["domestic"] ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </div>
 
-                  {/* Commercial Cleaning */}
-                  <div>
-                    <button
-                      className="flex items-center justify-between w-full text-base font-medium text-white"
-                      onClick={() => toggleMobileSubmenu("commercial")}
+                  <div
+                    className={`ml-4 space-y-2 overflow-hidden transition-all duration-300 ${
+                      expandedMenus["domestic"] ? "max-h-[500px] opacity-100 mt-2" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <Link
+                      href="/services#domestic-end-of-tenancy"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
                     >
-                      <span>Commercial Cleaning</span>
-                      {mobileActiveSubmenu === "commercial" ? <span>-</span> : <span>+</span>}
-                    </button>
-
-                    {mobileActiveSubmenu === "commercial" && (
-                      <div className="mt-2 ml-4 space-y-2">
-                        <Link
-                          href="/services#commercial-office-workshop"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Office and Workshop
-                        </Link>
-                        <Link
-                          href="/services#commercial-restaurants-hotels"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Restaurants and Hotels
-                        </Link>
-                        <Link
-                          href="/services#commercial-care-homes"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Care Homes
-                        </Link>
-                        <Link
-                          href="/services#commercial-shop-cleaning"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Shop Cleaning
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Specialised Cleaning */}
-                  <div>
-                    <button
-                      className="flex items-center justify-between w-full text-base font-medium text-white"
-                      onClick={() => toggleMobileSubmenu("specialised")}
+                      End of Tenancy
+                    </Link>
+                    <Link
+                      href="/services#domestic-move-in-out"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
                     >
-                      <span>Specialised Cleaning</span>
-                      {mobileActiveSubmenu === "specialised" ? <span>-</span> : <span>+</span>}
-                    </button>
-
-                    {mobileActiveSubmenu === "specialised" && (
-                      <div className="mt-2 ml-4 space-y-2">
-                        <Link
-                          href="/services#specialised-end-of-construction"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          End of Construction
-                        </Link>
-                        <Link
-                          href="/services#specialised-pre-post-event"
-                          className="block text-sm text-white"
-                          onClick={toggleMenu}
-                        >
-                          Pre/Post Event
-                        </Link>
-                      </div>
-                    )}
+                      Move-In/Move-Out
+                    </Link>
+                    <Link
+                      href="/services#domestic-carpet-cleaning"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Carpet Cleaning
+                    </Link>
+                    <Link
+                      href="/services#domestic-deep-clean"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Deep Clean
+                    </Link>
+                    <Link
+                      href="/services#domestic-standard-cleaning"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Standard Cleaning
+                    </Link>
+                    <Link
+                      href="/services#domestic-housekeeping"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      General Housekeeping
+                    </Link>
+                    <Link
+                      href="/services#domestic-mattress-cleaning"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Mattress Cleaning
+                    </Link>
+                    <Link
+                      href="/services#domestic-upholstery-cleaning"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Upholstery Cleaning
+                    </Link>
                   </div>
                 </div>
-              )}
+
+                {/* Commercial Cleaning */}
+                <div className="mobile-submenu-item">
+                  <div
+                    className="flex items-center justify-between w-full text-base font-medium text-[#9AEDB6] cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      toggleSubmenu("commercial")
+                    }}
+                  >
+                    <span>Commercial Cleaning</span>
+                    {expandedMenus["commercial"] ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                  </div>
+
+                  <div
+                    className={`ml-4 space-y-2 overflow-hidden transition-all duration-300 ${
+                      expandedMenus["commercial"] ? "max-h-[500px] opacity-100 mt-2" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <Link
+                      href="/services#commercial-office-workshop"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Office and Workshop
+                    </Link>
+                    <Link
+                      href="/services#commercial-restaurants-hotels"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Restaurants and Hotels
+                    </Link>
+                    <Link
+                      href="/services#commercial-care-homes"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Care Homes
+                    </Link>
+                    <Link
+                      href="/services#commercial-shop-cleaning"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Shop Cleaning
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Specialised Cleaning */}
+                <div className="mobile-submenu-item">
+                  <div
+                    className="flex items-center justify-between w-full text-base font-medium text-[#9AEDB6] cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      toggleSubmenu("specialised")
+                    }}
+                  >
+                    <span>Specialised Cleaning</span>
+                    {expandedMenus["specialised"] ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                  </div>
+
+                  <div
+                    className={`ml-4 space-y-2 overflow-hidden transition-all duration-300 ${
+                      expandedMenus["specialised"] ? "max-h-[500px] opacity-100 mt-2" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <Link
+                      href="/services#specialised-end-of-construction"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      End of Construction
+                    </Link>
+                    <Link
+                      href="/services#specialised-pre-post-event"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Pre/Post Event
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <Link href="/sectors" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
+            <Link
+              href="/sectors"
+              className="py-2 text-lg font-medium text-[#9AEDB6] mobile-menu-item"
+              onClick={toggleMenu}
+            >
               Sectors
             </Link>
-            <Link href="/book" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
+            <Link
+              href="/book"
+              className="py-2 text-lg font-medium text-[#9AEDB6] mobile-menu-item"
+              onClick={toggleMenu}
+            >
               Book Online
             </Link>
-            <Link href="/contact" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
+            <Link
+              href="/contact"
+              className="py-2 text-lg font-medium text-[#9AEDB6] mobile-menu-item"
+              onClick={toggleMenu}
+            >
               Contact Us
             </Link>
           </div>
