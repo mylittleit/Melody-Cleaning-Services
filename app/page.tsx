@@ -11,7 +11,7 @@ export default function Home() {
     <>
       {/* Hero Section with Video Background */}
       <section className="hero-section relative h-[600px] w-full">
-        <video className="hero-video" src="/Hero.mp4" autoPlay loop muted playsInline preload="auto" />
+        <video className="hero-video" src="/Heromain.mp4" autoPlay loop muted playsInline preload="auto" />
       </section>
 
       {/* Dual Button Section */}
