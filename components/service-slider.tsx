@@ -6,24 +6,24 @@ import Image from "next/image"
 // Define images with guaranteed placeholder sources
 const images = [
   {
-    src: "/placeholder.svg?height=240&width=320&text=Professional+Cleaning",
-    alt: "Professional Cleaning Service",
+    src: "/Restaurant1.png",
+    alt: "Restaurant Cleaning",
   },
   {
-    src: "/placeholder.svg?height=240&width=320&text=End+of+Tenancy",
-    alt: "End of Tenancy Cleaning",
-  },
-  {
-    src: "/placeholder.svg?height=240&width=320&text=Commercial+Cleaning",
-    alt: "Commercial Cleaning",
-  },
-  {
-    src: "/placeholder.svg?height=240&width=320&text=Deep+Cleaning",
-    alt: "Deep Cleaning",
-  },
-  {
-    src: "/placeholder.svg?height=240&width=320&text=Carpet+Cleaning",
+    src: "/Carpet1.png",
     alt: "Carpet Cleaning",
+  },
+  {
+    src: "/Event6.png",
+    alt: "Event Cleaning",
+  },
+  {
+    src: "/Slide6.png",
+    alt: "Domestic Cleaning",
+  },
+  {
+    src: "/Slide4.png",
+    alt: "General Cleaning",
   },
 ]
 
