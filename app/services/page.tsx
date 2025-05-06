@@ -69,7 +69,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -90,7 +90,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -111,7 +111,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -153,7 +153,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -174,7 +174,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -195,7 +195,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -216,7 +216,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -251,7 +251,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -271,7 +271,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -292,7 +292,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -313,7 +313,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -348,7 +348,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -369,7 +369,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-center">
-                <Button className="w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
