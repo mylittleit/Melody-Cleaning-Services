@@ -24,7 +24,7 @@ export default function ServicesPage() {
     <>
       {/* Hero Banner */}
       <section className="page-header">
-        <Image src="/images/services-header.png" alt="Our Services" fill className="object-cover" />
+        <Image src="/Services.png" alt="Our Services" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">OUR SERVICES</h1>
         </div>
