@@ -84,8 +84,8 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Book Now</Link>
+                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
             </Card>
