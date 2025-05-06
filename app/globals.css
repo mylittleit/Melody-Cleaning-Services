@@ -233,7 +233,7 @@
 
 /* Purpose section background */
 .purpose-bg {
-  background-image: url("/images/purpose-bg.png");
+  background-image: url("/Purpose.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -249,19 +249,19 @@
 }
 
 .domestic-bg {
-  background-image: url("/images/sector-residential.png");
+  background-image: url("/Domestic.png");
   background-size: cover;
   background-position: center;
 }
 
 .commercial-bg {
-  background-image: url("/images/sector-commercial.png");
+  background-image: url("/Commercial.png");
   background-size: cover;
   background-position: center;
 }
 
 .specialised-bg {
-  background-image: url("/images/sector-construction.png");
+  background-image: url("/Specialised.png");
   background-size: cover;
   background-position: center;
 }
