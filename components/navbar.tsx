@@ -174,12 +174,15 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-[#4B0082] pt-16">
+        <div ref={menuRef} className="fixed inset-0 z-50 flex flex-col bg-[#3A0162] pt-16 mobile-menu-container">
           <div className="container flex flex-col space-y-4 p-4">
-            <Link href="/" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
+            <Link href="/" className="py-2 text-lg font-medium text-[#9AEDB6] mobile-menu-item" onClick={toggleMenu}>
               Home
             </Link>
-            <Link href="/about" className="py-2 text-lg font-medium text-white" onClick={toggleMenu}>
+            <Link
+              href="/about"
+              className="py-2 text-lg font-medium text-[#9AEDB6] mobile-menu-item"
+              onClick={toggleMenu}>
               About Us
             </Link>
 
