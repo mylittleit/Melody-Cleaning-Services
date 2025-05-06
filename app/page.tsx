@@ -13,7 +13,7 @@ export default function Home() {
 <section className="hero-section relative h-[600px] w-full overflow-hidden">
   <video
     className="hero-video"
-    src="/Hero.mp4"
+    src="/Heromain.mp4"
     autoPlay
     loop
     muted
