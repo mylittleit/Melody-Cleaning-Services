@@ -22,6 +22,26 @@ const images = [
     alt: "Domestic Cleaning",
   },
   {
+    src: "/Carpet2.png",
+    alt: "Domestic Cleaning",
+  },
+  {
+    src: "/Event5.png",
+    alt: "Domestic Cleaning",
+  },
+  {
+    src: "/Restaurant.png",
+    alt: "Domestic Cleaning",
+  },
+  {
+    src: "/Slide9.png",
+    alt: "Upholstery Cleaning",
+  },
+  {
+    src: "/Slide.png",
+    alt: "Bathroom Cleaning",
+  },
+  {
     src: "/Slide4.png",
     alt: "General Cleaning",
   },
