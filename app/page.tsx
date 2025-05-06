@@ -12,6 +12,11 @@ export default function Home() {
       {/* Hero Section with Video Background */}
       <section className="hero-section relative h-[600px] w-full">
         <video className="hero-video" src="/Heromain.mp4" autoPlay loop muted playsInline preload="auto" />
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
+         <Button className="px-6 py-3 bg-primary text-secondary hover:bg-primary/90">
+        <Link href="/book">Book Now</Link>
+        </Button>
+       </div>
       </section>
 
       {/* Dual Button Section */}
