@@ -18,15 +18,16 @@ import {
   UtensilsCrossed,
   Construction,
   Brush,
+  MapPin,
 } from "lucide-react"
 import { FaTiktok } from "react-icons/fa"
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero Banner */}
+      {/* Hero Banner with updated header image */}
       <section className="page-header">
-        <Image src="/Aboutpage.png" alt="About Us" fill className="object-cover" />
+        <Image src="/images/about-header.png" alt="About Us" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">ABOUT US</h1>
         </div>
@@ -64,96 +65,90 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission, Vision, Goals */}
-<section
-  className="relative py-16 bg-cover bg-center"
-  style={{
-    backgroundImage: "url('/Restaurant.png')",
-    backgroundAttachment: "fixed",
-  }}
->
-  {/* Overlay to fade the background */}
-  <div className="absolute inset-0 bg-white/80"></div>
+      {/* Mission, Vision, Goals with updated purpose section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container">
+          {/* Full-width header image for OUR PURPOSE */}
+          <div className="purpose-header-bg mb-12 relative w-full overflow-hidden rounded-lg">
+            <Image src="/images/purpose-header.png" alt="Our Purpose" fill className="object-cover" />
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+              <h2 className="text-4xl font-bold text-white z-10">OUR PURPOSE</h2>
+            </div>
+          </div>
 
-  {/* Content on top of the overlay */}
-  <div className="relative z-10">
-    {/* Full width header with background image */}
-    <div
-      className="relative mb-12 h-[300px] w-full bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/Purpose.png')",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-        <h2 className="text-5xl font-bold text-white">OUR PURPOSE</h2>
-      </div>
-    </div>
+          {/* Purpose content with background image */}
+          <div className="purpose-content-bg rounded-lg p-8 relative">
+            <div className="purpose-content relative z-10">
+              <div className="mb-16">
+                <div className="mb-6 flex items-center">
+                  <h2 className="text-3xl font-bold text-white">Our Mission</h2>
+                </div>
+                <p className="text-lg text-white">
+                  Our mission is to provide exceptional cleaning services that enhance the quality of life for our
+                  clients. We aim to create cleaner, healthier, and more comfortable environments through our
+                  professional cleaning solutions, while maintaining the highest standards of service and customer care.
+                </p>
+              </div>
 
-    {/* Main container for Mission, Vision, Goals */}
-    <div className="container">
-      <div className="mb-16">
-        <div className="mb-6 flex items-center">
-          <h2 className="text-3xl font-bold text-primary">Our Mission</h2>
+              <div className="mb-16">
+                <div className="mb-6 flex items-center">
+                  <h2 className="text-3xl font-bold text-white">Our Vision</h2>
+                </div>
+                <p className="text-lg text-white">
+                  We envision becoming the leading cleaning service provider in the UK, recognised for our excellence,
+                  reliability, and customer-focused approach. We strive to set new standards in the cleaning industry
+                  through innovation, sustainability, and continuous improvement.
+                </p>
+              </div>
+
+              <div className="mb-16">
+                <div className="mb-6 flex items-center">
+                  <h2 className="text-3xl font-bold text-white">Our Goals & Objectives</h2>
+                </div>
+                <p className="mb-6 text-lg text-white">
+                  At Melody Cleaning Services, we have set clear goals to guide our growth and service delivery:
+                </p>
+                <ul className="ml-6 list-disc space-y-2 text-lg text-white">
+                  <li>Deliver consistent, high-quality cleaning services that meet or exceed industry standards</li>
+                  <li>Expand our service offerings to meet the evolving needs of our clients</li>
+                  <li>Maintain a team of well-trained, professional staff who share our values</li>
+                  <li>Minimise our environmental footprint through sustainable practices and products</li>
+                  <li>Build long-term relationships with our clients based on trust and satisfaction</li>
+                  <li>Continuously improve our processes and services through feedback and innovation</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="mb-6 flex items-center">
+                  <h2 className="text-3xl font-bold text-white">How We Operate</h2>
+                </div>
+                <p className="mb-6 text-lg text-white">
+                  At Melody Cleaning Services, we follow a systematic approach to ensure consistent quality and customer
+                  satisfaction:
+                </p>
+                <ul className="ml-6 list-disc space-y-2 text-lg text-white">
+                  <li>
+                    Initial Consultation: We begin with a thorough assessment of your cleaning needs and requirements.
+                  </li>
+                  <li>
+                    Customised Plan: We develop a tailored cleaning plan specific to your property and preferences.
+                  </li>
+                  <li>
+                    Team Assignment: We assign experienced and trained cleaning professionals who specialise in your
+                    required services.
+                  </li>
+                  <li>
+                    Quality Execution: Our team executes the cleaning plan with attention to detail and using
+                    appropriate techniques.
+                  </li>
+                  <li>Quality Check: We conduct a thorough inspection to ensure all areas meet our high standards.</li>
+                  <li>Feedback Collection: We actively seek your feedback to continuously improve our services.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <p className="text-lg text-gray-700">
-          Our mission is to provide exceptional cleaning services that enhance the quality of life for our clients.
-          We aim to create cleaner, healthier, and more comfortable environments through our professional cleaning
-          solutions, while maintaining the highest standards of service and customer care.
-        </p>
-      </div>
-
-      <div className="mb-16">
-        <div className="mb-6 flex items-center">
-          <h2 className="text-3xl font-bold text-primary">Our Vision</h2>
-        </div>
-        <p className="text-lg text-gray-700">
-          We envision becoming the leading cleaning service provider in the UK, recognised for our excellence,
-          reliability, and customer-focused approach. We strive to set new standards in the cleaning industry
-          through innovation, sustainability, and continuous improvement.
-        </p>
-      </div>
-
-      <div className="mb-16">
-        <div className="mb-6 flex items-center">
-          <h2 className="text-3xl font-bold text-primary">Our Goals & Objectives</h2>
-        </div>
-        <p className="mb-6 text-lg text-gray-700">
-          At Melody Cleaning Services, we have set clear goals to guide our growth and service delivery:
-        </p>
-        <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
-          <li>Deliver consistent, high-quality cleaning services that meet or exceed industry standards</li>
-          <li>Expand our service offerings to meet the evolving needs of our clients</li>
-          <li>Maintain a team of well-trained, professional staff who share our values</li>
-          <li>Minimise our environmental footprint through sustainable practices and products</li>
-          <li>Build long-term relationships with our clients based on trust and satisfaction</li>
-          <li>Continuously improve our processes and services through feedback and innovation</li>
-        </ul>
-      </div>
-
-      <div>
-        <div className="mb-6 flex items-center">
-          <h2 className="text-3xl font-bold text-primary">How We Operate</h2>
-        </div>
-        <p className="mb-6 text-lg text-gray-700">
-          At Melody Cleaning Services, we follow a systematic approach to ensure consistent quality and customer
-          satisfaction:
-        </p>
-        <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
-          <li>Initial Consultation: We begin with a thorough assessment of your cleaning needs and requirements.</li>
-          <li>Customised Plan: We develop a tailored cleaning plan specific to your property and preferences.</li>
-          <li>Team Assignment: We assign experienced and trained cleaning professionals who specialise in your
-            required services.
-          </li>
-          <li>Quality Execution: Our team executes the cleaning plan with attention to detail and using appropriate
-            techniques.
-          </li>
-          <li>Quality Check: We conduct a thorough inspection to ensure all areas meet our high standards.</li>
-          <li>Feedback Collection: We actively seek your feedback to continuously improve our services.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Core Values */}
       <section className="bg-white py-16">
@@ -391,7 +386,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Map and Hours */}
       <section className="bg-gray-50 py-16">
         <div className="container">
           <div className="mb-12 text-center">
@@ -412,55 +407,70 @@ export default function AboutPage() {
               ></iframe>
             </div>
 
-            <div className="flex flex-col justify-center">
-              <div className="mb-8">
-                <h3 className="mb-4 text-xl font-semibold text-primary">Opening Hours</h3>
-                <p className="text-gray-600">Monday – Sunday</p>
-                <p className="text-gray-600">8:00AM – 10:00PM</p>
+            <div>
+              <div className="flex items-center">
+                <MapPin className="mr-2 h-6 w-6 text-primary" />
+                <h3 className="mb-6 text-2xl font-bold text-primary">Our Service Area</h3>
               </div>
+              <p className="mb-4 text-gray-600">We provide our cleaning services in:</p>
+              <ul className="mb-8 space-y-2 text-gray-600">
+                <li>• London</li>
+                <li>• Kent</li>
+                <li>• M25</li>
+              </ul>
+              <p className="mb-8 text-gray-600">
+                We also cater to clients further afield, ensuring flexibility and availability wherever our expertise is
+                needed.
+              </p>
 
-              <div>
-                <h3 className="mb-4 text-xl font-semibold text-primary">Connect With Us</h3>
+              <div className="flex items-center">
+                <Clock className="mr-2 h-6 w-6 text-primary" />
+                <h3 className="mb-4 text-2xl font-bold text-primary">Opening Hours</h3>
+              </div>
+              <p className="text-gray-600">
+                Monday - Sunday
+                <br />
+                8:00am - 10:00pm
+              </p>
+
+              <div className="mt-8">
+                <h3 className="mb-4 flex items-center text-2xl font-bold text-primary">Connect With Us</h3>
                 <div className="flex space-x-4">
                   <Link
                     href="https://www.facebook.com/profile.php?id=61575544748505"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80"
+                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
                   >
-                    <div className="rounded-full bg-primary/10 p-3">
-                      <Facebook className="h-6 w-6" />
-                    </div>
+                    <Facebook className="h-6 w-6" />
+                    <span className="sr-only">Facebook</span>
                   </Link>
                   <Link
                     href="https://www.instagram.com/melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80"
+                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
                   >
-                    <div className="rounded-full bg-primary/10 p-3">
-                      <Instagram className="h-6 w-6" />
-                    </div>
+                    <Instagram className="h-6 w-6" />
+                    <span className="sr-only">Instagram</span>
                   </Link>
                   <Link
                     href="https://www.linkedin.com/in/melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80"
+                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
                   >
-                    <div className="rounded-full bg-primary/10 p-3">
-                      <Linkedin className="h-6 w-6" />
-                    </div>
+                    <Linkedin className="h-6 w-6" />
+                    <span className="sr-only">LinkedIn</span>
                   </Link>
                   <Link
                     href="https://www.tiktok.com/@melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80"
+                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
                   >
-                    <div className="rounded-full bg-primary/10 p-3">
-                      <FaTiktok className="h-6 w-6" />
-                    </div>
+                    <FaTiktok className="h-6 w-6" />
+                    <span className="sr-only">TikTok</span>
                   </Link>
                 </div>
               </div>
