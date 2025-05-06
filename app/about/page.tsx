@@ -26,7 +26,7 @@ export default function AboutPage() {
     <>
       {/* Hero Banner */}
       <section className="page-header">
-        <Image src="/images/about-header.png" alt="About Us" fill className="object-cover" />
+        <Image src="/Aboutpage.png" alt="About Us" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">ABOUT US</h1>
         </div>
