@@ -100,7 +100,7 @@ export default function BookingPage() {
     <>
       {/* Hero Banner */}
       <section className="page-header">
-        <Image src="/images/book-header.png" alt="Book Online" fill className="object-cover" />
+        <Image src="/Booking.png" alt="Book Online" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">BOOK ONLINE</h1>
         </div>
