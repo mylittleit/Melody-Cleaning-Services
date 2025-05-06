@@ -65,81 +65,95 @@ export default function AboutPage() {
       </section>
 
       {/* Mission, Vision, Goals */}
-      <section className="bg-gray-50 py-16">
-        <div className="container">
-          <div className="relative mb-12 h-[200px] w-full overflow-hidden purpose-bg">
-            <div className="absolute inset-0 bg-primary/80"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <h2 className="text-4xl font-bold text-secondary">OUR PURPOSE</h2>
-            </div>
-          </div>
+<section
+  className="relative py-16 bg-cover bg-center"
+  style={{
+    backgroundImage: "url('/Restaurant.png')",
+    backgroundAttachment: "fixed",
+  }}
+>
+  {/* Overlay to fade the background */}
+  <div className="absolute inset-0 bg-white/80"></div>
 
-          <div className="mb-16">
-            <div className="mb-6 flex items-center">
-              <h2 className="text-3xl font-bold text-primary">Our Mission</h2>
-            </div>
-            <p className="text-lg text-gray-700">
-              Our mission is to provide exceptional cleaning services that enhance the quality of life for our clients.
-              We aim to create cleaner, healthier, and more comfortable environments through our professional cleaning
-              solutions, while maintaining the highest standards of service and customer care.
-            </p>
-          </div>
+  {/* Content on top of the overlay */}
+  <div className="relative z-10">
+    {/* Full width header with background image */}
+    <div
+      className="relative mb-12 h-[300px] w-full bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/Purpose.png')",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+        <h2 className="text-5xl font-bold text-white">OUR PURPOSE</h2>
+      </div>
+    </div>
 
-          <div className="mb-16">
-            <div className="mb-6 flex items-center">
-              <h2 className="text-3xl font-bold text-primary">Our Vision</h2>
-            </div>
-            <p className="text-lg text-gray-700">
-              We envision becoming the leading cleaning service provider in the UK, recognised for our excellence,
-              reliability, and customer-focused approach. We strive to set new standards in the cleaning industry
-              through innovation, sustainability, and continuous improvement.
-            </p>
-          </div>
-
-          <div className="mb-16">
-            <div className="mb-6 flex items-center">
-              <h2 className="text-3xl font-bold text-primary">Our Goals & Objectives</h2>
-            </div>
-            <p className="mb-6 text-lg text-gray-700">
-              At Melody Cleaning Services, we have set clear goals to guide our growth and service delivery:
-            </p>
-            <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
-              <li>Deliver consistent, high-quality cleaning services that meet or exceed industry standards</li>
-              <li>Expand our service offerings to meet the evolving needs of our clients</li>
-              <li>Maintain a team of well-trained, professional staff who share our values</li>
-              <li>Minimise our environmental footprint through sustainable practices and products</li>
-              <li>Build long-term relationships with our clients based on trust and satisfaction</li>
-              <li>Continuously improve our processes and services through feedback and innovation</li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="mb-6 flex items-center">
-              <h2 className="text-3xl font-bold text-primary">How We Operate</h2>
-            </div>
-            <p className="mb-6 text-lg text-gray-700">
-              At Melody Cleaning Services, we follow a systematic approach to ensure consistent quality and customer
-              satisfaction:
-            </p>
-            <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
-              <li>
-                Initial Consultation: We begin with a thorough assessment of your cleaning needs and requirements.
-              </li>
-              <li>Customised Plan: We develop a tailored cleaning plan specific to your property and preferences.</li>
-              <li>
-                Team Assignment: We assign experienced and trained cleaning professionals who specialise in your
-                required services.
-              </li>
-              <li>
-                Quality Execution: Our team executes the cleaning plan with attention to detail and using appropriate
-                techniques.
-              </li>
-              <li>Quality Check: We conduct a thorough inspection to ensure all areas meet our high standards.</li>
-              <li>Feedback Collection: We actively seek your feedback to continuously improve our services.</li>
-            </ul>
-          </div>
+    {/* Main container for Mission, Vision, Goals */}
+    <div className="container">
+      <div className="mb-16">
+        <div className="mb-6 flex items-center">
+          <h2 className="text-3xl font-bold text-primary">Our Mission</h2>
         </div>
-      </section>
+        <p className="text-lg text-gray-700">
+          Our mission is to provide exceptional cleaning services that enhance the quality of life for our clients.
+          We aim to create cleaner, healthier, and more comfortable environments through our professional cleaning
+          solutions, while maintaining the highest standards of service and customer care.
+        </p>
+      </div>
+
+      <div className="mb-16">
+        <div className="mb-6 flex items-center">
+          <h2 className="text-3xl font-bold text-primary">Our Vision</h2>
+        </div>
+        <p className="text-lg text-gray-700">
+          We envision becoming the leading cleaning service provider in the UK, recognised for our excellence,
+          reliability, and customer-focused approach. We strive to set new standards in the cleaning industry
+          through innovation, sustainability, and continuous improvement.
+        </p>
+      </div>
+
+      <div className="mb-16">
+        <div className="mb-6 flex items-center">
+          <h2 className="text-3xl font-bold text-primary">Our Goals & Objectives</h2>
+        </div>
+        <p className="mb-6 text-lg text-gray-700">
+          At Melody Cleaning Services, we have set clear goals to guide our growth and service delivery:
+        </p>
+        <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
+          <li>Deliver consistent, high-quality cleaning services that meet or exceed industry standards</li>
+          <li>Expand our service offerings to meet the evolving needs of our clients</li>
+          <li>Maintain a team of well-trained, professional staff who share our values</li>
+          <li>Minimise our environmental footprint through sustainable practices and products</li>
+          <li>Build long-term relationships with our clients based on trust and satisfaction</li>
+          <li>Continuously improve our processes and services through feedback and innovation</li>
+        </ul>
+      </div>
+
+      <div>
+        <div className="mb-6 flex items-center">
+          <h2 className="text-3xl font-bold text-primary">How We Operate</h2>
+        </div>
+        <p className="mb-6 text-lg text-gray-700">
+          At Melody Cleaning Services, we follow a systematic approach to ensure consistent quality and customer
+          satisfaction:
+        </p>
+        <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
+          <li>Initial Consultation: We begin with a thorough assessment of your cleaning needs and requirements.</li>
+          <li>Customised Plan: We develop a tailored cleaning plan specific to your property and preferences.</li>
+          <li>Team Assignment: We assign experienced and trained cleaning professionals who specialise in your
+            required services.
+          </li>
+          <li>Quality Execution: Our team executes the cleaning plan with attention to detail and using appropriate
+            techniques.
+          </li>
+          <li>Quality Check: We conduct a thorough inspection to ensure all areas meet our high standards.</li>
+          <li>Feedback Collection: We actively seek your feedback to continuously improve our services.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Core Values */}
       <section className="bg-white py-16">
