@@ -10,7 +10,7 @@ export default function ContactPage() {
     <>
       {/* Hero Banner */}
       <section className="page-header">
-        <Image src="/Contact.png" alt="Contact Us" fill className="object-cover" />
+        <Image src="/images/contact-header.png" alt="Contact Us" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">CONTACT US</h1>
         </div>

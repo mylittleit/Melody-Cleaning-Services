@@ -6,44 +6,24 @@ import Image from "next/image"
 // Define images with guaranteed placeholder sources
 const images = [
   {
-    src: "/Restaurant1.png",
-    alt: "Restaurant Cleaning",
+    src: "/placeholder.svg?height=240&width=320&text=Professional+Cleaning",
+    alt: "Professional Cleaning Service",
   },
   {
-    src: "/Carpet1.png",
+    src: "/placeholder.svg?height=240&width=320&text=End+of+Tenancy",
+    alt: "End of Tenancy Cleaning",
+  },
+  {
+    src: "/placeholder.svg?height=240&width=320&text=Commercial+Cleaning",
+    alt: "Commercial Cleaning",
+  },
+  {
+    src: "/placeholder.svg?height=240&width=320&text=Deep+Cleaning",
+    alt: "Deep Cleaning",
+  },
+  {
+    src: "/placeholder.svg?height=240&width=320&text=Carpet+Cleaning",
     alt: "Carpet Cleaning",
-  },
-  {
-    src: "/Event6.png",
-    alt: "Event Cleaning",
-  },
-  {
-    src: "/Slide6.png",
-    alt: "Domestic Cleaning",
-  },
-  {
-    src: "/Carpet2.png",
-    alt: "Domestic Cleaning",
-  },
-  {
-    src: "/Event5.png",
-    alt: "Domestic Cleaning",
-  },
-  {
-    src: "/Restaurant.png",
-    alt: "Domestic Cleaning",
-  },
-  {
-    src: "/Slide9.png",
-    alt: "Upholstery Cleaning",
-  },
-  {
-    src: "/Slide.png",
-    alt: "Bathroom Cleaning",
-  },
-  {
-    src: "/Slide4.png",
-    alt: "General Cleaning",
   },
 ]
 

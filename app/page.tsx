@@ -10,13 +10,17 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Video Background */}
-      <section className="hero-section relative h-[600px] w-full">
-        <video className="hero-video" src="/Heromain.mp4" autoPlay loop muted playsInline preload="auto" />
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
-         <Button className="px-6 py-3 bg-primary text-secondary hover:bg-primary/90">
-        <Link href="/book">Book Now</Link>
-        </Button>
-       </div>
+      <section className="hero-section relative w-full">
+        <video
+          className="hero-video"
+          src="/Hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          style={{ width: "100%", height: "100%" }}
+        />
       </section>
 
       {/* Dual Button Section */}
@@ -40,7 +44,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-              <Image src="/Abouthome.png" alt="About Melody Cleaning Services" fill className="object-cover" />
+              <Image src="/images/about-us.jpg" alt="About Melody Cleaning Services" fill className="object-cover" />
             </div>
             <div className="flex flex-col justify-center">
               <h2 className="mb-4 text-3xl font-bold text-primary">About Us</h2>
@@ -66,7 +70,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/Carpet2.png')",
+                backgroundImage: "url('/images/service-end-of-tenancy.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -74,7 +78,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Tenancy.png" alt="End of Tenancy" width={50} height={50} className="rounded-full object-cover"/>
+                  <Image src="/images/service-end-of-tenancy.png" alt="End of Tenancy" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Tenancy</CardTitle>
               </CardHeader>
@@ -84,7 +88,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -94,7 +98,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/Endbg.png')",
+                backgroundImage: "url('/images/service-construction.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -102,7 +106,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/End.png" alt="End of Construction" width={50} height={50} className="rounded-full object-cover"/>
+                  <Image src="/images/service-construction.png" alt="End of Construction" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Construction</CardTitle>
               </CardHeader>
@@ -112,7 +116,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -122,7 +126,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/Restaurantbg.png')",
+                backgroundImage: "url('/images/service-restaurants.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -130,7 +134,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Restauranticon.png" alt="Restaurants and Hotels" width={50} height={50} className="rounded-full object-cover"/>
+                  <Image src="/images/service-restaurants.png" alt="Restaurants and Hotels" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Restaurants and Hotels</CardTitle>
               </CardHeader>
@@ -140,7 +144,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -150,7 +154,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('Carpet1.png')",
+                backgroundImage: "url('/images/service-deep-clean.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -158,7 +162,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Deep.png" alt="Deep Clean" width={50} height={50} className="rounded-full object-cover"/>
+                  <Image src="/images/service-deep-clean.png" alt="Deep Clean" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Deep Clean</CardTitle>
               </CardHeader>
@@ -168,7 +172,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -178,7 +182,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/Carpetbg.png')",
+                backgroundImage: "url('/images/service-carpet.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -186,7 +190,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Carpet.png" alt="Carpet Cleaning" width={50} height={50} className="rounded-full object-cover"/>
+                  <Image src="/images/service-carpet.png" alt="Carpet Cleaning" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Carpet Cleaning</CardTitle>
               </CardHeader>
@@ -196,7 +200,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -206,7 +210,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden"
               style={{
-                backgroundImage: "url('/Event5.png')",
+                backgroundImage: "url('/images/service-event.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -214,7 +218,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Event.png" alt="Pre/Post Event" width={50} height={50} className="rounded-full object-cover"/>
+                  <Image src="/images/service-event.png" alt="Pre/Post Event" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Pre/Post Event</CardTitle>
               </CardHeader>
@@ -225,7 +229,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 px-6 py-3 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>

@@ -19,7 +19,7 @@ export default function SectorsPage() {
     <>
       {/* Hero Banner */}
       <section className="page-header">
-        <Image src="/Slide5.png" alt="Sectors We Serve" fill className="object-cover" />
+        <Image src="/images/sectors-header.png" alt="Sectors We Serve" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">SECTORS WE SERVE</h1>
         </div>
