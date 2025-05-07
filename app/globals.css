@@ -78,6 +78,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden; /* Prevent content from spilling out */
 }
 
 .hero-content {
@@ -94,8 +95,20 @@
   top: 0;
   left: 0;
   z-index: 0;
+  min-height: 100%; /* Ensure minimum height covers container */
+  min-width: 100%; /* Ensure minimum width covers container */
 }
+/* Add responsive adjustments for hero section */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh !important; /* Force full viewport height on mobile */
+    max-height: 600px; /* Cap the maximum height */
+  }
 
+  .hero-video {
+    object-position: center; /* Center the video content */
+  }
+  }
 .service-card {
   transition: transform 0.3s ease;
 }
@@ -231,12 +244,60 @@
   text-align: center;
 }
 
-/* Purpose section background */
+/* Purpose section background - updated to use faded image */
 .purpose-bg {
-  background-image: url("/Purpose.png");
+  background-image: url("/images/purpose-bg.png");
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+/* New Purpose header with full-width image */
+.purpose-header-bg {
+  height: 200px;
+  position: relative;
+}
+
+/* Purpose content with background image */
+.purpose-content-bg {
+  background-image: url("/Restaurant.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.purpose-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Service section content with background images */
+.domestic-content-bg {
+  background-image: url("/Domestic.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.commercial-content-bg {
+  background-image: url("/Commercial.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.specialised-content-bg {
+  background-image: url("/Specialised.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.domestic-content,
+.commercial-content,
+.specialised-content {
+  position: relative;
+  z-index: 2;
 }
 
 /* Service section titles with backgrounds */
