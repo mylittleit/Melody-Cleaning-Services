@@ -56,7 +56,7 @@ export default function SectorsPage() {
                   ensuring a clean and healthy living environment for families and individuals.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services">Learn More</Link>
                   </Button>
                 </div>
@@ -77,7 +77,7 @@ export default function SectorsPage() {
                   impression for clients and employees alike.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services#commercial-office-workshop">Learn More</Link>
                   </Button>
                 </div>
@@ -98,7 +98,7 @@ export default function SectorsPage() {
                   maintain the highest standards of cleanliness and hygiene for guest satisfaction.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services#commercial-restaurants-hotels">Learn More</Link>
                   </Button>
                 </div>
@@ -119,7 +119,7 @@ export default function SectorsPage() {
                   adhering to strict health and safety protocols.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services#commercial-care-homes">Learn More</Link>
                   </Button>
                 </div>
@@ -140,7 +140,7 @@ export default function SectorsPage() {
                   and maintain a professional appearance.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services#commercial-shop-cleaning">Learn More</Link>
                   </Button>
                 </div>
@@ -161,7 +161,7 @@ export default function SectorsPage() {
                   and healthy learning environment.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services">Learn More</Link>
                   </Button>
                 </div>
@@ -182,7 +182,7 @@ export default function SectorsPage() {
                   removing dust, debris, and construction residue.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services#specialised-end-of-construction">Learn More</Link>
                   </Button>
                 </div>
@@ -203,7 +203,7 @@ export default function SectorsPage() {
                   before guests arrive and quickly restored afterward.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services#specialised-pre-post-event">Learn More</Link>
                   </Button>
                 </div>
@@ -224,7 +224,7 @@ export default function SectorsPage() {
                   safety standards and operational efficiency.
                 </p>
                 <div className="mt-6 flex justify-center">
-                  <Button className="bg-primary text-secondary hover:bg-primary/90">
+                  <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                     <Link href="/services">Learn More</Link>
                   </Button>
                 </div>

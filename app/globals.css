@@ -115,6 +115,14 @@
   transform: translateY(-5px);
 }
 
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.rounded-3xl img {
+  border-radius: 1.5rem;
+}
+
 .form-container {
   border: 2px solid;
   border-image: linear-gradient(to right, #3a0162, #9aedb6) 1;

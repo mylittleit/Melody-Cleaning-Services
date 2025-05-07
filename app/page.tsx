@@ -68,7 +68,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {/* Service 1 */}
             <Card
-              className="service-card relative overflow-hidden"
+              className="service-card relative overflow-hidden rounded-3xl"
               style={{
                 backgroundImage: "url('/images/service-end-of-tenancy.png')",
                 backgroundSize: "cover",
@@ -88,7 +88,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -96,7 +96,7 @@ export default function Home() {
 
             {/* Service 2 */}
             <Card
-              className="service-card relative overflow-hidden"
+              className="service-card relative overflow-hidden rounded-3xl"
               style={{
                 backgroundImage: "url('/images/service-construction.png')",
                 backgroundSize: "cover",
@@ -116,7 +116,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -124,7 +124,7 @@ export default function Home() {
 
             {/* Service 3 */}
             <Card
-              className="service-card relative overflow-hidden"
+              className="service-card relative overflow-hidden rounded-3xl"
               style={{
                 backgroundImage: "url('/images/service-restaurants.png')",
                 backgroundSize: "cover",
@@ -144,7 +144,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -152,7 +152,7 @@ export default function Home() {
 
             {/* Service 4 */}
             <Card
-              className="service-card relative overflow-hidden"
+              className="service-card relative overflow-hidden rounded-3xl"
               style={{
                 backgroundImage: "url('/images/service-deep-clean.png')",
                 backgroundSize: "cover",
@@ -172,7 +172,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -180,7 +180,7 @@ export default function Home() {
 
             {/* Service 5 */}
             <Card
-              className="service-card relative overflow-hidden"
+              className="service-card relative overflow-hidden rounded-3xl"
               style={{
                 backgroundImage: "url('/images/service-carpet.png')",
                 backgroundSize: "cover",
@@ -200,7 +200,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>
@@ -208,7 +208,7 @@ export default function Home() {
 
             {/* Service 6 */}
             <Card
-              className="service-card relative overflow-hidden"
+              className="service-card relative overflow-hidden rounded-3xl"
               style={{
                 backgroundImage: "url('/images/service-event.png')",
                 backgroundSize: "cover",
@@ -229,7 +229,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
-                <Button className="mb-2 w-full bg-primary text-secondary hover:bg-primary/90">
+                <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
                   <Link href="/book">Book Now</Link>
                 </Button>
               </CardFooter>

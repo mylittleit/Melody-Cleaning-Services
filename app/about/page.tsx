@@ -308,7 +308,7 @@ export default function AboutPage() {
               <p className="mb-4 text-gray-600">
                 Comprehensive cleaning services for property transitions, ensuring your deposit is returned in full.
               </p>
-              <Button className="bg-primary text-secondary hover:bg-primary/90">
+              <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                 <Link href="/book">Book Now</Link>
               </Button>
             </div>
@@ -322,7 +322,7 @@ export default function AboutPage() {
               <p className="mb-4 text-gray-600">
                 Professional carpet cleaning to remove stains, odors, and allergens for a fresher home.
               </p>
-              <Button className="bg-primary text-secondary hover:bg-primary/90">
+              <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                 <Link href="/book">Book Now</Link>
               </Button>
             </div>
@@ -336,7 +336,7 @@ export default function AboutPage() {
               <p className="mb-4 text-gray-600">
                 Thorough cleaning of all areas, including hard-to-reach spots, for a completely refreshed space.
               </p>
-              <Button className="bg-primary text-secondary hover:bg-primary/90">
+              <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                 <Link href="/book">Book Now</Link>
               </Button>
             </div>
@@ -350,7 +350,7 @@ export default function AboutPage() {
               <p className="mb-4 text-gray-600">
                 Specialised cleaning for hospitality venues, maintaining hygiene standards and guest satisfaction.
               </p>
-              <Button className="bg-primary text-secondary hover:bg-primary/90">
+              <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                 <Link href="/book">Book Now</Link>
               </Button>
             </div>
@@ -364,7 +364,7 @@ export default function AboutPage() {
               <p className="mb-4 text-gray-600">
                 Post-construction cleaning to remove dust, debris, and make your new space ready for use.
               </p>
-              <Button className="bg-primary text-secondary hover:bg-primary/90">
+              <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                 <Link href="/book">Book Now</Link>
               </Button>
             </div>
@@ -378,7 +378,7 @@ export default function AboutPage() {
               <p className="mb-4 text-gray-600">
                 Specialised cleaning to remove dust mites, allergens, and stains from mattresses.
               </p>
-              <Button className="bg-primary text-secondary hover:bg-primary/90">
+              <Button className="px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
                 <Link href="/book">Book Now</Link>
               </Button>
             </div>
