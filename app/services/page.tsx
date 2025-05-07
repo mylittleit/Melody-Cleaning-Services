@@ -24,7 +24,7 @@ export default function ServicesPage() {
     <>
       {/* Hero Banner */}
       <section className="page-header">
-        <Image src="/images/services-header.png" alt="Our Services" fill className="object-cover" />
+        <Image src="/Services.png" alt="Our Services" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">OUR SERVICES</h1>
         </div>
@@ -48,7 +48,7 @@ export default function ServicesPage() {
         <div className="container">
           {/* Full-width header image for Domestic Cleaning */}
           <div className="domestic-header-bg mb-12 relative w-full overflow-hidden rounded-lg">
-            <Image src="/images/sector-residential.png" alt="Domestic Cleaning" fill className="object-cover" />
+            <Image src="/Domestic.png" alt="Domestic Cleaning" fill className="object-cover" />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <h2 className="text-center text-3xl font-bold text-white z-10">DOMESTIC CLEANING</h2>
             </div>
@@ -236,7 +236,7 @@ export default function ServicesPage() {
         <div className="container">
           {/* Full-width header image for Commercial Cleaning */}
           <div className="commercial-header-bg mb-12 relative w-full overflow-hidden rounded-lg">
-            <Image src="/images/sector-commercial.png" alt="Commercial Cleaning" fill className="object-cover" />
+            <Image src="/Commercial.png" alt="Commercial Cleaning" fill className="object-cover" />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <h2 className="text-center text-3xl font-bold text-white z-10">COMMERCIAL CLEANING</h2>
             </div>
@@ -340,7 +340,7 @@ export default function ServicesPage() {
         <div className="container">
           {/* Full-width header image for Specialised Cleaning */}
           <div className="specialised-header-bg mb-12 relative w-full overflow-hidden rounded-lg">
-            <Image src="/images/sector-construction.png" alt="Specialised Cleaning" fill className="object-cover" />
+            <Image src="/Specialised.png" alt="Specialised Cleaning" fill className="object-cover" />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <h2 className="text-center text-3xl font-bold text-white z-10">SPECIALISED CLEANING</h2>
             </div>

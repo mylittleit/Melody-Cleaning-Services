@@ -212,6 +212,37 @@
   }
 }
 
+/* About section animations */
+.about-image-animate {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.about-text-animate {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .mobile-submenu-item {
   transition: all 0.3s ease;
 }
@@ -252,7 +283,7 @@
 
 /* Purpose section background - updated to use faded image */
 .purpose-bg {
-  background-image: url("/images/purpose-bg.png");
+  background-image: url("/Restaurant.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -266,7 +297,7 @@
 
 /* Purpose content with background image */
 .purpose-content-bg {
-  background-image: url("/images/purpose-bg.png");
+  background-image: url("/Restaurant.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -298,58 +329,31 @@
 
 /* Service section content with background images */
 .domestic-content-bg {
-  background-image: url("/images/sector-residential.png");
+  background-image: url("/Domestic.png");
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
-.domestic-content-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(58, 1, 98, 0.85); /* Deep purple with opacity */
-  z-index: 1;
-}
+/* Removed the ::before pseudo-element for domestic-content-bg */
 
 .commercial-content-bg {
-  background-image: url("/images/sector-commercial.png");
+  background-image: url("/Commercial.png");
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
-.commercial-content-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(58, 1, 98, 0.85); /* Deep purple with opacity */
-  z-index: 1;
-}
+/* Removed the ::before pseudo-element for commercial-content-bg */
 
 .specialised-content-bg {
-  background-image: url("/images/sector-construction.png");
+  background-image: url("/Specialised.png");
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
-.specialised-content-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(58, 1, 98, 0.85); /* Deep purple with opacity */
-  z-index: 1;
-}
+/* Removed the ::before pseudo-element for specialised-content-bg */
 
 .domestic-content,
 .commercial-content,
@@ -368,19 +372,19 @@
 }
 
 .domestic-bg {
-  background-image: url("/images/sector-residential.png");
+  background-image: url("/Domestic.png");
   background-size: cover;
   background-position: center;
 }
 
 .commercial-bg {
-  background-image: url("/images/sector-commercial.png");
+  background-image: url("/Commercial.png");
   background-size: cover;
   background-position: center;
 }
 
 .specialised-bg {
-  background-image: url("/images/sector-construction.png");
+  background-image: url("/Specialised.png");
   background-size: cover;
   background-position: center;
 }

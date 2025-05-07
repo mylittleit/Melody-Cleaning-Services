@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/Melody.png"
             alt="Melody Cleaning Services Logo"
             width={150}
             height={50}

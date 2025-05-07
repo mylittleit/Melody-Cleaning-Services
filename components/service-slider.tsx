@@ -6,24 +6,72 @@ import Image from "next/image"
 // Define images with guaranteed placeholder sources
 const images = [
   {
-    src: "/placeholder.svg?height=240&width=320&text=Professional+Cleaning",
+    src: "/Slide.png",
     alt: "Professional Cleaning Service",
   },
   {
-    src: "/placeholder.svg?height=240&width=320&text=End+of+Tenancy",
+    src: "/Slide1.png",
     alt: "End of Tenancy Cleaning",
   },
   {
-    src: "/placeholder.svg?height=240&width=320&text=Commercial+Cleaning",
+    src: "/Slide2.png",
     alt: "Commercial Cleaning",
   },
   {
-    src: "/placeholder.svg?height=240&width=320&text=Deep+Cleaning",
+    src: "/Slide4.png",
     alt: "Deep Cleaning",
   },
   {
-    src: "/placeholder.svg?height=240&width=320&text=Carpet+Cleaning",
+    src: "/Slide5.png",
     alt: "Carpet Cleaning",
+  },
+  {
+    src: "/Slide6.png",
+    alt: "Upholstery Cleaning",
+  },
+  {
+    src: "/Slide8.png",
+    alt: "Event Cleaning",
+  },
+  {
+    src: "/Slide9.png",
+    alt: "Office Cleaning",
+  },
+  {
+    src: "/Slide10.png",
+    alt: "Residential Cleaning",
+  },
+  {
+    src: "/Carpet2.png",
+    alt: "Carpet Cleaning Service",
+  },
+  {
+    src: "/Carpet3.png",
+    alt: "Professional Carpet Cleaning",
+  },
+  {
+    src: "/Event4.png",
+    alt: "Event Cleaning Service",
+  },
+  {
+    src: "/Event5.png",
+    alt: "Pre-Event Cleaning",
+  },
+  {
+    src: "/Event6.png",
+    alt: "Post-Event Cleaning",
+  },
+  {
+    src: "/Restaurant1.png",
+    alt: "Restaurant Cleaning",
+  },
+  {
+    src: "/Upholstery.png",
+    alt: "Upholstery Cleaning",
+  },
+  {
+    src: "/IMG-20250428-WA0013.jpg",
+    alt: "Professional Cleaning",
   },
 ]
 
