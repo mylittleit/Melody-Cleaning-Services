@@ -27,7 +27,7 @@ export default function AboutPage() {
     <>
       {/* Hero Banner with updated header image */}
       <section className="page-header">
-        <Image src="/images/about-header.png" alt="About Us" fill className="object-cover" />
+        <Image src="/Aboutpage.png" alt="About Us" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">ABOUT US</h1>
         </div>
@@ -70,7 +70,7 @@ export default function AboutPage() {
         <div className="container">
           {/* Full-width header image for OUR PURPOSE */}
           <div className="purpose-header-bg mb-12 relative w-full overflow-hidden rounded-lg">
-            <Image src="/images/purpose-header.png" alt="Our Purpose" fill className="object-cover" />
+            <Image src="/Purpose.png" alt="Our Purpose" fill className="object-cover" />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <h2 className="text-4xl font-bold text-white z-10">OUR PURPOSE</h2>
             </div>

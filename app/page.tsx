@@ -154,7 +154,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: "url('/Carpetbg.png')",
+                backgroundImage: "url('/Carpet2.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -182,7 +182,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: "url('/Carpet2.png')",
+                backgroundImage: "url('/Carpetbg.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

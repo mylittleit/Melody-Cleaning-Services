@@ -274,9 +274,10 @@
   z-index: 2;
 }
 
+/* Increase header/title font sizes by 2 points */
 .page-header h1 {
   color: white;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: bold;
   text-align: center;
 }
@@ -295,12 +296,13 @@
   position: relative;
 }
 
-/* Purpose content with background image */
+/* Remove purple overlay from Our Purpose background and make it full screen */
 .purpose-content-bg {
   background-image: url("/Restaurant.png");
   background-size: cover;
   background-position: center;
   position: relative;
+  min-height: 100vh;
 }
 
 .purpose-content-bg::before {
@@ -310,13 +312,18 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(58, 1, 98, 0.85); /* Deep purple with opacity */
+  background-color: rgba(255, 255, 255, 0.7); /* White with opacity for fading */
   z-index: 1;
 }
 
-.purpose-content {
-  position: relative;
-  z-index: 2;
+/* Update text colors for purpose section */
+.purpose-content h2 {
+  color: #3a0162; /* Deep purple */
+}
+
+.purpose-content p,
+.purpose-content ul {
+  color: #333; /* Dark gray for paragraph text */
 }
 
 /* Service section headers with full-width images */
@@ -327,7 +334,7 @@
   position: relative;
 }
 
-/* Service section content with background images */
+/* Fade the background images on service page sections */
 .domestic-content-bg {
   background-image: url("/Domestic.png");
   background-size: cover;
@@ -335,7 +342,16 @@
   position: relative;
 }
 
-/* Removed the ::before pseudo-element for domestic-content-bg */
+.domestic-content-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* White with opacity for fading */
+  z-index: 1;
+}
 
 .commercial-content-bg {
   background-image: url("/Commercial.png");
@@ -344,7 +360,16 @@
   position: relative;
 }
 
-/* Removed the ::before pseudo-element for commercial-content-bg */
+.commercial-content-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* White with opacity for fading */
+  z-index: 1;
+}
 
 .specialised-content-bg {
   background-image: url("/Specialised.png");
@@ -353,7 +378,16 @@
   position: relative;
 }
 
-/* Removed the ::before pseudo-element for specialised-content-bg */
+.specialised-content-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* White with opacity for fading */
+  z-index: 1;
+}
 
 .domestic-content,
 .commercial-content,

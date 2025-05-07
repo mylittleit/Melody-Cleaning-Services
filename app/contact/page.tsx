@@ -10,7 +10,7 @@ export default function ContactPage() {
     <>
       {/* Hero Banner */}
       <section className="page-header">
-        <Image src="/images/contact-header.png" alt="Contact Us" fill className="object-cover" />
+        <Image src="/Contact.png" alt="Contact Us" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">CONTACT US</h1>
         </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Details */}
+      {/* Contact Details - Moved Email and Call Us under the Methods of Contact */}
       <section className="bg-gray-50 py-16">
         <div className="container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
