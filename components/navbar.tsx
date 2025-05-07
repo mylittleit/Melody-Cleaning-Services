@@ -47,8 +47,8 @@ const Navbar = () => {
             src="/MelodyLogo.png"
             alt="Melody Cleaning Services Logo"
             width={120}
-            height={15}
-            className="h-10 w-auto"
+            height={13}
+            className="h-8 w-auto"
           />
         </Link>
 
