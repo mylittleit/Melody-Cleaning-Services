@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 
-// Define images with guaranteed placeholder sources
+// Define images with guaranteed sources
 const images = [
   {
     src: "/Slide.png",
@@ -75,6 +75,9 @@ const images = [
   },
 ]
 
+// Filter out any images with empty src
+const validImages = images.filter((img) => img.src && img.src.trim() !== "")
+
 export default function ServiceSlider() {
   const sliderRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -126,6 +129,11 @@ export default function ServiceSlider() {
     }
   }, [isVisible])
 
+  // If no valid images, don't render the component
+  if (validImages.length === 0) {
+    return null
+  }
+
   return (
     <div className="mt-12 mb-10 overflow-hidden">
       <div
@@ -134,7 +142,7 @@ export default function ServiceSlider() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Duplicate images for seamless looping */}
-        {[...images, ...images].map((image, index) => (
+        {[...validImages, ...validImages].map((image, index) => (
           <div key={index} className="flex-shrink-0 w-80 h-60 relative rounded-lg overflow-hidden">
             <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover" />
           </div>

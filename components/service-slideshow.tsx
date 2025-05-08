@@ -63,7 +63,7 @@ export default function ServiceSlideshow() {
             key={index}
             className={`slideshow-slide ${index === currentSlide ? "active" : ""}`}
             style={{
-              backgroundImage: `url(${image.src})`,
+              backgroundImage: `url(${image.src || "/placeholder.svg?height=400&width=600"})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}

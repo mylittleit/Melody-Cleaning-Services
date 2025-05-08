@@ -5,6 +5,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, Plus, Minus } from "lucide-react"
 
+// Define logo source
+const LOGO_SRC = "/MelodyLogo.png"
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [expandedMenus, setExpandedMenus] = useState<{ [key: string]: boolean }>({})
