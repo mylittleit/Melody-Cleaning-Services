@@ -6,9 +6,6 @@ import { CheckCircle, Clock, Phone, Mail, Facebook, Instagram, Linkedin, Leaf, U
 import { FaTiktok } from "react-icons/fa"
 import ServiceSlider from "@/components/service-slider"
 
-// Define a guaranteed placeholder image
-const PLACEHOLDER = "/placeholder.svg"
-
 export default function Home() {
   return (
     <>
