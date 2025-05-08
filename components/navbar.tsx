@@ -5,8 +5,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, Plus, Minus } from "lucide-react"
 
-// Define logo source
-const LOGO_SRC = "/MelodyLogo.png"
+// Define a guaranteed placeholder image
+const PLACEHOLDER = "/placeholder.svg"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -47,10 +47,10 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/MelodyLogo.png"
+            src={PLACEHOLDER || "/placeholder.svg"}
             alt="Melody Cleaning Services Logo"
             width={120}
-            height={13}
+            height={40}
             className="h-8 w-auto"
           />
         </Link>

@@ -6,30 +6,8 @@ import { CheckCircle, Clock, Phone, Mail, Facebook, Instagram, Linkedin, Leaf, U
 import { FaTiktok } from "react-icons/fa"
 import ServiceSlider from "@/components/service-slider"
 
-// Define video source
-const HERO_VIDEO_SRC = "/Heromain.mp4"
-
-// Define image sources
-const IMAGE_SOURCES = {
-  logo: "/Melody.png",
-  about: "/Abouthome.png",
-  tenancy: "/Tenancy.png",
-  end: "/End.png",
-  restaurant: "/Restauranticon.png",
-  deep: "/Deep.png",
-  carpet: "/Carpet.png",
-  event: "/Event.png",
-  // Background images
-  carpet1Bg: "/Carpet1.png",
-  endBg: "/Endbg.png",
-  restaurantBg: "/Restaurantbg.png",
-  carpet2Bg: "/Carpet2.png",
-  carpetBg: "/Carpetbg.png",
-  event3Bg: "/Event3.png",
-}
-
-// Placeholder image
-const PLACEHOLDER = "/placeholder.svg?height=50&width=50"
+// Define a guaranteed placeholder image
+const PLACEHOLDER = "/placeholder.svg"
 
 export default function Home() {
   return (
@@ -38,7 +16,7 @@ export default function Home() {
       <section className="hero-section relative w-full">
         <video
           className="hero-video"
-          src={HERO_VIDEO_SRC}
+          src="/Heromain.mp4"
           autoPlay
           loop
           muted
@@ -70,7 +48,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg about-image-animate">
               <Image
-                src={IMAGE_SOURCES.about || "/placeholder.svg"}
+                src={PLACEHOLDER || "/placeholder.svg"}
                 alt="About Melody Cleaning Services"
                 fill
                 className="object-cover"
@@ -100,20 +78,13 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url(${IMAGE_SOURCES.carpet1Bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundColor: "#f0f0f0",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image
-                    src={IMAGE_SOURCES.tenancy || "/placeholder.svg"}
-                    alt="End of Tenancy"
-                    width={50}
-                    height={50}
-                  />
+                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="End of Tenancy" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Tenancy</CardTitle>
               </CardHeader>
@@ -133,20 +104,13 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url(${IMAGE_SOURCES.endBg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundColor: "#f0f0f0",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image
-                    src={IMAGE_SOURCES.end || "/placeholder.svg"}
-                    alt="End of Construction"
-                    width={50}
-                    height={50}
-                  />
+                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="End of Construction" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Construction</CardTitle>
               </CardHeader>
@@ -166,20 +130,13 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url(${IMAGE_SOURCES.restaurantBg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundColor: "#f0f0f0",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image
-                    src={IMAGE_SOURCES.restaurant || "/placeholder.svg"}
-                    alt="Restaurants and Hotels"
-                    width={50}
-                    height={50}
-                  />
+                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="Restaurants and Hotels" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Restaurants and Hotels</CardTitle>
               </CardHeader>
@@ -199,15 +156,13 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url(${IMAGE_SOURCES.carpet2Bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundColor: "#f0f0f0",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src={IMAGE_SOURCES.deep || "/placeholder.svg"} alt="Deep Clean" width={50} height={50} />
+                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="Deep Clean" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Deep Clean</CardTitle>
               </CardHeader>
@@ -227,20 +182,13 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url(${IMAGE_SOURCES.carpetBg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundColor: "#f0f0f0",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image
-                    src={IMAGE_SOURCES.carpet || "/placeholder.svg"}
-                    alt="Carpet Cleaning"
-                    width={50}
-                    height={50}
-                  />
+                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="Carpet Cleaning" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Carpet Cleaning</CardTitle>
               </CardHeader>
@@ -260,15 +208,13 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url(${IMAGE_SOURCES.event3Bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundColor: "#f0f0f0",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src={IMAGE_SOURCES.event || "/placeholder.svg"} alt="Pre/Post Event" width={50} height={50} />
+                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="Pre/Post Event" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Pre/Post Event</CardTitle>
               </CardHeader>
