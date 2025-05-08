@@ -44,12 +44,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg about-image-animate">
-              <Image
-                src="/Abouthome.png"
-                alt="About Melody Cleaning Services"
-                fill
-                className="object-cover"
-              />
+              <Image src="/Abouthome.png" alt="About Melody Cleaning Services" fill className="object-cover" />
             </div>
             <div className="flex flex-col justify-center about-text-animate">
               <h2 className="mb-4 text-3xl font-bold text-primary">About Us</h2>
@@ -75,7 +70,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url('/Carpet1.png')`,
+                backgroundImage: "url('/Carpet1.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -103,7 +98,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url('/End.png')`,
+                backgroundImage: "url('/Endbg.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -111,7 +106,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Endbg.png" alt="End of Construction" width={50} height={50} />
+                  <Image src="/End.png" alt="End of Construction" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Construction</CardTitle>
               </CardHeader>
@@ -131,7 +126,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url('/Restaurantbg.png')`,
+                backgroundImage: "url('/Restaurantbg.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -156,9 +151,10 @@ export default function Home() {
             </Card>
 
             {/* Service 4 */}
-            className="service-card relative overflow-hidden rounded-3xl"
+            <Card
+              className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url('/Deep.png')`,
+                backgroundImage: "url('/Carpet2.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -166,7 +162,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Carpet2.png" alt="Deep Clean" width={50} height={50} />
+                  <Image src="/Deep.png" alt="Deep Clean" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Deep Clean</CardTitle>
               </CardHeader>
@@ -186,7 +182,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url('/Carpetbg.png')`,
+                backgroundImage: "url('/Carpetbg.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -214,7 +210,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: `url('/Event.png')`,
+                backgroundImage: "url('/Event3.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -222,7 +218,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Event3.png" alt="Pre/Post Event" width={50} height={50} />
+                  <Image src="/Event.png" alt="Pre/Post Event" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Pre/Post Event</CardTitle>
               </CardHeader>

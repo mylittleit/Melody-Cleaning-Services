@@ -5,27 +5,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const images = [
   {
-    src: "/Slide.png",
+    src: "/slideshow/slide1.jpg",
     alt: "Professional Cleaning Service",
     caption: "Professional Cleaning Services",
   },
   {
-    src: "/Slide1.png",
+    src: "/slideshow/slide2.jpg",
     alt: "End of Tenancy Cleaning",
     caption: "End of Tenancy Cleaning",
   },
   {
-    src: "/Slide2.png",
+    src: "/slideshow/slide3.jpg",
     alt: "Commercial Cleaning",
     caption: "Commercial Cleaning Solutions",
   },
   {
-    src: "/Slide3.png",
+    src: "/slideshow/slide4.jpg",
     alt: "Deep Cleaning",
     caption: "Deep Cleaning Services",
   },
   {
-    src: "/Slide4.png",
+    src: "/slideshow/slide5.jpg",
     alt: "Carpet Cleaning",
     caption: "Professional Carpet Cleaning",
   },
@@ -63,7 +63,7 @@ export default function ServiceSlideshow() {
             key={index}
             className={`slideshow-slide ${index === currentSlide ? "active" : ""}`}
             style={{
-              backgroundImage: `url(${image.src || "/placeholder.svg?height=400&width=600"})`,
+              backgroundImage: `url(${image.src})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
