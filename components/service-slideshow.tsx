@@ -5,27 +5,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const images = [
   {
-    src: "/slideshow/slide1.jpg",
+    src: "/Slide.png",
     alt: "Professional Cleaning Service",
     caption: "Professional Cleaning Services",
   },
   {
-    src: "/slideshow/slide2.jpg",
+    src: "/Slide1.png",
     alt: "End of Tenancy Cleaning",
     caption: "End of Tenancy Cleaning",
   },
   {
-    src: "/slideshow/slide3.jpg",
+    src: "/Slide2.png",
     alt: "Commercial Cleaning",
     caption: "Commercial Cleaning Solutions",
   },
   {
-    src: "/slideshow/slide4.jpg",
+    src: "/Slide3.png",
     alt: "Deep Cleaning",
     caption: "Deep Cleaning Services",
   },
   {
-    src: "/slideshow/slide5.jpg",
+    src: "/Slide4.png",
     alt: "Carpet Cleaning",
     caption: "Professional Carpet Cleaning",
   },
