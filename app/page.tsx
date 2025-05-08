@@ -24,6 +24,9 @@ export default function Home() {
           preload="auto"
           style={{ width: "100%", height: "100%" }}
         />
+        <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
+             <Link href="/book">Book Now</Link>
+          </Button>
       </section>
 
       {/* Dual Button Section */}
@@ -48,7 +51,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg about-image-animate">
               <Image
-                src={PLACEHOLDER || "/placeholder.svg"}
+                src="/Abouthome.png"
                 alt="About Melody Cleaning Services"
                 fill
                 className="object-cover"
