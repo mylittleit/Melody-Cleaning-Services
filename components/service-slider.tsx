@@ -26,7 +26,7 @@ const images = [
     alt: "Carpet Cleaning",
   },
   {
-    src: "/Slide6.png",
+    src: "/Slide9.png",
     alt: "Upholstery Cleaning",
   },
   {
