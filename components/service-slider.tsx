@@ -34,11 +34,11 @@ const images = [
     alt: "Event Cleaning",
   },
   {
-    src: "/Slide9.png",
+    src: "/Slide3.png",
     alt: "Office Cleaning",
   },
   {
-    src: "/Slide10.png",
+    src: "/Slide7.png",
     alt: "Residential Cleaning",
   },
   {
@@ -68,10 +68,6 @@ const images = [
   {
     src: "/Upholstery.png",
     alt: "Upholstery Cleaning",
-  },
-  {
-    src: "/IMG-20250428-WA0013.jpg",
-    alt: "Professional Cleaning",
   },
 ]
 
