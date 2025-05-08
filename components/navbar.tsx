@@ -44,11 +44,11 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/Melody.png"
+            src="/MelodyLogo.png"
             alt="Melody Cleaning Services Logo"
             width={120}
-            height={40}
-            className="h-auto w-auto"
+            height={14}
+            className="h-9 w-auto"
           />
         </Link>
 
