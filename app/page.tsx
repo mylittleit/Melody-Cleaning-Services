@@ -24,9 +24,6 @@ export default function Home() {
           preload="auto"
           style={{ width: "100%", height: "100%" }}
         />
-        <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
-             <Link href="/book">Book Now</Link>
-          </Button>
       </section>
 
       {/* Dual Button Section */}
@@ -81,13 +78,15 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundColor: "#f0f0f0",
+                backgroundImage: `url('/Carpet1.png')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="End of Tenancy" width={50} height={50} />
+                  <Image src="/Tenancy.png" alt="End of Tenancy" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Tenancy</CardTitle>
               </CardHeader>
@@ -107,13 +106,15 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundColor: "#f0f0f0",
+                backgroundImage: `url('/End.png')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="End of Construction" width={50} height={50} />
+                  <Image src="/Endbg.png" alt="End of Construction" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Construction</CardTitle>
               </CardHeader>
@@ -133,13 +134,15 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundColor: "#f0f0f0",
+                backgroundImage: `url('/Restaurantbg.png')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="Restaurants and Hotels" width={50} height={50} />
+                  <Image src="/Restauranticon.png" alt="Restaurants and Hotels" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Restaurants and Hotels</CardTitle>
               </CardHeader>
@@ -156,16 +159,17 @@ export default function Home() {
             </Card>
 
             {/* Service 4 */}
-            <Card
-              className="service-card relative overflow-hidden rounded-3xl"
+            className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundColor: "#f0f0f0",
+                backgroundImage: `url('/Deep.png')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="Deep Clean" width={50} height={50} />
+                  <Image src="/Carpet2.png" alt="Deep Clean" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Deep Clean</CardTitle>
               </CardHeader>
@@ -185,13 +189,15 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundColor: "#f0f0f0",
+                backgroundImage: `url('/Carpetbg.png')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="Carpet Cleaning" width={50} height={50} />
+                  <Image src="/Carpet.png" alt="Carpet Cleaning" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Carpet Cleaning</CardTitle>
               </CardHeader>
@@ -211,13 +217,15 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundColor: "#f0f0f0",
+                backgroundImage: `url('/Event.png')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src={PLACEHOLDER || "/placeholder.svg"} alt="Pre/Post Event" width={50} height={50} />
+                  <Image src="/Event3.png" alt="Pre/Post Event" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Pre/Post Event</CardTitle>
               </CardHeader>
