@@ -27,7 +27,7 @@ const images = [
   },
   {
     src: "/Slide9.png",
-    alt: "Upholstery Cleaning",
+    alt: "Pub Cleaning",
   },
   {
     src: "/Slide8.png",
