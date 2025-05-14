@@ -130,7 +130,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="text-gray-600">
                 <strong>Email:</strong>{" "}
-                <a href="mailto:melodycleaningservices@gmail.com">melodycleaningservices@gmail.com</a>
+                <a href="mailto:melodycleaningservices@yahoo.com">melodycleaningservices@yahoo.com</a>
               </li>
               <li className="text-gray-600">
                 <strong>Phone:</strong> <a href="tel:07453581984">07453581984</a>
