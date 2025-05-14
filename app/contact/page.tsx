@@ -82,8 +82,8 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-gray-600">
-                  <a href="mailto:melodycleaningservices@gmail.com" className="hover:text-primary">
-                    melodycleaningservices@gmail.com
+                  <a href="mailto:melodycleaningservices@yahoo.com" className="hover:text-primary">
+                    melodycleaningservices@yahoo.com
                   </a>
                 </p>
                 <p className="text-gray-600">
