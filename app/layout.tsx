@@ -21,6 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17036896370">
+       </script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+       gtag('config', 'AW-17036896370');
+       </script>
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Navbar />
