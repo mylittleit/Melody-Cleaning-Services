@@ -86,11 +86,6 @@ export default function ContactPage() {
                     melodycleaningservices@yahoo.com
                   </a>
                 </p>
-                <p className="text-gray-600">
-                  <a href="mailto:info@melodycleaningservices.com" className="hover:text-primary">
-                    info@melodycleaningservices.com
-                  </a>
-                </p>
                 <p className="mt-2 text-sm text-gray-500">We aim to respond to all emails within 24 hours.</p>
               </CardContent>
             </Card>
