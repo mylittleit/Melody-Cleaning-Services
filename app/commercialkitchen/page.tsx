@@ -13,7 +13,7 @@ const HeroSection = () => (
       playsInline
       className="absolute top-0 left-0 w-full h-full object-cover opacity-70"
     >
-      <source src="/videos/CommercialKitchenHero.mp4" type="video/mp4" />
+      <source src="/CommercialKitchenHero.mp4" type="video/mp4" />
     </video>
     <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center">
         <a href="#why" className="border border-white px-6 py-3 rounded-md text-white">Learn More</a>
@@ -112,23 +112,44 @@ const GallerySection = () => (
 const testimonials = [
   {
     text: "I’m convinced Melody Cleaning Services doesn’t just clean, they perform miracles. Our kitchen looked like it survived a cooking tornado after a 250-guest wedding prep. By morning, it sparkled like it had never been used. If I didn’t own the place, I would’ve thought we moved venues!",
-    name: "Chef Marco V., Owner of The Midnight Spoon",
+    name: "Chef Marco V., Owner of The Midnight Spoon"
   },
-  // Repeat for 2 more times if needed for now
+  {
+    text: "I planned every inch of my wedding, except the cleanup. I thought I’d cry walking into the venue the next day. Instead, Melody Cleaning had it looking better than when I booked it! Even the confetti in my husband’s shoe was gone. 10 stars if I could!",
+    name: "Mirabel A., Bridezilla turned Believer"
+  },
+  {
+    text: "My Airbnb guests left ketchup in places I can’t legally describe. Melody Cleaning came in like a SWAT team and handled everything while I drank coffee in fear. Now the place smells like eucalyptus and success.",
+    name: "Jordan K., Airbnb Superhost (barely)"
+  }
 ];
 
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
+
   return (
-    <section className="py-16 bg-white text-center">
-      <h2 className="text-3xl font-semibold mb-6">Why Our Clients Choose Us</h2>
-      <div
-        className="max-w-xl mx-auto cursor-pointer"
-        onMouseEnter={() => setIndex((prev) => (prev + 1) % testimonials.length)}
+    <section className="relative overflow-hidden py-16 text-white text-center">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
-        <div className="text-6xl text-purple-600 mb-4">“</div>
+        <source src="/TestimonialHeader.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay (for contrast if needed) */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
+
+      {/* Content */}
+      <div className="relative z-20 max-w-xl mx-auto cursor-pointer px-4" onMouseEnter={() => setIndex((prev) => (prev + 1) % testimonials.length)}>
+        <h2 className="text-3xl font-semibold mb-6">Why Our Clients Choose Us</h2>
+        <div className="text-6xl text-[#9AEDB6] mb-4">“</div>
         <p className="text-lg italic">{testimonials[index].text}</p>
-        <p className="mt-4 font-semibold">{testimonials[index].name}</p>
+        <p className="mt-4 font-bold text-[#9AEDB6]">{testimonials[index].name}</p>
       </div>
     </section>
   );
