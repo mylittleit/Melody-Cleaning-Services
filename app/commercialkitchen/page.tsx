@@ -84,8 +84,6 @@ const WhyChooseUs = () => (
   </section>
 );
 
-);
-
 const GallerySection = () => (
   <section id="gallery" className="py-16 bg-gray-50 text-center">
     <h2 className="text-3xl font-semibold mb-8">Gallery</h2>
