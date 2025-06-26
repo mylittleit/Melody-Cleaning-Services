@@ -11,11 +11,11 @@ const HeroSection = () => (
       loop
       muted
       playsInline
-      className="absolute top-0 left-0 w-full h-full object-cover opacity-70"
+      className="absolute top-0 left-0 w-full h-full object-cover opacity-100"
     >
       <source src="/CommercialKitchenHero.mp4" type="video/mp4" />
     </video>
-    <div className="relative z-10 h-full flex flex-col items-end justify-center text-white text-right pr-8">
+    <div className="relative z-10 h-full flex flex-col items-end justify-bottom text-white text-bottom pr-8">
       <a href="#why" className="text-white underline text-lg cursor-pointer">Learn More</a>
     </div>
   </section>
