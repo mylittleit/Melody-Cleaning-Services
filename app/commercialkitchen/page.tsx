@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 const HeroSection = () => (
-  <section className="relative w-full h-[80vh] bg-black">
+  <section className="relative w-full h-[100vh] bg-black">
     <video
       autoPlay
       loop
@@ -15,8 +15,8 @@ const HeroSection = () => (
     >
       <source src="/CommercialKitchenHero.mp4" type="video/mp4" />
     </video>
-    <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center">
-        <a href="#why" className="border border-white px-6 py-3 rounded-md text-white">Learn More</a>
+    <div className="relative z-10 h-full flex flex-col items-end justify-center text-white text-right pr-8">
+      <a href="#why" className="text-white underline text-lg cursor-pointer">Learn More</a>
     </div>
   </section>
 );
@@ -24,11 +24,11 @@ const HeroSection = () => (
 const StickyNav = () => (
   <nav className="sticky top-0 bg-white z-50 shadow-sm border-b">
     <div className="container mx-auto flex justify-center gap-8 py-2 text-sm font-medium">
-      <a href="#services" className="hover:text-primary">WHAT WE DO</a>
-      <a href="#why" className="hover:text-primary">WHY CHOOSE US</a>
-      <a href="#gallery" className="hover:text-primary">GALLERY</a>
-      <a href="#faqs" className="hover:text-primary">FAQs</a>
-      <a href="#contact" className="hover:text-primary">CONTACT US</a>
+      <a href="#services" className="hover:text-primary text-[#3a0162]">WHAT WE DO</a>
+      <a href="#why" className="hover:text-primary text-[#3a0162]">WHY CHOOSE US</a>
+      <a href="#gallery" className="hover:text-primary text-[#3a0162]">GALLERY</a>
+      <a href="#faqs" className="hover:text-primary text-[#3a0162]">FAQs</a>
+      <a href="#contact" className="hover:text-primary text-[#3a0162]">CONTACT US</a>
     </div>
   </nav>
 );
@@ -47,15 +47,15 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="py-16 bg-gray-50 text-center">
-    <h2 className="text-3xl font-semibold mb-8">Our Services</h2>
+  <section id="services" className="py-24 bg-gray-50 text-center">
+    <h2 className="text-3xl font-semibold mb-8" style={{ color: 'transparent' }}>Our Services</h2>
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 justify-center max-w-6xl mx-auto">
       {services.map((service, index) => (
         <div
           key={index}
-          className="relative w-32 h-32 bg-[#3a0162] text-[#9aedb6] rounded-full flex items-center justify-center text-sm hover:scale-105 transition duration-300 group"
+          className="relative w-32 h-32 bg-white text-white rounded-full flex items-center justify-center text-sm hover:scale-105 transition duration-300 group border"
         >
-          <span className="z-10 cursor-pointer text-center px-2">{service.title}</span>
+          <span className="z-10 cursor-pointer text-center px-2 invisible">{service.title}</span>
           <div className="absolute inset-0 bg-white text-[#3a0162] opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 rounded-full flex items-center justify-center text-xs text-center">
             {service.details}
           </div>
@@ -66,8 +66,8 @@ const ServicesSection = () => (
 );
 
 const WhyChooseUs = () => (
-  <section id="why" className="py-16 bg-white text-center">
-    <h2 className="text-3xl font-semibold mb-10" style={{ color: '#9aedb6' }}>Why Choose Us</h2>
+  <section id="why" className="py-24 bg-white text-center">
+    <h2 className="text-3xl font-semibold mb-10 text-[#9aedb6]">Why Choose Us</h2>
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
       {["Certified and Insured", "Compliant with Food Safety Protocols", "24hr Scheduling", "Affordable Pricing"].map((reason, i) => (
         <div
@@ -75,7 +75,16 @@ const WhyChooseUs = () => (
           className="p-6 bg-[#3a0162] rounded-[1300px] shadow-md flex flex-col items-center justify-center transform rotate-1 hover:rotate-0 transition duration-300"
         >
           <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
-            <img src={`/images/icon${i + 1}.png`} alt={reason} className="w-full h-full object-cover" />
+            <img src={`/Insured.png`} alt={reason} className="w-full h-full object-cover" />
+          </div>
+          <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
+            <img src={`/Food.png`} alt={reason} className="w-full h-full object-cover" />
+          </div>
+          <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
+            <img src={`/24hour.png`} alt={reason} className="w-full h-full object-cover" />
+          </div>
+          <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
+            <img src={`/Price.png`} alt={reason} className="w-full h-full object-cover" />
           </div>
           <p className="text-[#9aedb6]">{reason}</p>
         </div>
@@ -84,65 +93,56 @@ const WhyChooseUs = () => (
   </section>
 );
 
-const GallerySection = () => (
-  <section id="gallery" className="py-16 bg-gray-50 text-center">
-    <h2 className="text-3xl font-semibold mb-8">Gallery</h2>
-    <div className="flex overflow-x-scroll gap-4 px-4 scrollbar-hide">
-      {[1, 2, 3, 4, 5].map((n) => (
-        <Image
-          key={n}
-          src={`/images/gallery${n}.jpg`}
-          alt={`Gallery ${n}`}
-          width={300}
-          height={200}
-          className="rounded-lg shadow-md"
-        />
-      ))}
-      {["video1.mp4", "video2.mp4"].map((src, i) => (
-        <video key={i} controls className="w-80 h-48 rounded-lg">
-          <source src={`/videos/${src}`} type="video/mp4" />
-        </video>
-      ))}
-    </div>
-  </section>
-);
+const GallerySection = () => {
+  const [index, setIndex] = useState(0);
+  const galleryItems = [
+    <video key="v1" controls className="w-full h-[60vh] rounded-lg">
+      <source src="/videos/video1.mp4" type="video/mp4" />
+    </video>,
+    <Image key="img2" src="/images/gallery2.jpg" alt="Gallery 2" width={800} height={400} className="rounded-lg" />,
+    <Image key="img3" src="/images/gallery3.jpg" alt="Gallery 3" width={800} height={400} className="rounded-lg" />,
+    <Image key="img4" src="/images/gallery4.jpg" alt="Gallery 4" width={800} height={400} className="rounded-lg" />,
+    <Image key="img5" src="/images/gallery5.jpg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
+  ];
 
-const testimonials = [
-  {
-    text: "I’m convinced Melody Cleaning Services doesn’t just clean, they perform miracles. Our kitchen looked like it survived a cooking tornado after a 250-guest wedding prep. By morning, it sparkled like it had never been used. If I didn’t own the place, I would’ve thought we moved venues!",
-    name: "Chef Marco V., Owner of The Midnight Spoon"
-  },
-  {
-    text: "I planned every inch of my wedding, except the cleanup. I thought I’d cry walking into the venue the next day. Instead, Melody Cleaning had it looking better than when I booked it! Even the confetti in my husband’s shoe was gone. 10 stars if I could!",
-    name: "Mirabel A., Bridezilla turned Believer"
-  },
-  {
-    text: "My Airbnb guests left ketchup in places I can’t legally describe. Melody Cleaning came in like a SWAT team and handled everything while I drank coffee in fear. Now the place smells like eucalyptus and success.",
-    name: "Jordan K., Airbnb Superhost (barely)"
-  }
-];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % galleryItems.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section id="gallery" className="py-24 bg-gray-50 text-center">
+      <h2 className="text-3xl font-semibold mb-8 text-[#3a0162]">Gallery</h2>
+      <div className="max-w-4xl mx-auto">{galleryItems[index]}</div>
+    </section>
+  );
+};
 
 const Testimonials = () => {
+  const testimonials = [
+    {
+      text: "I’m convinced Melody Cleaning Services doesn’t just clean, they perform miracles.",
+      name: "Chef Marco V., Owner of The Midnight Spoon"
+    },
+    {
+      text: "Between flour storms and sugar glazes, our kitchen is a disaster nightly. Melody’s team arrives like a cleaning ballet—swift, spotless, and utterly charming. Even our ovens sparkle like tiaras. Five stars!",
+      name: "Lady Brioche du Pan, Owner, The Royal Crumb Bakery"
+    },
+    {
+      text: "I run one of the busiest open-flame kitchens. The grease buildup alone could terrify health inspectors. Melody Cleaning Services handled it like pros. By sunrise, the kitchen looked like it was built yesterday. Brilliant work!",
+      name: "Gordon Flames, Executive Chef, Hell’s Ember Kitchen"
+    }
+  ];
   const [index, setIndex] = useState(0);
 
   return (
-    <section className="relative overflow-hidden py-16 text-white text-center">
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src="/TestimonialHeader.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+    <section className="relative overflow-hidden py-24 text-white text-center">
+      <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <source src="/Testimonial.mp4" type="video/mp4" />
       </video>
-
-      {/* Overlay (for contrast if needed) */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-
-      {/* Content */}
       <div className="relative z-20 max-w-xl mx-auto cursor-pointer px-4" onMouseEnter={() => setIndex((prev) => (prev + 1) % testimonials.length)}>
         <h2 className="text-3xl font-semibold mb-6">Why Our Clients Choose Us</h2>
         <div className="text-6xl text-[#9AEDB6] mb-4">“</div>
@@ -153,26 +153,24 @@ const Testimonials = () => {
   );
 };
 
-const faqs = [
-  { q: "What areas do you cover?", a: "We currently serve Commercial kitchens and Restaurants across London and surrounding regions in the UK. For larger projects, we’re happy to travel beyond." },
-  { q: "Do I need to be home or on-site during the cleaning?", a: "Not at all! Many of our clients give us access and go about their day. We’re fully insured and trustworthy. You’re also welcome to stay if you prefer." },
-  { q: "How long does cleaning usually take?", a: "It depends on the size and services booked, but most jobs are completed within a few hours." },
-  { q: "Are your products eco-friendly?", a: "Yes, we use certified eco-friendly and food-safe cleaning products." },
-  { q: "Do you offer weekend or night cleaning?", a: "Absolutely! We work 24/7 to meet your needs." },
-  { q: "What’s your pricing model?", a: "We provide customized quotes based on scope and frequency." },
-  { q: "Is your team trained?", a: "All our cleaners are trained, certified and undergo regular updates." },
-  { q: "Can I schedule recurring cleanings?", a: "Yes, we offer flexible recurring cleaning packages." },
-  { q: "Do you handle emergency cleanups?", a: "Yes, we offer rapid-response emergency services." },
-  { q: "What if I’m not satisfied?", a: "We guarantee satisfaction – we’ll make it right or refund." },
-];
-
 const FAQSection = () => {
+  const faqs = [
+    { q: "What areas do you cover?", a: "We currently serve Commercial kitchens and Restaurants across London..." },
+    { q: "Do I need to be home or on-site during the cleaning?", a: "Not at all!..." },
+    { q: "How long does cleaning usually take?", a: "It depends on the size and services booked..." },
+    { q: "Are your products eco-friendly?", a: "Yes, we use certified eco-friendly..." },
+    { q: "Do you offer weekend or night cleaning?", a: "Absolutely! We work 24/7..." },
+    { q: "What’s your pricing model?", a: "We provide customized quotes..." },
+    { q: "Is your team trained?", a: "All our cleaners are trained, certified..." },
+    { q: "Can I schedule recurring cleanings?", a: "Yes, we offer flexible recurring packages." },
+    { q: "Do you handle emergency cleanups?", a: "Yes, we offer rapid-response emergency services." },
+    { q: "What if I’m not satisfied?", a: "We guarantee satisfaction..." },
+  ];
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
-    <section
-      id="faqs"
-      className="py-16 bg-gray-100 bg-[url('/images/faq-bg.jpg')] bg-cover bg-center bg-no-repeat"
-    >
+    <section id="faqs" className="py-24 text-[#3a0162] bg-[url('/images/faq-bg.jpg')] bg-cover bg-center bg-no-repeat">
       <h2 className="text-3xl font-semibold text-center mb-8">Frequently Asked Questions</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
         {faqs.map((item, i) => (
@@ -193,15 +191,8 @@ const FAQSection = () => {
 };
 
 const ContactSection = () => (
-  <section id="contact" className="py-16 bg-[#3a0162] text-white">
+  <section id="contact" className="py-24 bg-[#3a0162] text-white">
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div>
-        <h2 className="text-3xl font-semibold mb-6">Contact Us</h2>
-        <h3 className="text-xl font-medium mb-4">Request A Quote</h3>
-        <a href="/book" className="text-white underline mb-2 inline-block">Fill Our Booking Form</a>
-        <p className="mb-1">Call us: <a href="https://wa.me/447000000000" className="text-white">+44 7000 000000</a></p>
-        <p>Email: <a href="mailto:info@melodycleaningservices.com" className="text-white">info@melodycleaningservices.com</a></p>
-      </div>
       <iframe
         src="https://www.google.com/maps?q=London,+UK&output=embed"
         width="100%"
@@ -210,6 +201,13 @@ const ContactSection = () => (
         allowFullScreen
         loading="lazy"
       ></iframe>
+      <div>
+        <h2 className="text-3xl font-semibold mb-6 text-[#9aedb6]">Contact Us</h2>
+        <h3 className="text-xl font-medium mb-4">Request A Quote</h3>
+        <a href="/book" className="text-white underline mb-2 inline-block">Fill Our Booking Form</a>
+        <p className="mb-1">Call us: <a href="https://wa.me/447000000000" className="text-white">+44 7000 000000</a></p>
+        <p>Email: <a href="mailto:info@melodycleaningservices.com" className="text-white">info@melodycleaningservices.com</a></p>
+      </div>
     </div>
   </section>
 );
