@@ -203,7 +203,7 @@ const Navbar = () => {
             >
               COMMECIAL KITCHEN CLEANING
             </Link>
-            <Link href="/" className="text-lg font-bold text-[#9aedb6] bg-[#3a0162] rounded-[12px] px-[96px] py-[48px] mobile-menu-item" onClick={toggleMenu}>
+            <Link href="/" className="text-lg font-bold text-[#9aedb6] bg-[#3a0162] rounded-[25px] px-[56px] py-[28px] mobile-menu-item" onClick={toggleMenu}>
               Home
             </Link>
             <Link
