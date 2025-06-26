@@ -48,11 +48,12 @@ const services = [
 
 const ServicesSection = () => (
   <section id="services" className="py-24 bg-gray-50 text-center">
-    <h2 className="text-3xl font-semibold mb-8" style={{ color: 'transparent' }}>Our Services</h2>
+    <h2 className="text-3xl font-semibold mb-8" style={{ color: '#3a0162' }}>OUR SERVICES</h2>
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 justify-center max-w-6xl mx-auto">
       {services.map((service, index) => (
         <div
           key={index}
+          className="relative w-32 h-32 bg-[#3a0162] text-[#9aedb6] rounded-full flex items-center justify-center text-sm hover:scale-105 transition duration-300 group"
           className="relative w-32 h-32 bg-white text-white rounded-full flex items-center justify-center text-sm hover:scale-105 transition duration-300 group border"
         >
           <span className="z-10 cursor-pointer text-center px-2 invisible">{service.title}</span>
@@ -65,28 +66,38 @@ const ServicesSection = () => (
   </section>
 );
 
+const reasons = [
+  {
+    title: "Certified and Insured",
+    image: "/Insured.png",
+  },
+  {
+    title: "Compliant with Food Safety Protocols",
+    image: "/Food.png",
+  },
+  {
+    title: "24hr Scheduling",
+    image: "/24hour.png",
+  },
+  {
+    title: "Affordable Pricing",
+    image: "Price.png",
+  },
+];
+
 const WhyChooseUs = () => (
   <section id="why" className="py-24 bg-white text-center">
     <h2 className="text-3xl font-semibold mb-10 text-[#9aedb6]">Why Choose Us</h2>
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-      {["Certified and Insured", "Compliant with Food Safety Protocols", "24hr Scheduling", "Affordable Pricing"].map((reason, i) => (
+      {reasons.map((reason, i) => (
         <div
           key={i}
           className="p-6 bg-[#3a0162] rounded-[1300px] shadow-md flex flex-col items-center justify-center transform rotate-1 hover:rotate-0 transition duration-300"
         >
           <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
-            <img src={`/Insured.png`} alt={reason} className="w-full h-full object-cover" />
+            <img src={reason.image} alt={reason.title} className="w-full h-full object-cover" />
           </div>
-          <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
-            <img src={`/Food.png`} alt={reason} className="w-full h-full object-cover" />
-          </div>
-          <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
-            <img src={`/24hour.png`} alt={reason} className="w-full h-full object-cover" />
-          </div>
-          <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
-            <img src={`/Price.png`} alt={reason} className="w-full h-full object-cover" />
-          </div>
-          <p className="text-[#9aedb6]">{reason}</p>
+          <p className="text-white font-medium">{reason.title}</p>
         </div>
       ))}
     </div>
