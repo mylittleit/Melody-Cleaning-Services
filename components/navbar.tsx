@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-6">
-          <Link href="/commercialkitchen" className="text-sm font-bold text-[#9aedb6] bg-[#3a0162] hover:text-primary rounded-[12px] px-[96px] py-[48px]">
+          <Link href="/commercialkitchen" className="text-sm font-bold text-[#9aedb6] bg-[#3a0162] hover:text-primary rounded-[25px] px-[56px] py-[28px]">
             COMMERCIAL KITCHEN CLEANING
           </Link>
           <Link href="/" className="text-sm font-medium hover:text-primary">
