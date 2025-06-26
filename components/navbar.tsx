@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-6">
-          <Link href="" className="text-sm font-medium hover:text-primary">
+          <Link href="/commercialkitchen" className="text-sm font-bold bg-[#3a0162] text-[#9aedb6] hover:text-primary px-2 py-1">
             COMMERCIAL KITCHEN CLEANING
           </Link>
           <Link href="/" className="text-sm font-medium hover:text-primary">
@@ -196,7 +196,14 @@ const Navbar = () => {
       {isOpen && (
         <div ref={menuRef} className="fixed inset-0 z-50 flex flex-col bg-[#3A0162] pt-16 mobile-menu-container">
           <div className="container flex flex-col space-y-4 p-4">
-            <Link href="/" className="py-2 text-lg font-medium text-[#9AEDB6] mobile-menu-item" onClick={toggleMenu}>
+            <Link
+              href="/commercialkitchen"
+              className="py-2 text-lg font-medium text-[#9AEDB6] mobile-menu-item"
+              onClick={toggleMenu}
+            >
+              COMMECIAL KITCHEN CLEANING
+            </Link>
+            <Link href="/" className="py-2 px-3 text-lg font-bold bg-[#3a0162] text-[#9aedb6] mobile-menu-item" onClick={toggleMenu}>
               Home
             </Link>
             <Link
