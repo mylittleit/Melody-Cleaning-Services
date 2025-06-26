@@ -13,15 +13,10 @@ const HeroSection = () => (
       playsInline
       className="absolute top-0 left-0 w-full h-full object-cover opacity-70"
     >
-      <source src="/videos/hero-video.mp4" type="video/mp4" />
+      <source src="/videos/CommercialKitchenHero.mp4" type="video/mp4" />
     </video>
     <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center">
-      <h1 className="text-4xl font-bold">Commercial Kitchen Cleaning Services</h1>
-      <p className="mt-4">Hygiene you can trust, results you can see.</p>
-      <div className="mt-6 flex gap-4">
-        <a href="#contact" className="bg-primary px-6 py-3 rounded-md text-white">Get a Quote</a>
         <a href="#why" className="border border-white px-6 py-3 rounded-md text-white">Learn More</a>
-      </div>
     </div>
   </section>
 );
@@ -58,10 +53,10 @@ const ServicesSection = () => (
       {services.map((service, index) => (
         <div
           key={index}
-          className="relative w-32 h-32 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm hover:scale-105 transition duration-300 group"
+          className="relative w-32 h-32 bg-[#3a0162] text-[#9aedb6] rounded-full flex items-center justify-center text-sm hover:scale-105 transition duration-300 group"
         >
           <span className="z-10 cursor-pointer text-center px-2">{service.title}</span>
-          <div className="absolute inset-0 bg-white text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 rounded-full flex items-center justify-center text-xs text-center">
+          <div className="absolute inset-0 bg-white text-[#3a0162] opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 rounded-full flex items-center justify-center text-xs text-center">
             {service.details}
           </div>
         </div>
@@ -72,21 +67,23 @@ const ServicesSection = () => (
 
 const WhyChooseUs = () => (
   <section id="why" className="py-16 bg-white text-center">
-    <h2 className="text-3xl font-semibold mb-10">Why Choose Us</h2>
+    <h2 className="text-3xl font-semibold mb-10" style={{ color: '#9aedb6' }}>Why Choose Us</h2>
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
       {["Certified and Insured", "Compliant with Food Safety Protocols", "24hr Scheduling", "Affordable Pricing"].map((reason, i) => (
         <div
           key={i}
-          className="p-6 bg-gray-100 rounded-[1300px] shadow-md flex flex-col items-center justify-center transform rotate-1 hover:rotate-0 transition duration-300"
+          className="p-6 bg-[#3a0162] rounded-[1300px] shadow-md flex flex-col items-center justify-center transform rotate-1 hover:rotate-0 transition duration-300"
         >
-          <div className="bg-purple-600 w-12 h-12 rounded-[40%] flex items-center justify-center text-white text-xl font-bold mb-4">
-            {reason.charAt(0)}
+          <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
+            <img src={`/images/icon${i + 1}.png`} alt={reason} className="w-full h-full object-cover" />
           </div>
-          <p>{reason}</p>
+          <p className="text-[#9aedb6]">{reason}</p>
         </div>
       ))}
     </div>
   </section>
+);
+
 );
 
 const GallerySection = () => (
