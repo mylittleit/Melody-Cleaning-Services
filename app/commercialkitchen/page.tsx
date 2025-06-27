@@ -2,19 +2,20 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 
 const HeroSection = () => (
   <section className="relative w-full h-[100vh] bg-black">
-    <video
-      autoPlay
-      loop
-      muted
-      playsInline
-      className="absolute top-0 left-0 w-full h-full object-cover opacity-100"
-    >
-      <source src="/CommercialKitchenHero.mp4" type="video/mp4" />
-    </video>
+    <a href="https://www.melodycleaningservices.com/book" target="_blank" rel="noopener noreferrer">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-100 cursor-pointer"
+      >
+        <source src="/CommercialKitchenHero.mp4" type="video/mp4" />
+      </video>
+    </a>
   </section>
 );
 
@@ -45,16 +46,18 @@ const services = [
 
 const ServicesSection = () => (
   <section id="services" className="py-24 bg-gray-50 text-center">
-    <h2 className="text-3xl font-semibold mb-8" style={{ color: '#3a0162' }}>OUR SERVICES</h2>
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 justify-center max-w-6xl mx-auto">
+    <h2 className="text-3xl font-semibold mb-8 text-[#3a0162]">OUR SERVICES</h2>
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
       {services.map((service, index) => (
         <div
           key={index}
-          className="relative w-32 h-32 bg-[#3a0162] text-[#9aedb6] rounded-full flex items-center justify-center text-sm hover:scale-105 transition duration-300 group"
-          className="relative w-32 h-32 bg-white text-white rounded-full flex items-center justify-center text-sm hover:scale-105 transition duration-300 group border"
+          className="relative w-32 h-32 mx-auto group"
         >
-          <div className="absolute inset-0 bg-white text-[#3a0162] opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 rounded-full flex items-center justify-center text-xs text-center">
-            {service.details}
+          <div className="absolute inset-0 bg-[#3a0162] text-[#9aedb6] rounded-full flex items-center justify-center text-xs text-center transition-opacity duration-300 group-hover:opacity-0">
+            <span className="px-2">{service.title}</span>
+          </div>
+          <div className="absolute inset-0 bg-white text-[#3a0162] rounded-full flex items-center justify-center text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-2">
+            <span>{service.details}</span>
           </div>
         </div>
       ))}
@@ -72,7 +75,9 @@ const WhyChooseUs = () => (
           className="p-6 bg-[#3a0162] rounded-[1300px] shadow-md flex flex-col items-center justify-center transform rotate-1 hover:rotate-0 transition duration-300"
         >
           <div className="w-12 h-12 rounded-full overflow-hidden mb-4">
-            <img src={/Insured.png} alt={reason} className="w-full h-full object-cover" />
+            <img src="/Insured.png" alt={reason} className="w-full h-full object-cover" />
+          </div>
+          <p className="text-white text-sm">{reason}</p>
         </div>
       ))}
     </div>
