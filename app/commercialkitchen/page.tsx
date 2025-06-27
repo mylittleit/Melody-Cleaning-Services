@@ -190,7 +190,7 @@ const FAQSection = () => {
   return (
     <section id="faqs" className="relative py-24 text-[#3a0162] overflow-hidden">
   <Image
-    src="/images/gallery2.jpg"
+    src="/FAQsBG.png"
     alt="Background"
     fill
     className="object-cover opacity-30 z-0"
