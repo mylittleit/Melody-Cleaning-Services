@@ -45,22 +45,25 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="py-24 bg-gray-50 text-center">
-    <h2 className="text-3xl font-semibold mb-8 text-[#3a0162] poppins-bold">OUR SERVICES</h2>
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
-      {services.map((service, index) => (
-        <div
-          key={index}
-          className="relative w-32 h-32 mx-auto group"
-        >
-          <div className="absolute inset-0 bg-[#3a0162] text-[#9aedb6] rounded-full flex items-center justify-center text-xs text-center transition-opacity duration-300 group-hover:opacity-0">
-            <span className="px-2">{service.title}</span>
+  <section
+    id="services"
+    className="py-24 text-center bg-[url('/FAQsBG.png')] bg-cover bg-center bg-no-repeat relative"
+  >
+    <div className="absolute inset-0 bg-white bg-opacity-70 z-0"></div>
+    <div className="relative z-10">
+      <h2 className="text-3xl font-semibold mb-8 text-[#3a0162] poppins-bold">OUR SERVICES</h2>
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        {services.map((service, index) => (
+          <div key={index} className="relative w-32 h-32 mx-auto group">
+            <div className="absolute inset-0 bg-[#3a0162] text-[#9aedb6] rounded-full flex items-center justify-center text-xs text-center transition-opacity duration-300 group-hover:opacity-0">
+              <span className="px-2">{service.title}</span>
+            </div>
+            <div className="absolute inset-0 bg-white text-[#3a0162] rounded-full flex items-center justify-center text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-2">
+              <span>{service.details}</span>
+            </div>
           </div>
-          <div className="absolute inset-0 bg-white text-[#3a0162] rounded-full flex items-center justify-center text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-2">
-            <span>{service.details}</span>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 );
