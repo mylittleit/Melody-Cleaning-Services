@@ -155,19 +155,78 @@ const Testimonials = () => {
       text: "I run one of the busiest open-flame kitchens. The grease buildup alone could terrify health inspectors. Melody Cleaning Services handled it like pros. By sunrise, the kitchen looked like it was built yesterday. Brilliant work!",
       name: "Gordon Flames, Executive Chef, Hell’s Ember Kitchen"
     }
+    {
+      text: "We cater to 300 guests a night, and the kitchen looks like a war zone afterward. Melody Cleaning doesn’t flinch. They arrive with smiles and leave behind a space cleaner than a Michelin showroom. Impeccable service.",
+      name: "Chef Lorenzo Blaze, Head Chef, Inferno Bistro"
+    },
+    {
+      text: "Being plant-based doesn’t mean being mess-free 😂. Between turmeric, beetroot, and coconut oil, our kitchen gets stained fast. Melody Cleaning handled it like artists. Even our cold press area gleamed!",
+      name: "Ms. Peaches Gold, Restaurateur, Vegan Queens London"
+    },
+      {
+      text: "We run 24 hours. Our grills are ancient. Our staff are messy. Melody Cleaning came in at 2AM and by 5AM we were health-inspector-ready. Can’t recommend them enough.",
+      name: "Nigel Steam, Head Chef, The Industrial Grubhouse"
+    },
+        {
+      text: "Melody Cleaning arrived in silence and left in sparkle. We barely noticed them working, but noticed the transformation. Every silver surface now doubles as a mirror. Elite service for elite spaces.",
+      name: "Baroness Fifi du Fork, Owner, Le Luxe Supper Club"
+    },
   ];
+  import { useEffect, useState } from 'react';
+
+const TestimonialSection = () => {
+  const testimonials = [
+    { text: "Melody Cleaning made our kitchen sparkle like new. Absolutely flawless job!", name: "Chef Tunde, Bistro 54" },
+    { text: "They handled our industrial grease trap without fuss. Highly professional.", name: "Mrs. Dami, FoodCourt NG" },
+    { text: "Even our staff were surprised how spotless the grill was. Truly magic!", name: "Kingsley, Burger Stack" },
+    { text: "The cleaning left our equipment looking brand new. Worth every naira!", name: "Chef Peace, Vegan Table" },
+  ];
+
   const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  // Auto-rotate every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false); // start fade-out
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % testimonials.length);
+        setFade(true); // fade-in next
+      }, 500); // delay swap to match animation
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="relative overflow-hidden py-24 text-white text-center">
-      <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <section className="relative overflow-hidden py-24 text-black text-center">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
         <source src="/Testimonial.mp4" type="video/mp4" />
       </video>
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-      <div className="relative z-20 max-w-xl mx-auto cursor-pointer px-4" onMouseEnter={() => setIndex((prev) => (prev + 1) % testimonials.length)}>
-        <h2 className="text-3xl font-semibold mb-6 text-[#9AEDB6] poppins-bold">WHY OUR CLIENTS CHOOSE US</h2>
+
+      <div className="absolute top-0 left-0 w-full h-full bg-white/100 z-10"></div>
+
+      <div
+        className="relative z-20 max-w-xl mx-auto px-4 transition-opacity duration-500 cursor-pointer"
+        onMouseEnter={() => {
+          setFade(false);
+          setTimeout(() => {
+            setIndex((prev) => (prev + 1) % testimonials.length);
+            setFade(true);
+          }, 200);
+        }}
+        style={{ opacity: fade ? 1 : 0 }}
+      >
+        <h2 className="text-3xl font-semibold mb-6 text-[#9AEDB6] poppins-bold">
+          WHY OUR CLIENTS CHOOSE US
+        </h2>
         <div className="text-6xl text-[#3a0162] mb-4">“</div>
-        <p className="text-lg italic">{testimonials[index].text}</p>
+        <p className="text-lg">{testimonials[index].text}</p>
         <p className="mt-4 font-bold text-[#3a0162]">{testimonials[index].name}</p>
       </div>
     </section>
