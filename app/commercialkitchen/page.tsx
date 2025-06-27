@@ -154,7 +154,7 @@ const Testimonials = () => {
     {
       text: "I run one of the busiest open-flame kitchens. The grease buildup alone could terrify health inspectors. Melody Cleaning Services handled it like pros. By sunrise, the kitchen looked like it was built yesterday. Brilliant work!",
       name: "Gordon Flames, Executive Chef, Hell’s Ember Kitchen"
-    }
+    },
     {
       text: "We cater to 300 guests a night, and the kitchen looks like a war zone afterward. Melody Cleaning doesn’t flinch. They arrive with smiles and leave behind a space cleaner than a Michelin showroom. Impeccable service.",
       name: "Chef Lorenzo Blaze, Head Chef, Inferno Bistro"
