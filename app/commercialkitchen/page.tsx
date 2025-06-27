@@ -237,8 +237,8 @@ const ContactSection = () => (
         <h2 className="text-3xl font-semibold mb-6 text-[#9aedb6] poppins-bold">CONTACT US</h2>
         <h3 className="text-xl font-medium mb-4">Request A Quote</h3>
         <a href="/book" className="text-white underline mb-2 inline-block">Fill Our Booking Form</a>
-        <p className="mb-1">Call us: <a href="https://wa.me/447000000000" className="text-white">+44 7000 000000</a></p>
-        <p>Email: <a href="mailto:info@melodycleaningservices.com" className="text-white">info@melodycleaningservices.com</a></p>
+        <p className="mb-1">Call us: <a href="https://wa.me/447000000000" className="text-white">07453581984</a></p>
+        <p>Email: <a href="mailto:info@melodycleaningservices.com" className="text-white">contactmelodycleaning@gmail.com</a></p>
       </div>
     </div>
   </section>
