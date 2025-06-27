@@ -95,7 +95,7 @@ const WhyChooseUs = () => {
             className="bg-[#3a0162] text-white rounded-[1300px] shadow-lg p-6 flex flex-col items-center justify-center transform hover:scale-105 transition duration-300"
           >
             <div className="w-16 h-16 mb-4">
-              <img src={reason.icon} alt={reason.title} className="w-full h-full object-contain" />
+              <img src={reason.icon} alt={reason.title} className="w-full h-full object-contain rounded-full" />
             </div>
             <p className="text-sm font-semibold">{reason.title}</p>
           </div>
