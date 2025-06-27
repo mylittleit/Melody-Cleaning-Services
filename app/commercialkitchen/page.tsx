@@ -199,7 +199,7 @@ const Testimonials = () => {
         <source src="/Testimonial.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute top-0 left-0 w-full h-full bg-white/100 z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-white/20 z-10"></div>
 
       <div
         className="relative z-20 max-w-xl mx-auto px-4 transition-opacity duration-500 cursor-pointer"
