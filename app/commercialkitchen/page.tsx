@@ -69,19 +69,19 @@ const WhyChooseUs = () => {
   const reasons = [
     {
       title: "Certified and Insured",
-      icon: "/images/Insured.png"
+      icon: "/Insured.png"
     },
     {
       title: "Compliant with Food Safety Protocols",
-      icon: "/images/Food.png"
+      icon: "/Food.png"
     },
     {
       title: "24hr Scheduling",
-      icon: "/images/24hour.png"
+      icon: "/24hour.png"
     },
     {
       title: "Affordable Pricing",
-      icon: "/images/Price.png"
+      icon: "/Price.png"
     }
   ];
 
