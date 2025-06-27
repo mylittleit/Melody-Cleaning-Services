@@ -46,7 +46,7 @@ const services = [
 
 const ServicesSection = () => (
   <section id="services" className="py-24 bg-gray-50 text-center">
-    <h2 className="text-3xl font-semibold mb-8 text-[#3a0162]">OUR SERVICES</h2>
+    <h2 className="text-3xl font-semibold mb-8 text-[#3a0162] poppins-bold">OUR SERVICES</h2>
     <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
       {services.map((service, index) => (
         <div
@@ -87,7 +87,7 @@ const WhyChooseUs = () => {
 
   return (
     <section id="why" className="py-24 bg-white text-center">
-      <h2 className="text-3xl font-semibold mb-10 text-[#3a0162]">WHY CHOOSE US</h2>
+      <h2 className="text-3xl font-semibold mb-10 text-[#3a0162] poppins-bold">WHY CHOOSE US</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
         {reasons.map((reason, i) => (
           <div
@@ -132,7 +132,7 @@ const GallerySection = () => {
 
   return (
     <section id="gallery" className="py-24 bg-gray-50 text-center">
-      <h2 className="text-3xl font-semibold mb-8 text-[#3a0162]">GALLERY</h2>
+      <h2 className="text-3xl font-semibold mb-8 text-[#3a0162] poppins-bold">GALLERY</h2>
       <div className="max-w-4xl mx-auto">{galleryItems[index]}</div>
     </section>
   );
@@ -162,7 +162,7 @@ const Testimonials = () => {
       </video>
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
       <div className="relative z-20 max-w-xl mx-auto cursor-pointer px-4" onMouseEnter={() => setIndex((prev) => (prev + 1) % testimonials.length)}>
-        <h2 className="text-3xl font-semibold mb-6 text-[#9AEDB6]">WHY OUR CLIENTS CHOOSE US</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-[#9AEDB6] poppins-bold">WHY OUR CLIENTS CHOOSE US</h2>
         <div className="text-6xl text-[#3a0162] mb-4">“</div>
         <p className="text-lg italic">{testimonials[index].text}</p>
         <p className="mt-4 font-bold text-[#3a0162]">{testimonials[index].name}</p>
@@ -197,7 +197,7 @@ const FAQSection = () => {
       />
       <div className="absolute inset-0 bg-white bg-opacity-60 z-0" />
       <div className="relative z-10">
-        <h2 className="text-3xl font-semibold text-center mb-8">FREQUENTLY ASKED QUESTIONS</h2>
+        <h2 className="text-3xl font-semibold text-center mb-8 poppins-bold">FREQUENTLY ASKED QUESTIONS</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {faqs.map((item, i) => (
             <div key={i}>
@@ -231,7 +231,7 @@ const ContactSection = () => (
         loading="lazy"
       ></iframe>
       <div>
-        <h2 className="text-3xl font-semibold mb-6 text-[#9aedb6]">CONTACT US</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-[#9aedb6] poppins-bold">CONTACT US</h2>
         <h3 className="text-xl font-medium mb-4">Request A Quote</h3>
         <a href="/book" className="text-white underline mb-2 inline-block">Fill Our Booking Form</a>
         <p className="mb-1">Call us: <a href="https://wa.me/447000000000" className="text-white">+44 7000 000000</a></p>
