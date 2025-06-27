@@ -75,6 +75,12 @@
   }
 }
 
+/* ✅ Added utility class for Poppins Bold */
+.poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
 /* Update the hero section CSS for better mobile responsiveness */
 
 /* Find the .hero-section class and update it */
