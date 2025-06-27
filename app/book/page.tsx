@@ -81,6 +81,13 @@ export default function BookingPage() {
       if (data.success) {
         setIsSuccess(true)
         form.reset()
+        
+        // ✅ Google Ads Event Snippet for Conversion Tracking
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-17036896370/0D_uCLra3skaEPLQ6bs_'
+          });
+        }
       } else {
         throw new Error(data.message || "Failed to submit booking")
       }
