@@ -69,19 +69,19 @@ const WhyChooseUs = () => {
   const reasons = [
     {
       title: "Certified and Insured",
-      icon: "/Insured.png"
+      icon: "/CKCInsured.png"
     },
     {
       title: "Compliant with Food Safety Protocols",
-      icon: "/Food.png"
+      icon: "/CKCFood.png"
     },
     {
       title: "24hr Scheduling",
-      icon: "/24hour.png"
+      icon: "/CKCHour.png"
     },
     {
       title: "Affordable Pricing",
-      icon: "/Price.png"
+      icon: "/CKCPrice.png"
     }
   ];
 
@@ -109,12 +109,18 @@ const GallerySection = () => {
   const [index, setIndex] = useState(0);
   const galleryItems = [
     <video key="v1" controls className="w-full h-[60vh] rounded-lg">
-      <source src="/videos/video1.mp4" type="video/mp4" />
+      <source src="/Gallery1.mp4" type="video/mp4" />
     </video>,
-    <Image key="img2" src="/images/gallery2.jpg" alt="Gallery 2" width={800} height={400} className="rounded-lg" />,
-    <Image key="img3" src="/images/gallery3.jpg" alt="Gallery 3" width={800} height={400} className="rounded-lg" />,
-    <Image key="img4" src="/images/gallery4.jpg" alt="Gallery 4" width={800} height={400} className="rounded-lg" />,
-    <Image key="img5" src="/images/gallery5.jpg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
+    <Image key="img2" src="/Gallery2.jpeg" alt="Gallery 2" width={800} height={400} className="rounded-lg" />,
+    <Image key="img3" src="/Gallery3.jpeg" alt="Gallery 3" width={800} height={400} className="rounded-lg" />,
+    <Image key="img4" src="/Gallery4.jpeg" alt="Gallery 4" width={800} height={400} className="rounded-lg" />,
+    <Image key="img5" src="/Gallery5.jpeg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
+    <Image key="img5" src="/Gallery6.jpeg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
+    <Image key="img5" src="/Gallery7.jpeg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
+    <Image key="img5" src="/Gallery8.jpeg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
+    <Image key="img5" src="/Gallery9.jpeg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
+    <Image key="img5" src="/Gallery10.jpeg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
+    <Image key="img5" src="/Gallery11.jpeg" alt="Gallery 5" width={800} height={400} className="rounded-lg" />,
   ];
 
   useEffect(() => {
