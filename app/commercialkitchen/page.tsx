@@ -163,36 +163,26 @@ const Testimonials = () => {
       text: "Being plant-based doesn’t mean being mess-free 😂. Between turmeric, beetroot, and coconut oil, our kitchen gets stained fast. Melody Cleaning handled it like artists. Even our cold press area gleamed!",
       name: "Ms. Peaches Gold, Restaurateur, Vegan Queens London"
     },
-      {
+    {
       text: "We run 24 hours. Our grills are ancient. Our staff are messy. Melody Cleaning came in at 2AM and by 5AM we were health-inspector-ready. Can’t recommend them enough.",
       name: "Nigel Steam, Head Chef, The Industrial Grubhouse"
     },
-        {
+    {
       text: "Melody Cleaning arrived in silence and left in sparkle. We barely noticed them working, but noticed the transformation. Every silver surface now doubles as a mirror. Elite service for elite spaces.",
       name: "Baroness Fifi du Fork, Owner, Le Luxe Supper Club"
-    },
-  ];
-  import { useEffect, useState } from 'react';
-
-const TestimonialSection = () => {
-  const testimonials = [
-    { text: "Melody Cleaning made our kitchen sparkle like new. Absolutely flawless job!", name: "Chef Tunde, Bistro 54" },
-    { text: "They handled our industrial grease trap without fuss. Highly professional.", name: "Mrs. Dami, FoodCourt NG" },
-    { text: "Even our staff were surprised how spotless the grill was. Truly magic!", name: "Kingsley, Burger Stack" },
-    { text: "The cleaning left our equipment looking brand new. Worth every naira!", name: "Chef Peace, Vegan Table" },
+    }
   ];
 
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
-  // Auto-rotate every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false); // start fade-out
+      setFade(false);
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % testimonials.length);
-        setFade(true); // fade-in next
-      }, 500); // delay swap to match animation
+        setFade(true);
+      }, 500);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
