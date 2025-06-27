@@ -189,34 +189,31 @@ const FAQSection = () => {
 
   return (
     <section id="faqs" className="relative py-24 text-[#3a0162] overflow-hidden">
-  <Image
-    src="/FAQsBG.png"
-    alt="Background"
-    fill
-    className="object-cover opacity-30 z-0"
-  />
-  <div className="absolute inset-0 bg-white bg-opacity-60 z-0" />
-  <div className="relative z-10">
-    <h2 className="text-3xl font-semibold text-center mb-8">Frequently Asked Questions</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-      {/* FAQ items here */}
-    </div>
-  </div>
-</section>
-      <h2 className="text-3xl font-semibold text-center mb-8">Frequently Asked Questions</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        {faqs.map((item, i) => (
-          <div key={i}>
-            <button
-              onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full text-left p-4 bg-white shadow rounded-md flex justify-between items-center"
-            >
-              <span>{item.q}</span>
-              <span>{openIndex === i ? "−" : "+"}</span>
-            </button>
-            {openIndex === i && <div className="p-4 bg-white mt-1 rounded-md text-sm">{item.a}</div>}
-          </div>
-        ))}
+      <Image
+        src="/FAQsBG.png"
+        alt="Background"
+        fill
+        className="object-cover opacity-30 z-0"
+      />
+      <div className="absolute inset-0 bg-white bg-opacity-60 z-0" />
+      <div className="relative z-10">
+        <h2 className="text-3xl font-semibold text-center mb-8">Frequently Asked Questions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {faqs.map((item, i) => (
+            <div key={i}>
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full text-left p-4 bg-white shadow rounded-md flex justify-between items-center"
+              >
+                <span>{item.q}</span>
+                <span>{openIndex === i ? "−" : "+"}</span>
+              </button>
+              {openIndex === i && (
+                <div className="p-4 bg-white mt-1 rounded-md text-sm">{item.a}</div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
