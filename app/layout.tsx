@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import WhatsAppButton from "@/components/whatsapp-button";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
