@@ -9,20 +9,20 @@ export async function POST(request: Request) {
     const subject = formData.get("subject") as string
     const message = formData.get("message") as string
 
-    // Create a transporter
+    // ✅ UPDATED: Use EMAIL_USER from environment variable
     const transporter = nodemailer.createTransport({
       service: "Yahoo",
       auth: {
-        user: "max_frances@yahoo.com",
+        user: process.env.EMAIL_USER, // ✅ changed from hardcoded to env variable
         pass: process.env.EMAIL_PASSWORD,
       },
-      debug: true, // Enable debug output
-      logger: true, // Log information to the console
+      debug: true,
+      logger: true,
     })
 
-    // Email content
+    // ✅ UPDATED: Also use EMAIL_USER as the "from" address
     const mailOptions = {
-      from: "max_frances@yahoo.com",
+      from: process.env.EMAIL_USER, // ✅ changed from hardcoded to env variable
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
       subject: `New Contact Message: ${subject}`,
       html: `
@@ -34,7 +34,6 @@ export async function POST(request: Request) {
       `,
     }
 
-    // Send email
     const info = await transporter.sendMail(mailOptions)
     console.log("Email sent:", info.response)
 
