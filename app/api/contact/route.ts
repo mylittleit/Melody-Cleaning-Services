@@ -3,43 +3,41 @@ import nodemailer from "nodemailer"
 
 export async function POST(request: Request) {
   try {
-    const formData = await request.formData()
-    const name = formData.get("name") as string
-    const email = formData.get("email") as string
-    const subject = formData.get("subject") as string
-    const message = formData.get("message") as string
+    const formData = await request.json()
 
-    // ✅ UPDATED: Use EMAIL_USER from environment variable
     const transporter = nodemailer.createTransport({
-      service: "Yahoo",
+      host: "smtp.mail.yahoo.com",
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // ✅ changed from hardcoded to env variable
+        user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
       },
-      debug: true,
-      logger: true,
     })
 
-    // ✅ UPDATED: Also use EMAIL_USER as the "from" address
     const mailOptions = {
-      from: process.env.EMAIL_USER, // ✅ changed from hardcoded to env variable
+      from: "max_frances@yahoo.com",
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
-      subject: `New Contact Message: ${subject}`,
+      subject: `New Contact Message: ${formData.subject}`,
       html: `
-        <h1>New Contact Message</h1>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong> ${message}</p>
+        <h2>New Contact Message</h2>
+        <p><strong>Name:</strong> ${formData.name}</p>
+        <p><strong>Email:</strong> ${formData.email}</p>
+        <p><strong>Subject:</strong> ${formData.subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${formData.message}</p>
       `,
     }
 
     const info = await transporter.sendMail(mailOptions)
-    console.log("Email sent:", info.response)
+    console.log("Contact form email sent:", info.response)
 
-    return NextResponse.redirect(new URL("/contact?success=true", request.url))
+    return NextResponse.json({ success: true, message: "Message sent successfully" })
   } catch (error) {
-    console.error("Error submitting contact form:", error)
-    return NextResponse.redirect(new URL("/contact?error=true", request.url))
+    console.error("Contact form error:", error)
+    return NextResponse.json(
+      { success: false, message: "Failed to send message" },
+      { status: 500 }
+    )
   }
 }
