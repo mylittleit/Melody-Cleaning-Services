@@ -1,9 +1,13 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import nodemailer from "nodemailer"
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const formData = await request.json()
+    const formData = await request.formData()
+    const name = formData.get("name") as string
+    const email = formData.get("email") as string
+    const subject = formData.get("subject") as string
+    const message = formData.get("message") as string
 
     const transporter = nodemailer.createTransport({
       host: "smtp.mail.yahoo.com",
@@ -18,26 +22,22 @@ export async function POST(request: Request) {
     const mailOptions = {
       from: "max_frances@yahoo.com",
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
-      subject: `New Contact Message: ${formData.subject}`,
+      subject: `New Contact Message: ${subject}`,
       html: `
         <h2>New Contact Message</h2>
-        <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Subject:</strong> ${formData.subject}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
-        <p>${formData.message}</p>
+        <p>${message}</p>
       `,
     }
 
-    const info = await transporter.sendMail(mailOptions)
-    console.log("Contact form email sent:", info.response)
+    await transporter.sendMail(mailOptions)
 
-    return NextResponse.json({ success: true, message: "Message sent successfully" })
+    return NextResponse.redirect(new URL("/contact?success=true", request.url))
   } catch (error) {
     console.error("Contact form error:", error)
-    return NextResponse.json(
-      { success: false, message: "Failed to send message" },
-      { status: 500 }
-    )
+    return NextResponse.redirect(new URL("/contact?error=true", request.url))
   }
 }
