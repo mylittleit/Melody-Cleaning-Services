@@ -30,7 +30,6 @@ export default function ContactPage() {
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold text-primary">Methods of Contact</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {/* Booking, Quote, Hours */}
             {[{
               icon: CalendarRange,
               title: "Book Online",
@@ -171,7 +170,7 @@ export default function ContactPage() {
             <div className="mb-6 rounded-lg bg-red-100 p-4 text-red-800">Error sending message. Try again.</div>
           )}
 
-          <form className="space-y-6 bg-white p-8 shadow-md rounded-lg" method="POST" action="/api/submit-contact">
+          <form className="space-y-6 bg-white p-8 shadow-md rounded-lg" method="POST" action="/api/contact">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
                 <label htmlFor="name" className="mb-2 block text-sm font-medium">Your Name</label>
