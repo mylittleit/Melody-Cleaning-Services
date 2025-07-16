@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -6,11 +10,24 @@ import { Phone, Mail, Clock, Facebook, Instagram, Linkedin, CalendarRange, FileT
 import { FaTiktok } from "react-icons/fa"
 
 export default function ContactPage() {
+  const searchParams = useSearchParams()
+  const [showSuccess, setShowSuccess] = useState(false)
+  const [showError, setShowError] = useState(false)
+
+  useEffect(() => {
+    if (searchParams.get("success") === "true") {
+      setShowSuccess(true)
+    }
+    if (searchParams.get("error") === "true") {
+      setShowError(true)
+    }
+  }, [searchParams])
+
   return (
     <>
       {/* Hero Banner */}
       <section className="page-header">
-        <Image src="/Contact.png" alt="Contact Us" fill className="object-cover" />
+        <Image src="/placeholder.svg?height=800&width=1600" alt="Contact Us" fill className="object-cover" />
         <div className="page-header-content">
           <h1 className="text-4xl font-bold text-white md:text-5xl">CONTACT US</h1>
         </div>
@@ -18,7 +35,7 @@ export default function ContactPage() {
 
       {/* Methods of Contact */}
       <section className="bg-white py-16">
-        <div className="container">
+        <div className="container-custom">
           <h2 className="mb-12 text-center text-3xl font-bold text-primary">Methods of Contact</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <Card className="text-center">
@@ -30,8 +47,8 @@ export default function ContactPage() {
                 <p className="mb-6 text-gray-600">
                   Fill out our online booking form to request our services at your convenience.
                 </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Book</Link>
+                <Button className="bg-primary text-mint hover:bg-primary/90">
+                  <Link href="/book-online">Book</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -45,8 +62,8 @@ export default function ContactPage() {
                 <p className="mb-6 text-gray-600">
                   Get a personalised quote for your specific cleaning needs without any obligation.
                 </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Quote</Link>
+                <Button className="bg-primary text-mint hover:bg-primary/90">
+                  <Link href="/book-online">Quote</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -62,8 +79,8 @@ export default function ContactPage() {
                   <br />
                   8:00am - 10:00pm
                 </p>
-                <Button className="bg-primary text-secondary hover:bg-primary/90">
-                  <Link href="/book">Schedule</Link>
+                <Button className="bg-primary text-mint hover:bg-primary/90">
+                  <Link href="/book-online">Schedule</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -73,7 +90,7 @@ export default function ContactPage() {
 
       {/* Contact Details - Moved Email and Call Us under the Methods of Contact */}
       <section className="bg-gray-50 py-16">
-        <div className="container">
+        <div className="container-custom">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <Card>
               <CardHeader className="flex items-center">
@@ -110,7 +127,7 @@ export default function ContactPage() {
 
       {/* Map and Hours */}
       <section className="bg-white py-16">
-        <div className="container">
+        <div className="container-custom">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-md">
               <iframe
@@ -123,7 +140,6 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-
             <div>
               <div className="flex items-center">
                 <MapPin className="mr-2 h-6 w-6 text-primary" />
@@ -139,7 +155,6 @@ export default function ContactPage() {
                 We also cater to clients further afield, ensuring flexibility and availability wherever our expertise is
                 needed.
               </p>
-
               <div className="flex items-center">
                 <Clock className="mr-2 h-6 w-6 text-primary" />
                 <h3 className="mb-4 text-2xl font-bold text-primary">Opening Hours</h3>
@@ -149,7 +164,6 @@ export default function ContactPage() {
                 <br />
                 8:00am - 10:00pm
               </p>
-
               <div className="mt-8">
                 <h3 className="mb-4 flex items-center text-2xl font-bold text-primary">Connect With Us</h3>
                 <div className="flex space-x-4">
@@ -157,7 +171,7 @@ export default function ContactPage() {
                     href="https://www.facebook.com/profile.php?id=61575544748505"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
+                    className="rounded-full bg-primary p-3 text-mint hover:bg-primary/90"
                   >
                     <Facebook className="h-6 w-6" />
                     <span className="sr-only">Facebook</span>
@@ -166,7 +180,7 @@ export default function ContactPage() {
                     href="https://www.instagram.com/melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
+                    className="rounded-full bg-primary p-3 text-mint hover:bg-primary/90"
                   >
                     <Instagram className="h-6 w-6" />
                     <span className="sr-only">Instagram</span>
@@ -175,7 +189,7 @@ export default function ContactPage() {
                     href="https://www.linkedin.com/in/melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
+                    className="rounded-full bg-primary p-3 text-mint hover:bg-primary/90"
                   >
                     <Linkedin className="h-6 w-6" />
                     <span className="sr-only">LinkedIn</span>
@@ -184,7 +198,7 @@ export default function ContactPage() {
                     href="https://www.tiktok.com/@melodycleaningservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-primary p-3 text-secondary hover:bg-primary/90"
+                    className="rounded-full bg-primary p-3 text-mint hover:bg-primary/90"
                   >
                     <FaTiktok className="h-6 w-6" />
                     <span className="sr-only">TikTok</span>
@@ -198,9 +212,26 @@ export default function ContactPage() {
 
       {/* Contact Form */}
       <section className="bg-gray-50 py-16">
-        <div className="container">
+        <div className="container-custom">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-center text-3xl font-bold text-primary">Send Us a Message</h2>
+
+            {/* Success Message */}
+            {showSuccess && (
+              <div className="mb-6 rounded-lg bg-green-50 border border-green-200 p-4 text-center">
+                <p className="text-green-700 font-semibold">Thank you! Your message has been sent successfully.</p>
+                <p className="text-green-600 text-sm">We'll get back to you within 24 hours.</p>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {showError && (
+              <div className="mb-6 rounded-lg bg-red-50 border border-red-200 p-4 text-center">
+                <p className="text-red-700 font-semibold">Sorry, there was an error sending your message.</p>
+                <p className="text-red-600 text-sm">Please try again or contact us directly.</p>
+              </div>
+            )}
+
             <div className="form-container rounded-lg bg-white p-8 shadow-md">
               <form className="space-y-6" action="/api/submit-contact" method="POST">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -258,10 +289,7 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
                 <div className="flex justify-center">
-                  <Button
-                    type="submit"
-                    className="rounded-full bg-primary px-8 py-2 text-secondary hover:bg-primary/90"
-                  >
+                  <Button type="submit" className="rounded-full bg-primary px-8 py-2 text-mint hover:bg-primary/90">
                     SUBMIT
                   </Button>
                 </div>
