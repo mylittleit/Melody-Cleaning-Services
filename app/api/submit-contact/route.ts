@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server"
+import { type NextRequest, NextResponse } from "next/server"
 import nodemailer from "nodemailer"
 
 export async function POST(request: NextRequest) {
@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     const subject = formData.get("subject") as string
     const message = formData.get("message") as string
 
-    const transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransporter({
       host: "smtp.mail.yahoo.com",
       port: 465,
       secure: true,
@@ -34,7 +34,6 @@ export async function POST(request: NextRequest) {
     }
 
     await transporter.sendMail(mailOptions)
-
     return NextResponse.redirect(new URL("/contact?success=true", request.url))
   } catch (error) {
     console.error("Contact form error:", error)
