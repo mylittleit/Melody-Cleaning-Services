@@ -11,7 +11,7 @@ const HeroSection = () => (
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-100 cursor-pointer"
+       className="absolute inset-0 w-full h-full object-cover object-center cursor-pointer"
       >
         <source src="/CommercialKitchenHero.mp4" type="video/mp4" />
       </video>
