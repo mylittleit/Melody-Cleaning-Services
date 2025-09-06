@@ -13,7 +13,7 @@ export default function Home() {
       <section className="hero-section relative w-full">
         <video
           className="hero-video"
-          src="/Heromain.mp4"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_75Dz9qHqODAxHFcKpcyqPaNRNNnS/qp6n6Ot1GjEVjEyyI5QBYN/public/Heromain.mp4"
           autoPlay
           loop
           muted

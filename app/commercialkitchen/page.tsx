@@ -13,7 +13,7 @@ const HeroSection = () => (
         playsInline
        className="absolute inset-0 w-full h-full object-cover object-center cursor-pointer"
       >
-        <source src="/CommercialKitchenHero.mp4" type="video/mp4" />
+        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_75Dz9qHqODAxHFcKpcyqPaNRNNnS/y5A_2ee1WAEZIW8YrllUFF/public/CommercialKitchenHero.mp4" type="video/mp4" />
       </video>
     </a>
   </section>
@@ -112,7 +112,7 @@ const GallerySection = () => {
   const [index, setIndex] = useState(0);
   const galleryItems = [
     <video key="v1" controls className="w-full h-[60vh] rounded-lg">
-      <source src="/Gallery1.mp4" type="video/mp4" />
+      <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_75Dz9qHqODAxHFcKpcyqPaNRNNnS/O5shTX2Z07rd1MfzAOCmJl/public/Gallery1.mp4" type="video/mp4" />
     </video>,
     <Image key="img2" src="/Gallery2.jpeg" alt="Gallery 2" width={800} height={400} className="rounded-lg" />,
     <Image key="img3" src="/Gallery3.jpeg" alt="Gallery 3" width={800} height={400} className="rounded-lg" />,
@@ -196,7 +196,7 @@ const Testimonials = () => {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
-        <source src="/Testimonial.mp4" type="video/mp4" />
+        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_75Dz9qHqODAxHFcKpcyqPaNRNNnS/DwSxqmnCKQ0VX-gztH5ZN5/public/Testimonial.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute top-0 left-0 w-full h-full bg-white/20 z-10"></div>

@@ -1,28 +1,31 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import WhatsAppButton from "@/components/whatsapp-button";
-import Script from "next/script";
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter, Poppins } from "next/font/google"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
+import WhatsAppButton from "@/components/whatsapp-button"
+import Script from "next/script"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({
+  weight: ["700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+})
 
 export const metadata: Metadata = {
   title: "Melody Cleaning Services",
   description: "Professional cleaning services in the UK",
   generator: "v0.dev",
-};
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - Only loads, tracking happens on specific actions */}
         <Script
           id="gtm-init"
           strategy="afterInteractive"
@@ -38,11 +41,8 @@ export default function RootLayout({
         />
         {/* End Google Tag Manager */}
 
-        {/* Global Site Tag (Google Ads) */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17036896370"
-        />
+        {/* Global Site Tag (Google Ads) - Only loads, tracking happens on specific actions */}
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=AW-17036896370" />
         <Script
           id="gtag-init"
           strategy="afterInteractive"
@@ -51,12 +51,14 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-17036896370');
+              gtag('config', 'AW-17036896370', {
+                send_page_view: false
+              });
             `,
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${poppins.variable}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -76,5 +78,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

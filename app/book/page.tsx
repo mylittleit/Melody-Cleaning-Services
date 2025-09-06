@@ -16,6 +16,14 @@ import { CalendarIcon } from "lucide-react"
 import { useToast } from "@/components/ui/use-toast"
 import Image from "next/image"
 
+// Extend Window interface to include gtag
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void
+    dataLayer: any[]
+  }
+}
+
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
@@ -81,12 +89,33 @@ export default function BookingPage() {
       if (data.success) {
         setIsSuccess(true)
         form.reset()
-        
-        // ✅ Google Ads Event Snippet for Conversion Tracking
+
+        // 🎯 CONVERSION TRACKING - Book Online Form Submission
         if (typeof window !== "undefined" && typeof window.gtag === "function") {
-          window.gtag('event', 'conversion', {
-            send_to: 'AW-17036896370/0D_uCLra3skaEPLQ6bs_'
-          });
+          // Google Ads Conversion
+          window.gtag("event", "conversion", {
+            send_to: "AW-17036896370/0D_uCLra3skaEPLQ6bs_",
+            value: 1.0,
+            currency: "GBP",
+            transaction_id: `booking_${Date.now()}`,
+          })
+
+          // Google Analytics Event
+          window.gtag("event", "form_submit", {
+            event_category: "engagement",
+            event_label: "booking_form",
+            value: 1,
+          })
+
+          // GTM Custom Event
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: "booking_form_submission",
+              form_type: "booking",
+              service_type: formData.serviceType,
+              conversion_value: 1,
+            })
+          }
         }
       } else {
         throw new Error(data.message || "Failed to submit booking")
