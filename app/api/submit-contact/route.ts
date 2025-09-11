@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     const subject = formData.get("subject") as string
     const message = formData.get("message") as string
 
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: "smtp.mail.yahoo.com",
       port: 465,
       secure: true,

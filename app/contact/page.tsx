@@ -287,7 +287,7 @@ export default function ContactPage() {
             )}
 
             <div className="form-container rounded-lg bg-white p-8 shadow-md">
-              <form className="space-y-6" action="/api/submit-contact" method="POST" onSubmit={handleFormSubmit}>
+              <form className="space-y-6" action="/api/submit-contact" method="post" onSubmit={handleFormSubmit}>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="mb-2 block text-sm font-medium">
