@@ -1,12 +1,20 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Poppins } from "next/font/google"
+import { Suspense } from "react"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
+import EnhancedPhoneTracker from "@/components/enhanced-phone-tracker"
+import ConversionDebugPanel from "@/components/conversion-debug-panel"
+import { ThemeProvider } from "@/components/theme-provider"
 import Script from "next/script"
+import ScrollToTop from "@/components/scroll-to-top"
+
+// Ensure NEXT_PUBLIC_SITE_URL always has a protocol for URL() calls
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.melodycleaningservices.co.uk"
+const siteUrl = rawSiteUrl.startsWith("http") ? rawSiteUrl : `https://${rawSiteUrl}`
 
 const inter = Inter({ subsets: ["latin"] })
 const poppins = Poppins({
@@ -16,18 +24,76 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Melody Cleaning Services",
-  description: "Professional cleaning services in the UK",
+  title: {
+    default: "Melody Cleaning Services | Professional Cleaning in UK",
+    template: "%s | Melody Cleaning Services",
+  },
+  description:
+    "Professional cleaning services across the UK. Trusted residential & commercial cleaners with same-day service and 100% satisfaction guarantee.",
+  keywords:
+    "cleaning services near me, office cleaning UK, deep cleaning services UK, residential cleaning, commercial cleaning, end of tenancy cleaning, Melody Cleaning Services",
+  authors: [{ name: "Melody Cleaning Services" }],
+  creator: "Melody Cleaning Services",
+  publisher: "Melody Cleaning Services",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: siteUrl,
+    siteName: "Melody Cleaning Services",
+    title: "Melody Cleaning Services | Professional Cleaning in UK",
+    description: "Professional cleaning services across the UK. Trusted residential & commercial cleaners with same-day service and 100% satisfaction guarantee.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Melody Cleaning Services - Professional Cleaning",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Melody Cleaning Services | Professional Cleaning in UK",
+    description: "Professional cleaning services across the UK. Trusted residential & commercial cleaners with same-day service and 100% satisfaction guarantee.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+  },
   generator: "v0.dev",
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="en">
+    <html lang="en-GB" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Only loads, tracking happens on specific actions */}
+        {/* Google Tag Manager */}
         <Script
-          id="gtm-init"
+          id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -41,19 +107,32 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         {/* End Google Tag Manager */}
 
-        {/* Global Site Tag (Google Ads) - Only loads, tracking happens on specific actions */}
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=AW-17036896370" />
+        {/* Google Ads (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17036896370" strategy="afterInteractive" />
         <Script
-          id="gtag-init"
+          id="google-ads-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-17036896370', {
-                send_page_view: false
-              });
+              gtag('config', 'AW-17036896370');
+            `,
+          }}
+        />
+
+        {/* Google Analytics */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7CNRYTB05B" strategy="afterInteractive" />
+        <Script
+          id="ga-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-7CNRYTB05B');
             `,
           }}
         />
@@ -66,15 +145,31 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
+          />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
+        <Suspense fallback={<div>Loading...</div>}>
+          <ScrollToTop />
+        </Suspense>
+
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <WhatsAppButton />
+          <div className="flex min-h-screen flex-col">
+            <Suspense fallback={<div>Loading navbar...</div>}>
+              <Navbar />
+            </Suspense>
+            <main className="flex-1">
+              <Suspense fallback={<div>Loading content...</div>}>{children}</Suspense>
+            </main>
+            <Footer />
+            <Suspense fallback={<div>Loading WhatsApp...</div>}>
+              <WhatsAppButton />
+            </Suspense>
+            <Suspense fallback={<div>Loading Phone Tracker...</div>}>
+              <EnhancedPhoneTracker />
+            </Suspense>
+            <ConversionDebugPanel />
+          </div>
         </ThemeProvider>
       </body>
     </html>

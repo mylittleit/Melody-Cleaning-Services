@@ -18,29 +18,34 @@ export default function WhatsAppButton() {
   const handleWhatsAppClick = () => {
     // 🎯 CONVERSION TRACKING - WhatsApp Button Click
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
-      // Google Ads Conversion
+      // Google Ads Conversion - Create a separate conversion action for WhatsApp clicks
       window.gtag("event", "conversion", {
-        send_to: "AW-17036896370/whatsapp_click",
-        value: 1.0,
+        send_to: "AW-17036896370/whatsapp_contact", // You'll need to create this conversion action
+        value: 25.0, // Lower value than booking form
         currency: "GBP",
         transaction_id: `whatsapp_${Date.now()}`,
       })
 
-      // Google Analytics Event
-      window.gtag("event", "click", {
+      // Enhanced Conversion Event for GA4
+      window.gtag("event", "contact", {
+        method: "whatsapp",
+        currency: "GBP",
+        value: 25.0,
         event_category: "engagement",
-        event_label: "whatsapp_button",
-        value: 1,
+        event_label: "whatsapp_click",
       })
 
       // GTM Custom Event
       if (window.dataLayer) {
         window.dataLayer.push({
-          event: "whatsapp_click",
-          button_type: "whatsapp",
-          conversion_value: 1,
+          event: "whatsapp_contact",
+          contact_method: "whatsapp",
+          conversion_value: 25,
+          currency: "GBP",
         })
       }
+
+      console.log("Conversion tracking fired for WhatsApp click")
     }
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`

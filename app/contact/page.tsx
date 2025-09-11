@@ -30,19 +30,20 @@ export default function ContactPage() {
 
       // 🎯 CONVERSION TRACKING - Contact Form Submission Success
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
-        // Google Ads Conversion
+        // Google Ads Conversion - Create a separate conversion action for contact form
         window.gtag("event", "conversion", {
-          send_to: "AW-17036896370/contact_form",
-          value: 1.0,
+          send_to: "AW-17036896370/contact_inquiry", // You'll need to create this conversion action
+          value: 30.0,
           currency: "GBP",
           transaction_id: `contact_${Date.now()}`,
         })
 
-        // Google Analytics Event
-        window.gtag("event", "form_submit", {
+        // Enhanced Conversion Event for GA4
+        window.gtag("event", "generate_lead", {
+          currency: "GBP",
+          value: 30.0,
           event_category: "engagement",
-          event_label: "contact_form",
-          value: 1,
+          event_label: "contact_form_submission",
         })
 
         // GTM Custom Event
@@ -50,9 +51,12 @@ export default function ContactPage() {
           window.dataLayer.push({
             event: "contact_form_submission",
             form_type: "contact",
-            conversion_value: 1,
+            conversion_value: 30,
+            currency: "GBP",
           })
         }
+
+        console.log("Conversion tracking fired for contact form submission")
       }
     }
     if (searchParams.get("error") === "true") {
@@ -68,6 +72,8 @@ export default function ContactPage() {
         event_category: "engagement",
         event_label: "contact_form_attempt",
       })
+
+      console.log("Contact form submission attempt tracked")
     }
   }
 

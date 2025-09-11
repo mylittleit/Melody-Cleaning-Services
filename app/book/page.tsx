@@ -92,19 +92,25 @@ export default function BookingPage() {
 
         // 🎯 CONVERSION TRACKING - Book Online Form Submission
         if (typeof window !== "undefined" && typeof window.gtag === "function") {
-          // Google Ads Conversion
+          // Google Ads Conversion - Using correct conversion action
           window.gtag("event", "conversion", {
             send_to: "AW-17036896370/0D_uCLra3skaEPLQ6bs_",
-            value: 1.0,
+            value: 50.0, // Estimated booking value
             currency: "GBP",
             transaction_id: `booking_${Date.now()}`,
           })
 
-          // Google Analytics Event
-          window.gtag("event", "form_submit", {
+          // Enhanced Conversion Event for GA4
+          window.gtag("event", "generate_lead", {
+            currency: "GBP",
+            value: 50.0,
             event_category: "engagement",
-            event_label: "booking_form",
-            value: 1,
+            event_label: "booking_form_submission",
+            custom_parameters: {
+              service_type: formData.serviceType,
+              preferred_date: formData.date,
+              preferred_time: formData.time,
+            },
           })
 
           // GTM Custom Event
@@ -113,9 +119,16 @@ export default function BookingPage() {
               event: "booking_form_submission",
               form_type: "booking",
               service_type: formData.serviceType,
-              conversion_value: 1,
+              conversion_value: 50,
+              currency: "GBP",
+              user_data: {
+                email: formData.email,
+                phone: formData.phone,
+              },
             })
           }
+
+          console.log("Conversion tracking fired for booking form submission")
         }
       } else {
         throw new Error(data.message || "Failed to submit booking")
