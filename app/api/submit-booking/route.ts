@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       service: "Yahoo",
       auth: {
-        user: "max_frances@yahoo.com",
+        user: "stephenie@yahoo.com",
         pass: process.env.EMAIL_PASSWORD,
       },
       debug: true, // Enable debug output
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 
     // Email content
     const mailOptions = {
-      from: "max_frances@yahoo.com",
+      from: "stephenieagboje@yahoo.com",
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
       subject: `New Booking Request: ${formData.serviceType}`,
       html: `
