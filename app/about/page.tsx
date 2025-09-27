@@ -108,7 +108,7 @@ export default function AboutPage() {
                 <p className="mb-6 text-lg text-white">
                   At Melody Cleaning Services, we have set clear goals to guide our growth and service delivery:
                 </p>
-                <ul className="ml-6 list-disc space-y-2 text-lg text-white">
+                <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
                   <li>Deliver consistent, high-quality cleaning services that meet or exceed industry standards</li>
                   <li>Expand our service offerings to meet the evolving needs of our clients</li>
                   <li>Maintain a team of well-trained, professional staff who share our values</li>
@@ -122,11 +122,11 @@ export default function AboutPage() {
                 <div className="mb-6 flex items-center">
                   <h2 className="text-3xl font-bold text-white">How We Operate</h2>
                 </div>
-                <p className="mb-6 text-lg text-white">
+                <p className="mb-6 text-lg text-gray-700">
                   At Melody Cleaning Services, we follow a systematic approach to ensure consistent quality and customer
                   satisfaction:
                 </p>
-                <ul className="ml-6 list-disc space-y-2 text-lg text-white">
+                <ul className="ml-6 list-disc space-y-2 text-lg text-gray-700">
                   <li>
                     Initial Consultation: We begin with a thorough assessment of your cleaning needs and requirements.
                   </li>

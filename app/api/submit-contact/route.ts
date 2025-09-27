@@ -1,3 +1,4 @@
+// app/api/submit-contact/route.tsx
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -5,8 +6,9 @@ export const runtime = 'nodejs'; // Ensure Node.js runtime
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, service, message } = await request.json();
-
+    // Get form data that matches exactly what the contact form sends
+    const { name, email, subject, message } = await request.json();
+    
     // Create transporter using Yahoo SMTP
     const transporter = nodemailer.createTransport({
       host: "smtp.mail.yahoo.com",
@@ -23,15 +25,14 @@ export async function POST(request: NextRequest) {
 
     // Email to business
     const businessEmailOptions = {
-      from: "stephenieagboje@yahoo.com", // Update to match your EMAIL_USER
+      from: process.env.EMAIL_USER || "stephenieagboje@yahoo.com",
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
-      subject: `New Contact Form Submission - ${service || "General Inquiry"}`,
+      subject: `New Contact Form Submission - ${subject || "General Inquiry"}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-        <p><strong>Service:</strong> ${service || "Not specified"}</p>
+        <p><strong>Subject:</strong> ${subject || "Not specified"}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
         <hr>
@@ -41,7 +42,7 @@ export async function POST(request: NextRequest) {
 
     // Auto-reply to customer
     const customerEmailOptions = {
-      from: "stephenieagboje@yahoo.com", // Update to match your EMAIL_USER
+      from: process.env.EMAIL_USER || "stephenieagboje@yahoo.com",
       to: email,
       subject: "Thank you for contacting Melody Cleaning Services",
       html: `
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
         <p>Dear ${name},</p>
         <p>Thank you for contacting Melody Cleaning Services. We have received your message and will get back to you within 2 hours during business hours.</p>
         <p><strong>Your inquiry details:</strong></p>
-        <p><strong>Service:</strong> ${service || "General inquiry"}</p>
+        <p><strong>Subject:</strong> ${subject || "General inquiry"}</p>
         <p><strong>Message:</strong> ${message}</p>
         <p>If you need immediate assistance, please call us at 07453581984.</p>
         <p>Best regards,<br>Melody Cleaning Services Team</p>
