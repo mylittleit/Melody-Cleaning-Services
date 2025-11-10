@@ -328,10 +328,12 @@ body {
     min-height: 500px;
   }
 
+  /* Reduce video width on mobile to fix display overflow */
   .hero-video {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     object-fit: cover;
+    object-position: center;
   }
 
   .page-header {
