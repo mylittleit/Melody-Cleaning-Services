@@ -86,6 +86,16 @@ const Footer = () => {
                   Pre/Post Event
                 </Link>
               </li>
+              <li>
+                <Link href="/services#domestic-mental-health-hoarding" className="text-gray-600 hover:text-primary">
+                  Mental Health Crisis/Hoarding Clean-up
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#domestic-funeral-death" className="text-gray-600 hover:text-primary">
+                  Funeral/Death Cleaning
+                </Link>
+              </li>
             </ul>
           </div>
 

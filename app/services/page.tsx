@@ -7,7 +7,7 @@ import {
   MoveRight,
   Brush,
   Sparkles,
-  BrushIcon as Broom,
+  Book as Broom,
   Building,
   UtensilsCrossed,
   Heart,
@@ -217,6 +217,48 @@ export default function ServicesPage() {
                     <CardDescription className="text-center text-gray-700">
                       Professional cleaning for sofas, chairs, and other upholstered furniture to remove dirt, stains,
                       and odors, extending the life of your furniture.
+                    </CardDescription>
+                  </CardContent>
+                  <CardFooter className="flex flex-col items-center">
+                    <Button className="mb-2 px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                      <Link href="/book">Book Now</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+
+                <Card className="service-card bg-white/90" id="domestic-mental-health-hoarding">
+                  <CardHeader className="flex flex-col items-center">
+                    <div className="mb-4 rounded-full bg-primary/10 p-3">
+                      <Heart className="h-10 w-10 text-primary" />
+                    </div>
+                    <CardTitle className="text-center text-xl text-primary">
+                      Mental Health Crisis/Hoarding Clean-up
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-center text-gray-700">
+                      Compassionate and discreet cleaning services for hoarding situations and crisis clean-ups, handled
+                      with sensitivity, respect, and complete confidentiality.
+                    </CardDescription>
+                  </CardContent>
+                  <CardFooter className="flex flex-col items-center">
+                    <Button className="mb-2 px-6 bg-primary text-secondary hover:bg-primary/90 mx-auto block">
+                      <Link href="/book">Book Now</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+
+                <Card className="service-card bg-white/90" id="domestic-funeral-death">
+                  <CardHeader className="flex flex-col items-center">
+                    <div className="mb-4 rounded-full bg-primary/10 p-3">
+                      <Heart className="h-10 w-10 text-primary" />
+                    </div>
+                    <CardTitle className="text-center text-xl text-primary">Funeral/Death Cleaning</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-center text-gray-700">
+                      Respectful and thorough biohazard and death cleaning services performed with utmost care,
+                      discretion, and professional standards.
                     </CardDescription>
                   </CardContent>
                   <CardFooter className="flex flex-col items-center">

@@ -54,7 +54,10 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-6">
-          <Link href="/commercialkitchen" className="text-sm font-bold text-[#9aedb6] bg-[#3a0162] hover:text-primary rounded-[50px] px-[26px] py-[12px]">
+          <Link
+            href="/commercialkitchen"
+            className="text-sm font-bold text-[#9aedb6] bg-[#3a0162] hover:text-primary rounded-[50px] px-[26px] py-[12px]"
+          >
             COMMERCIAL KITCHEN CLEANING
           </Link>
           <Link href="/" className="text-sm font-medium hover:text-primary">
@@ -120,6 +123,15 @@ const Navbar = () => {
                       className="block py-1 text-sm hover:text-primary"
                     >
                       Upholstery Cleaning
+                    </Link>
+                    <Link
+                      href="/services#domestic-mental-health-hoarding"
+                      className="block py-1 text-sm hover:text-primary"
+                    >
+                      Mental Health Crisis/Hoarding Clean-up
+                    </Link>
+                    <Link href="/services#domestic-funeral-death" className="block py-1 text-sm hover:text-primary">
+                      Funeral/Death Cleaning
                     </Link>
                   </div>
                 </div>
@@ -203,7 +215,11 @@ const Navbar = () => {
             >
               COMMECIAL KITCHEN CLEANING
             </Link>
-            <Link href="/" className="text-lg font-bold text-[#9aedb6] bg-[#3a0162] rounded-[50px] px-[26px] py-[12px] mobile-menu-item" onClick={toggleMenu}>
+            <Link
+              href="/"
+              className="text-lg font-bold text-[#9aedb6] bg-[#3a0162] rounded-[50px] px-[26px] py-[12px] mobile-menu-item"
+              onClick={toggleMenu}
+            >
               Home
             </Link>
             <Link
@@ -302,6 +318,20 @@ const Navbar = () => {
                       onClick={toggleMenu}
                     >
                       Upholstery Cleaning
+                    </Link>
+                    <Link
+                      href="/services#domestic-mental-health-hoarding"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Mental Health Crisis/Hoarding Clean-up
+                    </Link>
+                    <Link
+                      href="/services#domestic-funeral-death"
+                      className="block py-1 text-sm text-[#9AEDB6]"
+                      onClick={toggleMenu}
+                    >
+                      Funeral/Death Cleaning
                     </Link>
                   </div>
                 </div>

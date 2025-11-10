@@ -9,6 +9,16 @@ import ServiceSlider from "@/components/service-slider"
 export default function Home() {
   return (
     <>
+      <section className="w-full">
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Quality-ly7i7vWq8mIZ7I1dBQsydvyjl0xeln.png"
+          alt="Melody Cleaning Services Quality Banner"
+          width={1200}
+          height={100}
+          className="w-full h-auto"
+        />
+      </section>
+
       {/* Hero Section with Video Background */}
       <section className="hero-section relative w-full">
         <video
@@ -29,7 +39,7 @@ export default function Home() {
           <Button
             size="lg"
             variant="outline"
-            className="w-full border-primary text-primary hover:bg-primary hover:text-secondary sm:w-auto"
+            className="w-full border-primary text-primary hover:bg-primary hover:text-secondary sm:w-auto bg-transparent"
           >
             <Link href="/contact">We Are Hiring</Link>
           </Button>
@@ -226,6 +236,62 @@ export default function Home() {
                 <CardDescription className="text-center text-white">
                   Cleaning services before and after events to ensure your venue looks perfect for guests and is quickly
                   restored afterward.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="relative z-10 flex flex-col items-center">
+                <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card
+              className="service-card relative overflow-hidden rounded-3xl"
+              style={{
+                backgroundImage: "url('/Carpet1.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="bg-black/50 absolute inset-0"></div>
+              <CardHeader className="relative z-10 flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Image src="/Tenancy.png" alt="Mental Health Crisis/Hoarding Clean-up" width={50} height={50} />
+                </div>
+                <CardTitle className="text-center text-xl text-white">Mental Health Crisis/Hoarding Clean-up</CardTitle>
+              </CardHeader>
+              <CardContent className="relative z-10">
+                <CardDescription className="text-center text-white">
+                  Compassionate and discreet cleaning services for hoarding situations and crisis clean-ups, handled
+                  with sensitivity and professionalism.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="relative z-10 flex flex-col items-center">
+                <Button className="mb-2 px-6 mx-auto bg-primary text-secondary hover:bg-primary/90">
+                  <Link href="/book">Book Now</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card
+              className="service-card relative overflow-hidden rounded-3xl"
+              style={{
+                backgroundImage: "url('/Carpet2.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="bg-black/50 absolute inset-0"></div>
+              <CardHeader className="relative z-10 flex flex-col items-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Image src="/Deep.png" alt="Funeral/Death Cleaning" width={50} height={50} />
+                </div>
+                <CardTitle className="text-center text-xl text-white">Funeral/Death Cleaning</CardTitle>
+              </CardHeader>
+              <CardContent className="relative z-10">
+                <CardDescription className="text-center text-white">
+                  Respectful and thorough biohazard and death cleaning services performed with utmost care and
+                  discretion.
                 </CardDescription>
               </CardContent>
               <CardFooter className="relative z-10 flex flex-col items-center">
