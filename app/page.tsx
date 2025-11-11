@@ -88,7 +88,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/end of tenancy.jpg" alt="End of Tenancy" width={50} height={50} />
+                  <Image src="/End.png" alt="End of Tenancy" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Tenancy</CardTitle>
               </CardHeader>
@@ -256,7 +256,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/MentalHealth.jpg" alt="Mental Health Crisis/Hoarding Clean-up" width={50} height={50} />
+                  <Image src="/Domestic.png" alt="Mental Health Crisis/Hoarding Clean-up" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Mental Health Crisis/Hoarding Clean-up</CardTitle>
               </CardHeader>
@@ -284,7 +284,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/West-midlands-after-death-cleaning-service.jpg" alt="Funeral/Death Cleaning" width={50} height={50} />
+                  <Image src="/End.png" alt="Funeral/Death Cleaning" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Funeral/Death Cleaning</CardTitle>
               </CardHeader>
