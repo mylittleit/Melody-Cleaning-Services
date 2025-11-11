@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <section className="w-full">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Quality-ly7i7vWq8mIZ7I1dBQsydvyjl0xeln.png"
+          src="/images/design-mode/Quality.png"
           alt="Melody Cleaning Services Quality Banner"
           width={1200}
           height={100}
@@ -80,7 +80,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: "url('/Carpet1.png')",
+                backgroundImage: "url('/end of tenancy.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -88,7 +88,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Tenancy.png" alt="End of Tenancy" width={50} height={50} />
+                  <Image src="/end of tenancy.jpg" alt="End of Tenancy" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">End of Tenancy</CardTitle>
               </CardHeader>
@@ -172,7 +172,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Deep.png" alt="Deep Clean" width={50} height={50} />
+                  <Image src="/deepclean.jpg" alt="Deep Clean" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Deep Clean</CardTitle>
               </CardHeader>
@@ -248,7 +248,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: "url('/Carpet1.png')",
+                backgroundImage: "url('/MentalHealth.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -256,7 +256,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Tenancy.png" alt="Mental Health Crisis/Hoarding Clean-up" width={50} height={50} />
+                  <Image src="/MentalHealth.jpg" alt="Mental Health Crisis/Hoarding Clean-up" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Mental Health Crisis/Hoarding Clean-up</CardTitle>
               </CardHeader>
@@ -276,7 +276,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: "url('/Carpet2.png')",
+                backgroundImage: "url('/West-midlands-after-death-cleaning-service.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -284,7 +284,7 @@ export default function Home() {
               <div className="bg-black/50 absolute inset-0"></div>
               <CardHeader className="relative z-10 flex flex-col items-center">
                 <div className="mb-4 rounded-full bg-primary/10 p-3">
-                  <Image src="/Deep.png" alt="Funeral/Death Cleaning" width={50} height={50} />
+                  <Image src="/West-midlands-after-death-cleaning-service.jpg" alt="Funeral/Death Cleaning" width={50} height={50} />
                 </div>
                 <CardTitle className="text-center text-xl text-white">Funeral/Death Cleaning</CardTitle>
               </CardHeader>
