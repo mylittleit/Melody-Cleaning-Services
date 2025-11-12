@@ -50,7 +50,7 @@ export default function ServicesPage() {
           <div className="domestic-header-bg mb-12 relative w-full overflow-hidden rounded-lg">
             <Image src="/Domestic.png" alt="Domestic Cleaning" fill className="object-cover" />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-              <h2 className="text-center text-3xl font-bold text-white z-10">DOMESTIC CLEANING</h2>
+              <h2 className="text-center text-3xl font-bold text-white">DOMESTIC CLEANING</h2>
             </div>
           </div>
 

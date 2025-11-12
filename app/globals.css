@@ -263,6 +263,8 @@ body {
   font-size: 2.7rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9), -1px -1px 4px rgba(255, 255, 255, 0.7), 0 0 15px
+    rgba(255, 255, 255, 0.8);
 }
 
 .domestic-section {
@@ -328,12 +330,15 @@ body {
     min-height: 500px;
   }
 
-  /* Reduce video width on mobile to fix display overflow */
+  /* Fix video display on mobile - prevent overflow and ensure full visibility */
   .hero-video {
-    width: 100vw;
+    width: 100%;
+    max-width: 100vw;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .page-header {

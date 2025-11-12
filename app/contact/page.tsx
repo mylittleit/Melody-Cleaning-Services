@@ -1,58 +1,55 @@
-"use client";
-import type React from "react";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Phone, Mail, Clock, Facebook, Instagram, 
-  Linkedin, CalendarRange, FileText, MapPin 
-} from "lucide-react";
-import { FaTiktok } from "react-icons/fa";
+"use client"
+import type React from "react"
+import { useEffect, useState, Suspense } from "react"
+import { useSearchParams } from "next/navigation"
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Phone, Mail, Clock, Facebook, Instagram, Linkedin, CalendarRange, FileText, MapPin } from "lucide-react"
+import { FaTiktok } from "react-icons/fa"
 
 // Extend Window interface to include gtag
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
-    dataLayer: any[];
+    gtag: (...args: any[]) => void
+    dataLayer: any[]
   }
 }
 
-export default function ContactPage() {
-  const searchParams = useSearchParams();
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+function ContactPageContent() {
+  const searchParams = useSearchParams()
+  const [showSuccess, setShowSuccess] = useState(false)
+  const [showError, setShowError] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     // Clear messages when component mounts
-    setShowSuccess(false);
-    setShowError(false);
-  }, []);
+    setShowSuccess(false)
+    setShowError(false)
+  }, [])
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setShowSuccess(false);
-    setShowError(false);
+    e.preventDefault()
+    setIsSubmitting(true)
+    setShowSuccess(false)
+    setShowError(false)
 
     // Track form submission attempt
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
       window.gtag("event", "form_start", {
         event_category: "engagement",
         event_label: "contact_form_attempt",
-      });
+      })
     }
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(e.currentTarget)
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
       subject: formData.get("subject"),
       message: formData.get("message"),
-    };
+    }
 
     try {
       const response = await fetch("/api/submit-contact", {
@@ -61,9 +58,9 @@ export default function ContactPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      });
+      })
 
-      const result = await response.json();
+      const result = await response.json()
 
       if (result.success) {
         // Track successful conversion
@@ -74,16 +71,16 @@ export default function ContactPage() {
             value: 30.0,
             currency: "GBP",
             transaction_id: `contact_${Date.now()}`,
-          });
-          
+          })
+
           // Enhanced Conversion Event for GA4
           window.gtag("event", "generate_lead", {
             currency: "GBP",
             value: 30.0,
             event_category: "engagement",
             event_label: "contact_form_submission",
-          });
-          
+          })
+
           // GTM Custom Event
           if (window.dataLayer) {
             window.dataLayer.push({
@@ -91,23 +88,23 @@ export default function ContactPage() {
               form_type: "contact",
               conversion_value: 30,
               currency: "GBP",
-            });
+            })
           }
         }
-        
-        setShowSuccess(true);
+
+        setShowSuccess(true)
         // Reset form
-        e.currentTarget.reset();
+        e.currentTarget.reset()
       } else {
-        setShowError(true);
+        setShowError(true)
       }
     } catch (error) {
-      console.error("Form submission error:", error);
-      setShowError(true);
+      console.error("Form submission error:", error)
+      setShowError(true)
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <>
@@ -138,7 +135,7 @@ export default function ContactPage() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             <Card className="text-center">
               <CardHeader className="flex flex-col items-center">
                 <FileText className="h-12 w-12 text-primary" />
@@ -153,7 +150,7 @@ export default function ContactPage() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             <Card className="text-center">
               <CardHeader className="flex flex-col items-center">
                 <Clock className="h-12 w-12 text-primary" />
@@ -192,7 +189,7 @@ export default function ContactPage() {
                 <p className="mt-2 text-sm text-gray-500">We aim to respond to all emails within 24 hours.</p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader className="flex items-center">
                 <Phone className="mr-2 h-6 w-6 text-primary" />
@@ -226,7 +223,7 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            
+
             <div>
               <div className="flex items-center">
                 <MapPin className="mr-2 h-6 w-6 text-primary" />
@@ -242,7 +239,7 @@ export default function ContactPage() {
                 We also cater to clients further afield, ensuring flexibility and availability wherever our expertise is
                 needed.
               </p>
-              
+
               <div className="flex items-center">
                 <Clock className="mr-2 h-6 w-6 text-primary" />
                 <h3 className="mb-4 text-2xl font-bold text-primary">Opening Hours</h3>
@@ -252,7 +249,7 @@ export default function ContactPage() {
                 <br />
                 8:00am - 10:00pm
               </p>
-              
+
               <div className="mt-8">
                 <h3 className="mb-4 flex items-center text-2xl font-bold text-primary">Connect With Us</h3>
                 <div className="flex space-x-4">
@@ -304,7 +301,7 @@ export default function ContactPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-center text-3xl font-bold text-primary">Send Us a Message</h2>
-            
+
             {/* Success Message */}
             {showSuccess && (
               <div className="mb-6 rounded-lg bg-green-50 border border-green-200 p-4 text-center">
@@ -312,7 +309,7 @@ export default function ContactPage() {
                 <p className="text-green-600 text-sm">We'll get back to you within 24 hours.</p>
               </div>
             )}
-            
+
             {/* Error Message */}
             {showError && (
               <div className="mb-6 rounded-lg bg-red-50 border border-red-200 p-4 text-center">
@@ -320,12 +317,9 @@ export default function ContactPage() {
                 <p className="text-red-600 text-sm">Please try again or contact us directly.</p>
               </div>
             )}
-            
+
             <div className="form-container rounded-lg bg-white p-8 shadow-md">
-              <form 
-                className="space-y-6" 
-                onSubmit={handleFormSubmit}
-              >
+              <form className="space-y-6" onSubmit={handleFormSubmit}>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="mb-2 block text-sm font-medium">
@@ -354,7 +348,7 @@ export default function ContactPage() {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="subject" className="mb-2 block text-sm font-medium">
                     Subject
@@ -368,7 +362,7 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="mb-2 block text-sm font-medium">
                     Message
@@ -382,7 +376,7 @@ export default function ContactPage() {
                     required
                   ></textarea>
                 </div>
-                
+
                 <div className="flex justify-center">
                   <Button
                     type="submit"
@@ -398,5 +392,13 @@ export default function ContactPage() {
         </div>
       </section>
     </>
-  );
+  )
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ContactPageContent />
+    </Suspense>
+  )
 }
