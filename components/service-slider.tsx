@@ -54,11 +54,11 @@ const images = [
     alt: "Event Cleaning Service",
   },
   {
-    src: "/Event5.png",
-    alt: "Pre-Event Cleaning",
+    src: "/ezgif-8187ba0aceace784.jpg",
+    alt: "Deep Cleaning",
   },
   {
-    src: "/Event6.png",
+    src: "/steam-cleaning-tiles-1600x400.jpg",
     alt: "Post-Event Cleaning",
   },
   {
