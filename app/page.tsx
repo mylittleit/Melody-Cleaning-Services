@@ -164,7 +164,7 @@ export default function Home() {
             <Card
               className="service-card relative overflow-hidden rounded-3xl"
               style={{
-                backgroundImage: "url('/Upholstery.png')",
+                backgroundImage: "url('/ezgif-8187ba0aceace784.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
