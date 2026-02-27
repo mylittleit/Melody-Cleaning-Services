@@ -10,6 +10,11 @@ export default function Home() {
   return (
     <>
       <section className="w-full">
+        <a
+        href="https://wa.me/447453581984"
+        target="_blank"
+        rel="noopener noreferrer"
+       >
         <Image
           src="/images/design-mode/Quality.png"
           alt="Melody Cleaning Services Quality Banner"
@@ -17,6 +22,7 @@ export default function Home() {
           height={100}
           className="w-full h-auto"
         />
+        </a>
       </section>
 
       {/* Hero Section with Video Background */}
