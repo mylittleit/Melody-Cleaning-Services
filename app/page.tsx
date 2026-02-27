@@ -397,10 +397,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  <a href="mailto:melodycleaningservices@gmail.com">melodycleaningservices@gmail.com</a>
-                </p>
-                <p className="text-gray-600">
-                  <a href="mailto:info@melodycleaningservices.com">info@melodycleaningservices.com</a>
+                  <a href="mailto:melodycleaningservices@gmail.com">melodycleaningservices@yahoo.com</a>
                 </p>
               </CardContent>
             </Card>
