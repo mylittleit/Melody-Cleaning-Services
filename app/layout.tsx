@@ -169,7 +169,9 @@ export default function RootLayout({
             <Suspense fallback={<div>Loading Phone Tracker...</div>}>
               <EnhancedPhoneTracker />
             </Suspense>
-            <ConversionDebugPanel />
+            <Suspense fallback={null}>
+              <ConversionDebugPanel />
+            </Suspense>
           </div>
         </ThemeProvider>
       </body>
