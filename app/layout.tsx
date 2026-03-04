@@ -159,9 +159,7 @@ export default function RootLayout({
             <Suspense fallback={<div>Loading navbar...</div>}>
               <Navbar />
             </Suspense>
-            <main className="flex-1">
-              <Suspense fallback={<div>Loading content...</div>}>{children}</Suspense>
-            </main>
+            <main className="flex-1">{children}</main>
             <Footer />
             <Suspense fallback={<div>Loading WhatsApp...</div>}>
               <WhatsAppButton />
