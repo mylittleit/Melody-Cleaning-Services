@@ -1,6 +1,6 @@
 "use client"
 import type React from "react"
-import { useEffect, useState, Suspense } from "react"
+import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -396,9 +396,5 @@ function ContactPageContent() {
 }
 
 export default function ContactPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <ContactPageContent />
-    </Suspense>
-  )
+  return <ContactPageContent />
 }
