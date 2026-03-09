@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Poppins } from "next/font/google"
-import { Suspense } from "react"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -150,26 +149,16 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
-        <Suspense fallback={<div>Loading...</div>}>
-          <ScrollToTop />
-        </Suspense>
+        <ScrollToTop />
 
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">
-            <Suspense fallback={<div>Loading navbar...</div>}>
-              <Navbar />
-            </Suspense>
+            <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
-            <Suspense fallback={<div>Loading WhatsApp...</div>}>
-              <WhatsAppButton />
-            </Suspense>
-            <Suspense fallback={<div>Loading Phone Tracker...</div>}>
-              <EnhancedPhoneTracker />
-            </Suspense>
-            <Suspense fallback={null}>
-              <ConversionDebugPanel />
-            </Suspense>
+            <WhatsAppButton />
+            <EnhancedPhoneTracker />
+            <ConversionDebugPanel />
           </div>
         </ThemeProvider>
       </body>
