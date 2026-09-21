@@ -36,11 +36,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, message: "Please provide a valid name, email, subject, and message." }, { status: 400 })
     }
 
-    const emailUser = process.env.EMAIL_USER
-    const emailPassword = process.env.EMAIL_PASSWORD
+    const emailUser = process.env.EMAIL_USER?.trim() || "stephenieagboje@yahoo.com"
+    const emailPassword = process.env.EMAIL_PASSWORD?.trim()
 
-    if (!emailUser || !emailPassword) {
-      console.error("Missing email configuration: EMAIL_USER or EMAIL_PASSWORD")
+    if (!emailPassword || BUSINESS_EMAILS.length === 0) {
+      console.error("Missing email configuration: EMAIL_PASSWORD or BUSINESS_EMAILS")
       return NextResponse.json({ success: false, message: "Email service is not configured." }, { status: 500 })
     }
 
@@ -48,16 +48,11 @@ export async function POST(request: NextRequest) {
       host: "smtp.mail.yahoo.com",
       port: 465,
       secure: true,
-      auth: {
-        user: emailUser,
-        pass: emailPassword,
-      },
-      tls: {
-        rejectUnauthorized: true,
-      },
+      auth: { user: emailUser, pass: emailPassword },
+      tls: { rejectUnauthorized: true },
     })
 
-    const businessEmailOptions = {
+    await transporter.sendMail({
       from: `"Melody Cleaning Services" <${emailUser}>`,
       replyTo: email,
       to: BUSINESS_EMAILS.join(", "),
@@ -72,9 +67,9 @@ export async function POST(request: NextRequest) {
         <hr>
         <p><em>This message was sent from the Melody Cleaning Services website contact form.</em></p>
       `,
-    }
+    })
 
-    const customerEmailOptions = {
+    await transporter.sendMail({
       from: `"Melody Cleaning Services" <${emailUser}>`,
       to: email,
       subject: "Thank you for contacting Melody Cleaning Services",
@@ -88,14 +83,11 @@ export async function POST(request: NextRequest) {
         <p>If you need immediate assistance, please call us at 07453581984.</p>
         <p>Best regards,<br>Melody Cleaning Services Team</p>
       `,
-    }
-
-    await transporter.sendMail(businessEmailOptions)
-    await transporter.sendMail(customerEmailOptions)
+    })
 
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error("Contact form error:", error)
-    return NextResponse.json({ error: "Failed to send message" }, { status: 500 })
+    return NextResponse.json({ success: false, error: "Failed to send message" }, { status: 500 })
   }
 }
