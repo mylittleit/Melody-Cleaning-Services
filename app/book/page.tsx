@@ -50,6 +50,7 @@ const formSchema = z.object({
 export default function BookingPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState("")
   const { toast } = useToast()
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -65,6 +66,7 @@ export default function BookingPage() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
+    setSubmitError("")
 
     try {
       // Convert the date to a string for JSON serialization
@@ -84,7 +86,7 @@ export default function BookingPage() {
 
       const data = await response.json()
 
-      if (data.success) {
+      if (response.ok && data.success) {
         setIsSuccess(true)
         form.reset()
 
@@ -129,13 +131,15 @@ export default function BookingPage() {
           console.log("Conversion tracking fired for booking form submission")
         }
       } else {
-        throw new Error(data.message || "Failed to submit booking")
+        throw new Error(data.message || "We could not send your booking request.")
       }
     } catch (error) {
       console.error("Error submitting form:", error)
+      const message = error instanceof Error ? error.message : "We could not send your booking request."
+      setSubmitError(message)
       toast({
         title: "Error",
-        description: "There was a problem submitting your booking. Please try again.",
+        description: message,
         variant: "destructive",
       })
     } finally {
@@ -178,6 +182,12 @@ export default function BookingPage() {
               </div>
             ) : (
               <div className="form-container rounded-lg p-8">
+                {submitError && (
+                  <div role="alert" className="mb-6 rounded-lg border border-red-200 bg-red-50 p-4 text-center">
+                    <p className="font-semibold text-red-700">We could not send your booking request.</p>
+                    <p className="text-sm text-red-600">{submitError} Please try again or call us on 07453581984.</p>
+                  </div>
+                )}
                 <div className="mb-6 -mt-8 -mx-8 bg-primary p-4 text-center">
                   <h2 className="text-2xl font-bold text-secondary">BOOKING FORM</h2>
                 </div>

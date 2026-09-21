@@ -60,9 +60,9 @@ function ContactPageContent() {
         body: JSON.stringify(data),
       })
 
-      const result = await response.json()
+      const result = await response.json().catch(() => ({}))
 
-      if (result.success) {
+      if (response.ok && result.success) {
         // Track successful conversion
         if (typeof window !== "undefined" && typeof window.gtag === "function") {
           // Google Ads Conversion
@@ -96,10 +96,12 @@ function ContactPageContent() {
         // Reset form
         e.currentTarget.reset()
       } else {
+        setShowSuccess(false)
         setShowError(true)
       }
     } catch (error) {
       console.error("Form submission error:", error)
+      setShowSuccess(false)
       setShowError(true)
     } finally {
       setIsSubmitting(false)
@@ -303,16 +305,16 @@ function ContactPageContent() {
             <h2 className="mb-8 text-center text-3xl font-bold text-primary">Send Us a Message</h2>
 
             {/* Success Message */}
-            {showSuccess && (
-              <div className="mb-6 rounded-lg bg-green-50 border border-green-200 p-4 text-center">
+            {showSuccess && !showError && (
+              <div role="status" className="mb-6 rounded-lg bg-green-50 border border-green-200 p-4 text-center">
                 <p className="text-green-700 font-semibold">Thank you! Your message has been sent successfully.</p>
                 <p className="text-green-600 text-sm">We'll get back to you within 24 hours.</p>
               </div>
             )}
 
             {/* Error Message */}
-            {showError && (
-              <div className="mb-6 rounded-lg bg-red-50 border border-red-200 p-4 text-center">
+            {showError && !showSuccess && (
+              <div role="alert" className="mb-6 rounded-lg bg-red-50 border border-red-200 p-4 text-center">
                 <p className="text-red-700 font-semibold">Sorry, there was an error sending your message.</p>
                 <p className="text-red-600 text-sm">Please try again or contact us directly.</p>
               </div>
