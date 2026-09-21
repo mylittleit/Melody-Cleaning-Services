@@ -1,45 +1,89 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import nodemailer from "nodemailer"
 
-export async function POST(request: Request) {
-  try {
-    const formData = await request.json()
+export const runtime = "nodejs"
 
-    // Create a transporter
+const BUSINESS_EMAILS = (process.env.BUSINESS_EMAILS ?? "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com")
+  .split(",")
+  .map((email) => email.trim())
+  .filter(Boolean)
+
+function escapeHtml(value: unknown, fallback = "Not provided") {
+  if (value === null || value === undefined || value === "") return fallback
+
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+}
+
+function isValidEmail(value: unknown) {
+  if (typeof value !== "string") return false
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json()
+
+    const name = typeof body.name === "string" ? body.name.trim() : ""
+    const email = typeof body.email === "string" ? body.email.trim() : ""
+    const phone = typeof body.phone === "string" ? body.phone.trim() : ""
+    const address = typeof body.address === "string" ? body.address.trim() : ""
+    const serviceType = typeof body.serviceType === "string" ? body.serviceType.trim() : ""
+    const date = typeof body.date === "string" ? body.date.trim() : ""
+    const time = typeof body.time === "string" ? body.time.trim() : ""
+    const message = typeof body.message === "string" ? body.message.trim() : ""
+
+    if (!name || !email || !phone || !address || !serviceType || !date || !time || !isValidEmail(email)) {
+      return NextResponse.json(
+        { success: false, message: "Please complete all required booking fields with a valid email address." },
+        { status: 400 },
+      )
+    }
+
+    const emailUser = process.env.EMAIL_USER
+    const emailPassword = process.env.EMAIL_PASSWORD
+
+    if (!emailUser || !emailPassword) {
+      console.error("Missing email configuration: EMAIL_USER or EMAIL_PASSWORD")
+      return NextResponse.json({ success: false, message: "Email service is not configured." }, { status: 500 })
+    }
+
     const transporter = nodemailer.createTransport({
-      service: "Yahoo",
+      host: "smtp.mail.yahoo.com",
+      port: 465,
+      secure: true,
       auth: {
-        user: "stephenie@yahoo.com",
-        pass: process.env.EMAIL_PASSWORD,
+        user: emailUser,
+        pass: emailPassword,
       },
-      debug: true, // Enable debug output
-      logger: true, // Log information to the console
+      tls: {
+        rejectUnauthorized: true,
+      },
     })
 
-    // Format the date if it's a string
-    const formattedDate = formData.date || "Not specified"
-
-    // Email content
     const mailOptions = {
-      from: "stephenieagboje@yahoo.com",
-      to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
-      subject: `New Booking Request: ${formData.serviceType}`,
+      from: `"Melody Cleaning Services" <${emailUser}>`,
+      replyTo: email,
+      to: BUSINESS_EMAILS.join(", "),
+      subject: `New Booking Request: ${escapeHtml(serviceType)}`,
       html: `
         <h1>New Booking Request</h1>
-        <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Phone:</strong> ${formData.phone}</p>
-        <p><strong>Address:</strong> ${formData.address}</p>
-        <p><strong>Service Type:</strong> ${formData.serviceType}</p>
-        <p><strong>Preferred Date:</strong> ${formattedDate}</p>
-        <p><strong>Preferred Time:</strong> ${formData.time}</p>
-        <p><strong>Additional Information:</strong> ${formData.message || "None provided"}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Address:</strong> ${escapeHtml(address)}</p>
+        <p><strong>Service Type:</strong> ${escapeHtml(serviceType)}</p>
+        <p><strong>Preferred Date:</strong> ${escapeHtml(date)}</p>
+        <p><strong>Preferred Time:</strong> ${escapeHtml(time)}</p>
+        <p><strong>Additional Information:</strong> ${escapeHtml(message, "None provided")}</p>
       `,
     }
 
-    // Send email
-    const info = await transporter.sendMail(mailOptions)
-    console.log("Email sent:", info.response)
+    await transporter.sendMail(mailOptions)
 
     return NextResponse.json({ success: true, message: "Booking request submitted successfully" })
   } catch (error) {
