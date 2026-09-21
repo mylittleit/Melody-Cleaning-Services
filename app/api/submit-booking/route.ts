@@ -6,12 +6,12 @@ export const runtime = "nodejs"
 export async function POST(request: Request) {
   try {
     const formData = await request.json()
-    const emailUser = process.env.EMAIL_USER || "stephenieagboje@yahoo.com"
+    const emailUser = process.env.EMAIL_USER
     const emailPassword = process.env.EMAIL_PASSWORD
 
-    if (!emailPassword) {
+    if (!emailUser || !emailPassword) {
       return NextResponse.json(
-        { success: false, message: "Email configuration is missing. Please set EMAIL_PASSWORD." },
+        { success: false, message: "Email configuration is missing. Please set EMAIL_USER and EMAIL_PASSWORD." },
         { status: 500 }
       )
     }
@@ -29,7 +29,11 @@ export async function POST(request: Request) {
     const formattedDate = formData.date || "Not specified"
 
     const mailOptions = {
-      from: emailUser,
+      from: `Melody Cleaning Services <${emailUser}>`,
+      replyTo: formData.email || emailUser,
+      headers: {
+        "Reply-To": formData.email || emailUser,
+      },
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
       subject: `New Booking Request: ${formData.serviceType || "General Inquiry"}`,
       html: `
@@ -46,7 +50,7 @@ export async function POST(request: Request) {
     }
 
     const info = await transporter.sendMail(mailOptions)
-    console.log("Email sent:", info.response)
+    console.log("Email sent:", info)
 
     return NextResponse.json({ success: true, message: "Booking request submitted successfully" })
   } catch (error) {

@@ -6,12 +6,12 @@ export const runtime = "nodejs"
 export async function POST(request: NextRequest) {
   try {
     const { name, email, subject, message } = await request.json()
-    const emailUser = process.env.EMAIL_USER || "stephenieagboje@yahoo.com"
+    const emailUser = process.env.EMAIL_USER
     const emailPassword = process.env.EMAIL_PASSWORD
 
-    if (!emailPassword) {
+    if (!emailUser || !emailPassword) {
       return NextResponse.json(
-        { success: false, error: "Email configuration is missing. Please set EMAIL_PASSWORD." },
+        { success: false, error: "Email configuration is missing. Please set EMAIL_USER and EMAIL_PASSWORD." },
         { status: 500 }
       )
     }
@@ -30,7 +30,11 @@ export async function POST(request: NextRequest) {
     })
 
     const businessEmailOptions = {
-      from: emailUser,
+      from: `Melody Cleaning Services <${emailUser}>`,
+      replyTo: email || emailUser,
+      headers: {
+        "Reply-To": email || emailUser,
+      },
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
       subject: `New Contact Form Submission - ${subject || "General Inquiry"}`,
       html: `
@@ -45,11 +49,13 @@ export async function POST(request: NextRequest) {
       `,
     }
 
-    const customerEmailOptions = {
-      from: emailUser,
-      to: email,
-      subject: "Thank you for contacting Melody Cleaning Services",
-      html: `
+    // Send acknowledgement to the customer only if a valid sender email was provided
+    const customerEmailOptions = email
+      ? {
+          from: `Melody Cleaning Services <${emailUser}>`,
+          to: email,
+          subject: "Thank you for contacting Melody Cleaning Services",
+          html: `
         <h2>Thank you for your inquiry!</h2>
         <p>Dear ${name || "Customer"},</p>
         <p>Thank you for contacting Melody Cleaning Services. We have received your message and will get back to you within 2 hours during business hours.</p>
@@ -59,10 +65,17 @@ export async function POST(request: NextRequest) {
         <p>If you need immediate assistance, please call us at 07453581984.</p>
         <p>Best regards,<br>Melody Cleaning Services Team</p>
       `,
-    }
+        }
+      : null
 
     await transporter.sendMail(businessEmailOptions)
-    await transporter.sendMail(customerEmailOptions)
+    if (customerEmailOptions) {
+      try {
+        await transporter.sendMail(customerEmailOptions)
+      } catch (err) {
+        console.warn("Failed to send customer acknowledgement email:", err)
+      }
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {
