@@ -37,14 +37,12 @@ const formSchema = z.object({
   address: z.string().min(5, {
     message: "Address must be at least 5 characters.",
   }),
-  serviceType: z.string({
-    required_error: "Please select a service type.",
+  serviceType: z.string({ error: "Please select a service type." }).min(1, {
+    message: "Please select a service type.",
   }),
-  date: z.date({
-    required_error: "Please select a date.",
-  }),
-  time: z.string({
-    required_error: "Please select a preferred time.",
+  date: z.date({ error: "Please select a date." }),
+  time: z.string({ error: "Please select a preferred time." }).min(1, {
+    message: "Please select a preferred time.",
   }),
   message: z.string().optional(),
 })
@@ -306,7 +304,6 @@ export default function BookingPage() {
                                   selected={field.value}
                                   onSelect={field.onChange}
                                   disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
-                                  initialFocus
                                 />
                               </PopoverContent>
                             </Popover>

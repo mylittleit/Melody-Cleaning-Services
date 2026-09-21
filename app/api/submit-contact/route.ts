@@ -8,6 +8,7 @@ export async function POST(request: NextRequest) {
     const { name, email, subject, message } = await request.json()
     const emailUser = process.env.EMAIL_USER
     const emailPassword = process.env.EMAIL_PASSWORD
+    const senderName = "Melody Cleaning Services"
 
     if (!emailUser || !emailPassword) {
       return NextResponse.json(
@@ -30,11 +31,8 @@ export async function POST(request: NextRequest) {
     })
 
     const businessEmailOptions = {
-      from: `Melody Cleaning Services <${emailUser}>`,
+      from: { name: senderName, address: emailUser },
       replyTo: email || emailUser,
-      headers: {
-        "Reply-To": email || emailUser,
-      },
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
       subject: `New Contact Form Submission - ${subject || "General Inquiry"}`,
       html: `
@@ -52,7 +50,8 @@ export async function POST(request: NextRequest) {
     // Send acknowledgement to the customer only if a valid sender email was provided
     const customerEmailOptions = email
       ? {
-          from: `Melody Cleaning Services <${emailUser}>`,
+          from: { name: senderName, address: emailUser },
+          replyTo: emailUser,
           to: email,
           subject: "Thank you for contacting Melody Cleaning Services",
           html: `
