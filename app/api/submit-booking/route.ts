@@ -19,6 +19,10 @@ function escapeHtml(value: unknown, fallback = "Not provided") {
     .replace(/'/g, "&#039;")
 }
 
+function cleanHeaderValue(value: string) {
+  return value.replace(/[\r\n]/g, " ").trim()
+}
+
 function isValidEmail(value: unknown) {
   if (typeof value !== "string") return false
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())
@@ -44,11 +48,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const emailUser = process.env.EMAIL_USER
+    const emailUser = process.env.EMAIL_USER?.trim()
     const emailPassword = process.env.EMAIL_PASSWORD
 
-    if (!emailUser || !emailPassword) {
-      console.error("Missing email configuration: EMAIL_USER or EMAIL_PASSWORD")
+    if (!emailUser || !emailPassword || BUSINESS_EMAILS.length === 0) {
+      console.error("Missing email configuration: EMAIL_USER, EMAIL_PASSWORD, or BUSINESS_EMAILS")
       return NextResponse.json({ success: false, message: "Email service is not configured." }, { status: 500 })
     }
 
@@ -69,7 +73,7 @@ export async function POST(request: NextRequest) {
       from: `"Melody Cleaning Services" <${emailUser}>`,
       replyTo: email,
       to: BUSINESS_EMAILS.join(", "),
-      subject: `New Booking Request: ${escapeHtml(serviceType)}`,
+      subject: `New Booking Request: ${cleanHeaderValue(serviceType)}`,
       html: `
         <h1>New Booking Request</h1>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
