@@ -26,22 +26,19 @@ export async function POST(request: NextRequest) {
 
     if (!emailUser || !emailPassword) {
       return NextResponse.json(
-        { success: false, error: "Email configuration is missing. Please set EMAIL_USER and EMAIL_PASSWORD." },
+        { success: false, message: "Email configuration is missing. Please set EMAIL_USER and EMAIL_PASSWORD." },
         { status: 500 }
       )
     }
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.mail.yahoo.com",
-      port: 465,
-      secure: true,
+      service: "Yahoo",
       auth: {
         user: emailUser,
         pass: emailPassword,
       },
-      tls: {
-        rejectUnauthorized: true,
-      },
+      debug: false,
+      logger: false,
     })
 
     const businessEmailOptions = {
