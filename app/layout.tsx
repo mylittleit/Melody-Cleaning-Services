@@ -81,7 +81,10 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
   },
-  generator: "v0.dev",
+  icons: {
+    icon: "/MelodyLogo.png",
+    apple: "/MelodyLogo.png",
+  },
 }
 
 export default function RootLayout({

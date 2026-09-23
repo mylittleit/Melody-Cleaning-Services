@@ -84,9 +84,9 @@ export default function BookingPage() {
         body: JSON.stringify(formData),
       })
 
-      const data = await response.json()
+      const data = await response.json().catch(() => null)
 
-      if (response.ok && data.success) {
+      if (response.ok && data?.success) {
         setIsSuccess(true)
         form.reset()
 
@@ -131,7 +131,7 @@ export default function BookingPage() {
           console.log("Conversion tracking fired for booking form submission")
         }
       } else {
-        throw new Error(data.message || "We could not send your booking request.")
+        throw new Error(data?.message || "We could not send your booking request.")
       }
     } catch (error) {
       console.error("Error submitting form:", error)

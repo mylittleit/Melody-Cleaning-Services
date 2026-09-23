@@ -62,7 +62,7 @@ function ContactPageContent() {
 
       const result = await response.json().catch(() => ({}))
 
-      if (response.ok && result.success) {
+      if (response.ok && result?.success === true) {
         // Track successful conversion
         if (typeof window !== "undefined" && typeof window.gtag === "function") {
           // Google Ads Conversion
@@ -96,6 +96,7 @@ function ContactPageContent() {
         // Reset form
         e.currentTarget.reset()
       } else {
+        console.error("Contact form request failed:", result?.message || response.statusText)
         setShowSuccess(false)
         setShowError(true)
       }
