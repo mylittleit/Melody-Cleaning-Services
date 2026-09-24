@@ -308,8 +308,7 @@ function ContactPageContent() {
             {/* Success Message */}
             {showSuccess && !showError && (
               <div role="status" className="mb-6 rounded-lg bg-green-50 border border-green-200 p-4 text-center">
-                <p className="text-green-700 font-semibold">Thank you! Your message has been sent successfully.</p>
-                <p className="text-green-600 text-sm">We'll get back to you within 24 hours.</p>
+                <p className="text-green-700 font-semibold">Thank you, your message has been received and our team will get back to you.</p>
               </div>
             )}
 

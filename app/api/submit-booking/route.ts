@@ -1,20 +1,24 @@
-import { NextResponse } from "next/server"
-import nodemailer from "nodemailer"
-import { escapeHtml, getString, isValidEmail } from "@/lib/email-utils"
+import { NextRequest, NextResponse } from "next/server"
+import { createYahooTransporter, escapeHtml, getEmailCredentials, getString, isValidEmail } from "@/lib/email-utils"
 
 export const runtime = "nodejs"
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const formData = await request.json()
-    const name = getString(formData.name, 200)
-    const email = getString(formData.email, 254).toLowerCase()
-    const phone = getString(formData.phone, 50)
-    const address = getString(formData.address, 500)
-    const serviceType = getString(formData.serviceType, 100)
-    const date = getString(formData.date, 30)
-    const time = getString(formData.time, 100)
-    const message = getString(formData.message, 2000)
+    const body = await request.json().catch(() => null)
+
+    if (!body || typeof body !== "object") {
+      return NextResponse.json({ success: false, message: "Invalid request payload." }, { status: 400 })
+    }
+
+    const name = getString(body.name, 200)
+    const email = getString(body.email, 254).toLowerCase()
+    const phone = getString(body.phone, 50)
+    const address = getString(body.address, 500)
+    const serviceType = getString(body.serviceType, 100)
+    const date = getString(body.date, 30)
+    const time = getString(body.time, 100)
+    const message = getString(body.message, 2000)
 
     if (!name || !email || !phone || !address || !serviceType || !date || !time) {
       return NextResponse.json({ success: false, message: "Please complete all required booking fields." }, { status: 400 })
@@ -24,29 +28,21 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, message: "Please enter a valid email address." }, { status: 400 })
     }
 
-    const emailUser = process.env.EMAIL_USER
-    const emailPassword = process.env.EMAIL_PASSWORD
+    const credentials = getEmailCredentials()
     const senderName = "Melody Cleaning Services"
 
-    if (!emailUser || !emailPassword) {
+    if (!credentials) {
+      console.error("Booking form failed: EMAIL_USER or EMAIL_PASSWORD is missing in the server environment")
       return NextResponse.json(
-        { success: false, message: "Email configuration is missing. Please set EMAIL_USER and EMAIL_PASSWORD." },
+        { success: false, message: "We couldn't send your booking request right now. Please try again later." },
         { status: 500 }
       )
     }
 
-    const transporter = nodemailer.createTransport({
-      service: "Yahoo",
-      auth: {
-        user: emailUser,
-        pass: emailPassword,
-      },
-      debug: false,
-      logger: false,
-    })
+    const transporter = createYahooTransporter()
 
     const mailOptions = {
-      from: { name: senderName, address: emailUser },
+      from: { name: senderName, address: credentials.emailUser },
       replyTo: email,
       to: "max_frances@yahoo.com, melodycleaningservices@yahoo.com, contactmelodycleaning@gmail.com",
       subject: `New Booking Request: ${serviceType}`,
@@ -63,12 +59,14 @@ export async function POST(request: Request) {
       `,
     }
 
-    const info = await transporter.sendMail(mailOptions)
-    console.log("Email sent:", info)
+    await transporter.sendMail(mailOptions)
 
     return NextResponse.json({ success: true, message: "Booking request submitted successfully" })
   } catch (error) {
     console.error("Error submitting booking:", error)
-    return NextResponse.json({ success: false, message: "Failed to submit booking request" }, { status: 500 })
+    return NextResponse.json(
+      { success: false, message: "We could not send your booking request right now. Please try again later." },
+      { status: 500 }
+    )
   }
 }
